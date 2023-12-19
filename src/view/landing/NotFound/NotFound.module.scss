@@ -1,0 +1,48 @@
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: em(203px) em(30px) em(64px);
+  @include iflaptop {
+    padding: em(157px) em(30px) em(64px);
+  }
+  @include iftablet {
+    padding: em(203px) em(30px) em(64px);
+  }
+  @include ifmobile {
+    padding: em(64px) em(30px) em(64px);
+  }
+
+  &_Image {
+    position: relative;
+    width: em(500px);
+    height: em(500px);
+    @include iflaptop {
+      width: em(400px);
+      height: em(400px);
+    }
+    @include iftablet {
+      width: em(400px);
+      height: em(400px);
+    }
+    @include ifmobile {
+      width: em(300px);
+      height: em(300px);
+    }
+  }
+
+  &_Button {
+    @include ifmobile {
+      width: 100%;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
