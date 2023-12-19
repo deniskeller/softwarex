@@ -1,0 +1,25 @@
+.Logo {
+  display: flex;
+  height: 100%;
+  width: em(66.369px);
+  height: em(34.336px);
+  cursor: pointer;
+
+  @include iflaptop {
+    width: em(49.777px);
+    height: em(25.752px);
+  }
+  @include iftablet {
+    width: em(49.777px);
+    height: em(25.752px);
+  }
+  @include ifmobile {
+    width: em(37.333px);
+    height: em(19.314px);
+  }
+
+  svg {
+    width: inherit;
+    height: 100%;
+  }
+}

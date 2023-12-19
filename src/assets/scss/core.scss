@@ -3,26 +3,26 @@
 html {
   color: #000;
   font-family: 'Gantari', sans-serif;
-  // font-size: math.div(16, 1920) * 100vh;
+  // font-size: math.div(16, 1440) * 100vh;
   font-weight: normal;
   line-height: 120%;
   scroll-behavior: smooth;
   min-height: 100%;
 }
 
-@media screen and (max-aspect-ratio: 1920/720) {
+@media screen and (max-aspect-ratio: 1440/720) {
   html {
-    font-size: math.div(16, 1920) * 100vw;
+    font-size: math.div(16, 1440) * 100vw;
   }
 }
 
-@media only screen and (min-width: 1920px) and (max-aspect-ratio: 1920/720) {
+@media only screen and (min-width: 1440px) and (max-aspect-ratio: 1440/720) {
   html {
     font-size: 16px;
   }
 }
 
-@media only screen and (min-height: 720px) and (min-aspect-ratio: 1920/720) {
+@media only screen and (min-height: 720px) and (min-aspect-ratio: 1440/720) {
   html {
     font-size: 16px;
   }
