@@ -120,19 +120,18 @@
   &_Image {
     width: em(734px);
     height: em(522px);
-    top: em(-94px);
     right: em(68px);
+    bottom: em(42px);
     position: absolute;
     @include iflaptop {
       width: em(581px);
       height: em(449px);
-      top: em(92px);
       right: em(66px);
+      bottom: em(-8px);
     }
     @include iftablet {
       width: em(581px);
       height: em(449px);
-      top: auto;
       bottom: em(22px);
       right: em(67px);
     }
@@ -140,8 +139,14 @@
       width: em(310px);
       height: em(234px);
       top: auto;
-      bottom: em(73px);
+      // bottom: em(73px);
+      bottom: 0;
       right: em(23px);
+    }
+    @include landscape {
+      width: em(310px);
+      height: em(234px);
+      top: 0;
     }
   }
 }
