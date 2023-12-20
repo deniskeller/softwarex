@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import s from './Landing.module.scss';
-// import Footer from 'components/landing/Footer/Footer';
 import { BaseToast } from '@base/index';
 import { Header } from 'components/landing/header';
+import { Footer } from 'components/landing/footer';
 
 const pages = [
   {
@@ -48,7 +48,7 @@ const Landing: React.FC<Props> = ({
 
         <div className={s.Content}>{children}</div>
 
-        {/* {footer ? <Footer /> : null} */}
+        {footer ? <Footer /> : null}
       </div>
 
       <BaseToast />

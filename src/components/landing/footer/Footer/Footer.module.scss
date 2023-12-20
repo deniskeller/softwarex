@@ -1,0 +1,180 @@
+.Footer {
+  padding: 0 0 em(80px) 0;
+  @include iflaptop {
+    padding: 0 0 em(35px) 0;
+  }
+  @include iftablet {
+    padding: 0 0 em(32px) 0;
+  }
+  @include ifmobile {
+    padding: 0 0 em(26px) 0;
+  }
+  &_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &_Logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-right: em(130px);
+    @include iflaptop {
+      margin-right: em(74px);
+    }
+    @include iftablet {
+      margin-right: 0;
+    }
+    @include ifmobile {
+      margin-right: 0;
+      margin-bottom: em(40px);
+    }
+    .Icon {
+      width: em(66.369px);
+      height: em(34.336px);
+      margin-right: em(8px);
+      overflow: visible;
+      path {
+        stroke: $text;
+      }
+    }
+    .Label {
+      color: $text;
+      font-size: em(27px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 115%;
+    }
+  }
+
+  &_Navbar {
+    width: 100%;
+    max-width: em(950px);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: em(26px) 0;
+
+    &__Desktop {
+      display: none;
+      @include ifdesktop {
+        display: grid;
+      }
+    }
+
+    &__Mobile {
+      display: grid;
+      @include ifdesktop {
+        display: none;
+      }
+    }
+
+    @include iflaptop {
+      max-width: em(361px);
+      grid-template-columns: 1fr 1fr;
+      gap: em(26px) em(118px);
+    }
+    @include iftablet {
+      margin-left: auto;
+      max-width: em(350px);
+      grid-template-columns: 1fr 1fr;
+      gap: em(26px) em(106px);
+    }
+    @include ifmobile {
+      max-width: em(282px);
+      grid-template-columns: 1fr 1fr;
+      gap: em(26px) em(70px);
+    }
+    li {
+      line-height: 100%;
+      .Link {
+        color: $text;
+        font-size: em(16px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        &:hover {
+          color: $pr1;
+        }
+        @include ifmobile {
+          font-size: em(14px);
+        }
+      }
+    }
+  }
+
+  &_Info {
+    margin-left: auto;
+    @include iflaptop {
+      margin-top: auto;
+    }
+    @include iftablet {
+      margin-top: em(20px);
+      margin-left: 0;
+    }
+    @include ifmobile {
+      margin-top: em(48px);
+      margin-left: 0;
+    }
+    .Partners {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: em(25px);
+      @include iftablet {
+        justify-content: flex-start;
+        margin-bottom: em(18px);
+      }
+      @include ifmobile {
+        justify-content: flex-start;
+        margin-bottom: em(26px);
+      }
+      &_Visa {
+        width: em(68px);
+        height: em(21px);
+        margin-right: em(14px);
+      }
+      &_MasterCard {
+        width: em(45px);
+        height: em(27px);
+      }
+    }
+
+    .Copyright {
+      @include iftablet {
+        display: inline-flex;
+      }
+      p {
+        color: $text;
+        text-align: right;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%;
+        opacity: 0.5;
+        font-size: em(12px);
+        &:not(:last-child) {
+          @include ifmobile {
+            display: inline-flex;
+          }
+        }
+        @include ifdesktop {
+          font-size: em(14px);
+        }
+        @include iftablet {
+          text-align: left;
+        }
+        @include ifmobile {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
