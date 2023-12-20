@@ -1,0 +1,45 @@
+.ToMainPage {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  &_Icon {
+    width: em(16px);
+    height: em(16px);
+    margin-right: em(4px);
+    transition: transform $speed ease;
+  }
+  &_Label {
+    color: $pr1;
+    text-align: center;
+    font-size: em(16px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &:hover {
+    .ToMainPage_Icon {
+      transform: translate(-4px, 0);
+    }
+    .ToMainPage_Icon path {
+      stroke: $text;
+    }
+    .ToMainPage_Label {
+      color: $text;
+    }
+  }
+  &:active {
+    .ToMainPage_Icon {
+      transform: translate(-4px, 0);
+    }
+    .ToMainPage_Icon {
+      stroke: $text;
+      stroke-opacity: 0.7;
+    }
+    .ToMainPage_Label {
+      color: $text;
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,41 +1,147 @@
 .NotFound {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  padding: em(203px) em(30px) em(64px);
+  position: relative;
+  padding: em(270px) 0 em(60px);
+  overflow: hidden;
   @include iflaptop {
-    padding: em(157px) em(30px) em(64px);
+    padding: em(176px) 0 em(60px);
   }
   @include iftablet {
-    padding: em(203px) em(30px) em(64px);
+    padding: em(176px) 0 em(60px);
   }
   @include ifmobile {
-    padding: em(64px) em(30px) em(64px);
+    padding: em(184px) 0 em(60px);
+  }
+
+  .Background {
+    width: 100%;
+    position: absolute;
+    min-height: 83%;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-image: url('/pictures/images/404/gradient-bg-desktop.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include iflaptop {
+      background-image: url('/pictures/images/404/gradient-bg-laptop.png');
+      min-height: 100%;
+    }
+    @include iftablet {
+      background-image: url('/pictures/images/404/gradient-bg-tablet.png');
+      min-height: 100%;
+    }
+    @include ifmobile {
+      background-image: url('/pictures/images/404/gradient-bg-mobile.png');
+      min-height: 100%;
+    }
+  }
+
+  &_Container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+  }
+
+  &_Title {
+    $size: 71px;
+    position: relative;
+    z-index: 1;
+    color: $white;
+    font-size: em($size);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
+    margin-bottom: em(50px, $size);
+    @include iflaptop {
+      $size: 50px;
+      font-size: em($size);
+      margin-bottom: em(15px, $size);
+    }
+    @include iftablet {
+      $size: 50px;
+      font-size: em($size);
+      margin-bottom: em(15px, $size);
+    }
+    @include ifmobile {
+      $size: 40px;
+      font-size: em($size);
+      margin-bottom: em(20px, $size);
+    }
+  }
+
+  &_Subtitle {
+    position: relative;
+    z-index: 1;
+    color: $white;
+    font-size: em(20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  &_ToMainPage {
+    position: relative;
+    z-index: 1;
+    margin: auto auto 0;
+    @include iflaptop {
+      margin: em(20px) 0 0;
+      svg path {
+        stroke: $text;
+      }
+      span {
+        color: $text;
+      }
+    }
+    @include iftablet {
+      margin: em(20px) 0 0;
+      svg path {
+        stroke: $text;
+      }
+      span {
+        color: $text;
+      }
+    }
+    @include ifmobile {
+      margin: em(22px) 0 0;
+      svg path {
+        stroke: $text;
+      }
+      span {
+        color: $text;
+      }
+    }
   }
 
   &_Image {
-    position: relative;
-    width: em(500px);
-    height: em(500px);
+    width: em(734px);
+    height: em(522px);
+    top: em(-94px);
+    right: em(68px);
+    position: absolute;
     @include iflaptop {
-      width: em(400px);
-      height: em(400px);
+      width: em(581px);
+      height: em(449px);
+      top: em(92px);
+      right: em(66px);
     }
     @include iftablet {
-      width: em(400px);
-      height: em(400px);
+      width: em(581px);
+      height: em(449px);
+      top: auto;
+      bottom: em(22px);
+      right: em(67px);
     }
     @include ifmobile {
-      width: em(300px);
-      height: em(300px);
-    }
-  }
-
-  &_Button {
-    @include ifmobile {
-      width: 100%;
+      width: em(310px);
+      height: em(234px);
+      top: auto;
+      bottom: em(73px);
+      right: em(23px);
     }
   }
 }

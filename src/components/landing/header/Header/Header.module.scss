@@ -16,7 +16,7 @@
   }
   @include ifmobile {
     min-height: em(57px);
-    padding: em(17px) 0;
+    padding: em(33px) 0;
   }
 
   &_Container {
@@ -157,6 +157,9 @@
         width: em(45px);
         height: em(45px);
         margin-left: em(10px);
+        path {
+          transition: transform $speed ease;
+        }
       }
 
       &:hover {
@@ -165,6 +168,9 @@
         }
         .Logout_Icon path {
           stroke: $text;
+        }
+        .Logout_Icon path:nth-child(2) {
+          transform: translate(5px, 0);
         }
       }
       &:active {
@@ -394,6 +400,9 @@
             width: em(45px);
             height: em(45px);
             margin-left: em(10px);
+            path {
+              transition: transform $speed ease;
+            }
           }
 
           &:hover {
@@ -410,6 +419,9 @@
             }
             .Logout_Icon path {
               stroke: $text;
+            }
+            .Logout_Icon path:nth-child(2) {
+              transform: translate(5px, 0);
             }
           }
         }
