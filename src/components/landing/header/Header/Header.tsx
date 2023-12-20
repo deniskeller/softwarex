@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import s from './Header.module.scss';
 import { BaseButton, BaseContainer, BaseIcon } from '@base/index';
 import { useRouter } from 'next/router';
@@ -30,6 +30,21 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
       document.body.style.height = '';
     }
   }, [isVisibleSidebar]);
+
+  //ВРЕМЕННАЯ АВТОРИЗАЦИЯ
+  const [auth, setAuth] = useState(false);
+  useEffect(() => {
+    const checkAuth = sessionStorage.getItem('auth');
+    if (checkAuth == 'true') {
+      setAuth(true);
+    }
+    console.log('auth: ', auth);
+  }, [auth]);
+
+  const logout = () => {
+    sessionStorage.removeItem('auth');
+    setAuth(false);
+  };
 
   return (
     <div className={`${s.Header} ${theme == 'light' ? s.Header__Light : ''}`}>
@@ -63,22 +78,77 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
         </ul>
 
         <div className={s.Header_Actions}>
-          <BaseButton
-            as="a"
-            href="/sign-up"
-            type={theme == 'light' ? 'gradientEmpty' : 'whiteEmpty'}
-            className={s.SignUp}
-          >
-            Sign Up
-          </BaseButton>
-          <BaseButton
-            as="a"
-            href="/login"
-            className={s.Login}
-            type={theme == 'light' ? 'gradient' : 'primary'}
-          >
-            Log In
-          </BaseButton>
+          {!auth ? (
+            <>
+              <BaseButton
+                as="a"
+                href="/sign-up"
+                type={theme == 'light' ? 'gradientEmpty' : 'whiteEmpty'}
+                className={s.SignUp}
+              >
+                Sign Up
+              </BaseButton>
+              <BaseButton
+                as="a"
+                href="/log-in"
+                className={s.Login}
+                type={theme == 'light' ? 'gradient' : 'primary'}
+              >
+                Log In
+              </BaseButton>
+            </>
+          ) : (
+            <>
+              <Link href="/log-in" className={s.User}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 45 45"
+                  fill="none"
+                  className={s.User_Icon}
+                >
+                  <circle
+                    cx="22.5"
+                    cy="22.5"
+                    r="21.25"
+                    fill="white"
+                    fillOpacity="0.8"
+                  />
+                  <path
+                    d="M5.625 22.5C5.625 24.7161 6.06148 26.9104 6.90953 28.9578C7.75758 31.0052 9.00058 32.8654 10.5676 34.4324C12.1346 35.9994 13.9948 37.2424 16.0422 38.0905C18.0896 38.9385 20.2839 39.375 22.5 39.375C24.7161 39.375 26.9104 38.9385 28.9578 38.0905C31.0052 37.2424 32.8654 35.9994 34.4324 34.4324C35.9994 32.8654 37.2424 31.0052 38.0905 28.9578C38.9385 26.9104 39.375 24.7161 39.375 22.5C39.375 20.2839 38.9385 18.0896 38.0905 16.0422C37.2424 13.9948 35.9994 12.1346 34.4324 10.5676C32.8654 9.00058 31.0052 7.75758 28.9578 6.90953C26.9104 6.06148 24.7161 5.625 22.5 5.625C20.2839 5.625 18.0896 6.06148 16.0422 6.90953C13.9948 7.75758 12.1346 9.00058 10.5676 10.5676C9.00058 12.1346 7.75758 13.9948 6.90953 16.0422C6.06148 18.0896 5.625 20.2839 5.625 22.5Z"
+                    stroke="#F98973"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11.565 35.3419C12.0291 33.7973 12.9787 32.4435 14.273 31.4812C15.5672 30.5189 17.1372 29.9995 18.75 30H26.25C27.8649 29.9994 29.4368 30.5201 30.732 31.4846C32.0272 32.4491 32.9765 33.8058 33.4388 35.3531M16.875 18.75C16.875 20.2418 17.4676 21.6726 18.5225 22.7275C19.5774 23.7824 21.0082 24.375 22.5 24.375C23.9918 24.375 25.4226 23.7824 26.4775 22.7275C27.5324 21.6726 28.125 20.2418 28.125 18.75C28.125 17.2582 27.5324 15.8274 26.4775 14.7725C25.4226 13.7176 23.9918 13.125 22.5 13.125C21.0082 13.125 19.5774 13.7176 18.5225 14.7725C17.4676 15.8274 16.875 17.2582 16.875 18.75Z"
+                    stroke="#F98973"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+
+              <button className={s.Logout} onClick={logout}>
+                <div className={s.Logout_Label}>Log out</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 45 45"
+                  fill="none"
+                  className={s.Logout_Icon}
+                >
+                  <path
+                    d="M28.125 15V13.125C28.125 12.1304 27.7299 11.1766 27.0266 10.4733C26.3234 9.77009 25.3696 9.375 24.375 9.375H9.375C8.38044 9.375 7.42661 9.77009 6.72335 10.4733C6.02009 11.1766 5.625 12.1304 5.625 13.125V31.875C5.625 32.8696 6.02009 33.8234 6.72335 34.5266C7.42661 35.2299 8.38044 35.625 9.375 35.625H24.375C25.3696 35.625 26.3234 35.2299 27.0266 34.5266C27.7299 33.8234 28.125 32.8696 28.125 31.875V30M18.75 22.5H39.375M39.375 22.5L33.75 16.875M39.375 22.5L33.75 28.125"
+                    stroke="white"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
 
         <div
@@ -388,22 +458,76 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
               </ul>
 
               <div className={s.Sidebar_Actions}>
-                <BaseButton
-                  as="a"
-                  href="/sign-up"
-                  type="gradientEmpty"
-                  className={s.SignUp}
-                >
-                  Sign Up
-                </BaseButton>
-                <BaseButton
-                  as="a"
-                  href="/login"
-                  type="gradient"
-                  className={s.Login}
-                >
-                  Log In
-                </BaseButton>
+                {!auth ? (
+                  <>
+                    <BaseButton
+                      as="a"
+                      href="/sign-up"
+                      type="gradientEmpty"
+                      className={s.SignUp}
+                    >
+                      Sign Up
+                    </BaseButton>
+                    <BaseButton
+                      as="a"
+                      href="/log-in"
+                      type="gradient"
+                      className={s.Login}
+                    >
+                      Log In
+                    </BaseButton>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/log-in" className={s.User}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 73 73"
+                        fill="none"
+                        className={s.User_Icon}
+                      >
+                        <circle
+                          cx="36.9619"
+                          cy="36.3398"
+                          r="34"
+                          fill="#F98973"
+                        />
+                        <path
+                          d="M9.96191 36.3398C9.96191 39.8855 10.6603 43.3965 12.0172 46.6723C13.374 49.9481 15.3628 52.9245 17.87 55.4317C20.3772 57.9389 23.3537 59.9277 26.6295 61.2846C29.9053 62.6415 33.4162 63.3398 36.9619 63.3398C40.5076 63.3398 44.0186 62.6415 47.2944 61.2846C50.5702 59.9277 53.5466 57.9389 56.0538 55.4317C58.561 52.9245 60.5498 49.9481 61.9067 46.6723C63.2635 43.3965 63.9619 39.8855 63.9619 36.3398C63.9619 32.7942 63.2635 29.2832 61.9067 26.0074C60.5498 22.7316 58.561 19.7551 56.0538 17.248C53.5466 14.7408 50.5702 12.752 47.2944 11.3951C44.0186 10.0382 40.5076 9.33984 36.9619 9.33984C33.4162 9.33984 29.9053 10.0382 26.6295 11.3951C23.3537 12.752 20.3772 14.7408 17.87 17.248C15.3628 19.7551 13.374 22.7316 12.0172 26.0074C10.6603 29.2832 9.96191 32.7942 9.96191 36.3398Z"
+                          stroke="white"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M19.4658 56.8868C20.2083 54.4155 21.7277 52.2494 23.7986 50.7098C25.8694 49.1702 28.3814 48.3391 30.9618 48.3398H42.9618C45.5456 48.339 48.0607 49.172 50.133 50.7152C52.2053 52.2584 53.7242 54.4292 54.4638 56.9048M27.9618 30.3398C27.9618 32.7268 28.91 35.016 30.5979 36.7038C32.2857 38.3916 34.5749 39.3398 36.9618 39.3398C39.3488 39.3398 41.638 38.3916 43.3258 36.7038C45.0136 35.016 45.9618 32.7268 45.9618 30.3398C45.9618 27.9529 45.0136 25.6637 43.3258 23.9759C41.638 22.2881 39.3488 21.3398 36.9618 21.3398C34.5749 21.3398 32.2857 22.2881 30.5979 23.9759C28.91 25.6637 27.9618 27.9529 27.9618 30.3398Z"
+                          stroke="white"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+
+                    <button className={s.Logout} onClick={logout}>
+                      <div className={s.Logout_Label}>Log out</div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 45 45"
+                        fill="none"
+                        className={s.Logout_Icon}
+                      >
+                        <path
+                          d="M28.125 15V13.125C28.125 12.1304 27.7299 11.1766 27.0266 10.4733C26.3234 9.77009 25.3696 9.375 24.375 9.375H9.375C8.38044 9.375 7.42661 9.77009 6.72335 10.4733C6.02009 11.1766 5.625 12.1304 5.625 13.125V31.875C5.625 32.8696 6.02009 33.8234 6.72335 34.5266C7.42661 35.2299 8.38044 35.625 9.375 35.625H24.375C25.3696 35.625 26.3234 35.2299 27.0266 34.5266C27.7299 33.8234 28.125 32.8696 28.125 31.875V30M18.75 22.5H39.375M39.375 22.5L33.75 16.875M39.375 22.5L33.75 28.125"
+                          stroke="#f98973"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>

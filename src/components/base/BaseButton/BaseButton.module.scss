@@ -14,6 +14,12 @@
     padding: em(15px) em(40px);
   }
 
+  &:active {
+    span {
+      opacity: 0.7;
+    }
+  }
+
   span {
     color: $text;
     text-align: center;
@@ -22,6 +28,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    // transition: all $speed ease;
     @include ifmobile {
       font-size: em(15px);
     }
@@ -33,15 +40,10 @@
   background: $white;
   &:hover {
     span {
-      background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+      background-image: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-  }
-  &:active {
-    span {
-      opacity: 0.7;
     }
   }
 }
@@ -55,12 +57,6 @@
       color: $white;
     }
   }
-
-  &:active {
-    span {
-      opacity: 0.7;
-    }
-  }
 }
 
 //Button_gradientEmpty
@@ -72,7 +68,7 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   span {
-    background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+    background-image: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -80,16 +76,7 @@
 
   &:hover {
     span {
-      background: $text;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-
-  &:active {
-    span {
-      opacity: 0.7;
+      background-image: linear-gradient(89deg, $text, $text);
     }
   }
 }
@@ -104,12 +91,6 @@
   &:hover {
     span {
       color: $text;
-    }
-  }
-
-  &:active {
-    span {
-      opacity: 0.7;
     }
   }
 }

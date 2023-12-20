@@ -89,7 +89,7 @@
       font-weight: 600;
       line-height: normal;
       white-space: nowrap;
-      transition: color $speed ease;
+      // transition: color $speed ease;
       &:hover {
         color: $white;
       }
@@ -103,6 +103,7 @@
   &_Actions {
     display: none;
     flex-direction: row;
+    align-items: center;
     @include ifdesktop {
       display: flex;
     }
@@ -115,6 +116,66 @@
       padding: em(16px) em(44px);
       span {
         font-size: em(17px);
+      }
+    }
+
+    .User {
+      display: flex;
+      margin-right: em(30px);
+      &_Icon {
+        width: em(45px);
+        height: em(45px);
+      }
+      &:hover {
+        .User_Icon path {
+          stroke: $text;
+        }
+      }
+      &:active {
+        .User_Icon path {
+          stroke-opacity: 0.7;
+        }
+      }
+    }
+    .Logout {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @extend %button;
+      background: transparent;
+      font-size: 100%;
+      &_Label {
+        display: flex;
+        color: $white;
+        font-size: em(20px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        font-family: 'Gantari', sans-serif;
+      }
+      &_Icon {
+        width: em(45px);
+        height: em(45px);
+        margin-left: em(10px);
+      }
+
+      &:hover {
+        .Logout_Label {
+          color: $text;
+        }
+        .Logout_Icon path {
+          stroke: $text;
+        }
+      }
+      &:active {
+        .Logout_Label {
+          color: $text;
+          opacity: 0.7;
+        }
+        .Logout_Icon path {
+          stroke: $text;
+          stroke-opacity: 0.7;
+        }
       }
     }
   }
@@ -219,7 +280,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: em(137px);
+        margin-bottom: em(60px);
         .Logo {
           display: flex;
           flex-direction: row;
@@ -279,7 +340,7 @@
       &_Actions {
         display: flex;
         flex-direction: column;
-        margin-top: em(85px);
+        margin-top: em(30px);
         .SignUp {
           margin-bottom: em(8px);
         }
@@ -290,6 +351,66 @@
           padding: em(16px) em(41px);
           span {
             font-size: em(17px);
+          }
+        }
+
+        .User {
+          display: flex;
+          margin: 0 auto em(30px);
+          &_Icon {
+            width: em(72px);
+            height: em(72px);
+          }
+          &:hover {
+            .User_Icon circle {
+              fill: #1f1e58;
+            }
+          }
+          &:active {
+            .User_Icon circle {
+              fill: #1f1e58;
+            }
+          }
+        }
+
+        .Logout {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          @extend %button;
+          background: transparent;
+          font-size: 100%;
+          margin: 0 auto;
+          &_Label {
+            display: flex;
+            color: $pr1;
+            font-size: em(20px);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            font-family: 'Gantari', sans-serif;
+          }
+          &_Icon {
+            width: em(45px);
+            height: em(45px);
+            margin-left: em(10px);
+          }
+
+          &:hover {
+            .Logout_Label {
+              color: $text;
+            }
+            .Logout_Icon path {
+              stroke: $text;
+            }
+          }
+          &:active {
+            .Logout_Label {
+              color: $text;
+            }
+            .Logout_Icon path {
+              stroke: $text;
+            }
           }
         }
       }
