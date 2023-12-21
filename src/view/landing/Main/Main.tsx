@@ -1,6 +1,11 @@
 import React from 'react';
 import s from './Main.module.scss';
-import { Expertise, Header, Solutions } from 'components/landing/pages/main';
+import {
+  Expertise,
+  Header,
+  Solutions,
+  Technologies,
+} from 'components/landing/pages/main';
 
 const Main: React.FC = () => {
   return (
@@ -8,6 +13,7 @@ const Main: React.FC = () => {
       <Header />
       <Expertise />
       <Solutions />
+      <Technologies />
     </div>
   );
 };

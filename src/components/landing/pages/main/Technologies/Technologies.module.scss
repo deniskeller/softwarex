@@ -1,0 +1,322 @@
+.Technologies {
+  margin-bottom: em(221px);
+  @include iflaptop {
+    margin-bottom: em(157px);
+  }
+  @include iftablet {
+    margin-bottom: em(108px);
+  }
+  @include ifmobile {
+    margin-bottom: em(90px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Star {
+    display: none;
+    position: absolute;
+    @include ifdesktop {
+      display: block;
+    }
+
+    &__1 {
+      top: em(-151px);
+      left: em(600px);
+      width: em(78px);
+      height: em(78px);
+    }
+    &__2 {
+      top: em(-54px);
+      right: em(119px);
+      width: em(123px);
+      height: em(123px);
+    }
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(33px);
+  }
+
+  &_Text {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: em(78px);
+    @include iflaptop {
+      margin-bottom: em(52px);
+    }
+    @include iftablet {
+      margin-bottom: em(60px);
+    }
+    @include ifmobile {
+      margin-bottom: em(46px);
+    }
+  }
+
+  &_List {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: em(926px);
+    gap: em(46px) em(55px);
+    @include iflaptop {
+      max-width: em(695px);
+      gap: em(45px) em(42px);
+    }
+    @include iftablet {
+      max-width: em(695px);
+      gap: em(45px) em(42px);
+    }
+    @include ifmobile {
+      gap: em(41px) em(26px);
+    }
+    .CSS {
+      width: em(52.392px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(39.294px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(39.294px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(26.196px);
+        height: em(26.748px);
+      }
+    }
+
+    .React {
+      width: em(60px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(30px);
+      }
+    }
+
+    .HTML {
+      width: em(52.392px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(39.294px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(39.294px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(26.838px);
+      }
+    }
+
+    .Nodejs {
+      width: em(54.48px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(40.86px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(40.86px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(26.838px);
+      }
+    }
+
+    .Javascript {
+      width: em(60px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(30px);
+      }
+    }
+
+    .Vue {
+      width: em(67.192px);
+      height: em(58px);
+      @include iflaptop {
+        width: em(50.394px);
+        height: em(43.5px);
+      }
+      @include iftablet {
+        width: em(50.394px);
+        height: em(43.5px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(23.167px);
+      }
+    }
+
+    .Python {
+      width: em(60.241px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(45.181px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(45.181px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30.12px);
+        height: em(26.838px);
+      }
+    }
+
+    .Flask {
+      width: em(60px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(45px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(26.838px);
+      }
+    }
+
+    .Django {
+      width: em(39.319px);
+      height: em(50px);
+      @include iflaptop {
+        width: em(29.489px);
+        height: em(37.5px);
+      }
+      @include iftablet {
+        width: em(29.489px);
+        height: em(37.5px);
+      }
+      @include ifmobile {
+        width: em(30px);
+        height: em(22.365px);
+      }
+    }
+
+    .Docker {
+      width: em(68px);
+      height: em(52px);
+      @include iflaptop {
+        width: em(51px);
+        height: em(39px);
+      }
+      @include iftablet {
+        width: em(51px);
+        height: em(39px);
+      }
+      @include ifmobile {
+        width: em(34px);
+        height: em(23.26px);
+      }
+    }
+
+    .Kubernets {
+      width: em(61.678px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(46.258px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(46.258px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(30.839px);
+        height: em(26.838px);
+      }
+    }
+
+    .Mysql {
+      width: em(88.132px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(66.099px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(66.099px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(44.066px);
+        height: em(26.838px);
+      }
+    }
+
+    .Postgresql {
+      width: em(58.176px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(43.632px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(43.632px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(29.088px);
+        height: em(26.838px);
+      }
+    }
+
+    .Gitlab {
+      width: em(65px);
+      height: em(60px);
+      @include iflaptop {
+        width: em(48.75px);
+        height: em(45px);
+      }
+      @include iftablet {
+        width: em(48.75px);
+        height: em(45px);
+      }
+      @include ifmobile {
+        width: em(32.5px);
+        height: em(26.838px);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
