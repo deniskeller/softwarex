@@ -1,23 +1,27 @@
-import React, { ReactNode, forwardRef } from 'react';
+import React, { ComponentProps, ElementType, ReactNode } from 'react';
 import s from './BaseText.module.scss';
 
-interface Props {
+type OwnProps<E extends ElementType = ElementType> = {
   children?: ReactNode | ReactNode[];
   className?: string;
-}
-export type Ref = HTMLHeadingElement;
+  as?: E;
+};
 
-const BaseText = forwardRef<Ref, Props>(function BaseText(
-  { children, className = '' },
-  ref
-) {
+type Props<E extends ElementType> = OwnProps<E> &
+  Omit<ComponentProps<E>, keyof OwnProps>;
+
+const defaultElement = 'h1';
+
+export default function BaseText<
+  E extends ElementType = typeof defaultElement
+>({ children, className = '', as, ...otherProps }: Props<E>) {
+  const TagName = as || defaultElement;
+
   return (
-    <div className={`${className}`}>
-      <p className={s.Text} ref={ref}>
+    <div className={`${className}`} {...otherProps}>
+      <TagName className={`${s.Text} ${s['Text_' + TagName]}`}>
         {children}
-      </p>
+      </TagName>
     </div>
   );
-});
-
-export default BaseText;
+}

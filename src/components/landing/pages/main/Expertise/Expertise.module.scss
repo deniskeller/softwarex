@@ -1,0 +1,117 @@
+.Expertise {
+  padding: em(198px) 0 em(113px);
+  @include iflaptop {
+    padding: em(114px) 0 em(151px);
+  }
+  @include iftablet {
+    padding: em(114px) 0 em(90px);
+  }
+  @include ifmobile {
+    padding: em(150px) 0 em(100px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(33px);
+    span {
+      background-image: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &_Text {
+    margin: 0 auto;
+    text-align: center;
+    max-width: em(878px);
+    margin-bottom: em(24px);
+    @include iflaptop {
+      margin-bottom: em(117px);
+    }
+    @include iftablet {
+      margin-bottom: em(95px);
+    }
+    @include ifmobile {
+      margin-bottom: em(43px);
+    }
+  }
+
+  &_Logo {
+    display: flex;
+    margin: 0 auto;
+    width: em(192px);
+    height: em(105px);
+  }
+
+  &_Star {
+    position: absolute;
+    width: em(123px);
+    height: em(123px);
+    @include iftablet {
+      display: none;
+    }
+    @include ifmobile {
+      display: none;
+    }
+
+    &__1 {
+      top: em(-76px);
+      left: em(125px);
+      width: em(123px);
+      height: em(123px);
+      @include iflaptop {
+        top: auto;
+        bottom: em(40px);
+        left: em(50px);
+        width: em(90px);
+        height: em(90px);
+      }
+    }
+    &__2 {
+      bottom: em(-114px);
+      left: 0;
+      width: em(114px);
+      height: em(114px);
+      @include iflaptop {
+        top: auto;
+        bottom: em(-26px);
+        left: em(125px);
+        width: em(52px);
+        height: em(52px);
+      }
+    }
+    &__3 {
+      top: em(129px);
+      right: em(92px);
+      width: em(91px);
+      height: em(91px);
+      @include iflaptop {
+        display: none;
+      }
+    }
+    &__4 {
+      bottom: em(40px);
+      right: em(32px);
+      width: em(78px);
+      height: em(78px);
+      @include iflaptop {
+        bottom: em(-90px);
+        right: em(66px);
+        width: em(90px);
+        height: em(90px);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
