@@ -12,6 +12,9 @@
 
   &_Container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &_Title {
@@ -42,8 +45,6 @@
   }
 
   &_Logo {
-    display: flex;
-    margin: 0 auto;
     width: em(192px);
     height: em(105px);
   }
