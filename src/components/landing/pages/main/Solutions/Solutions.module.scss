@@ -1,0 +1,110 @@
+.Solutions {
+  margin-bottom: em(136px);
+  @include iflaptop {
+    margin-bottom: em(122px);
+  }
+  @include iftablet {
+    margin-bottom: em(113px);
+  }
+  @include ifmobile {
+    margin-bottom: em(76px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(33px);
+  }
+
+  &_Text {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: em(63px);
+    @include ifmobile {
+      margin-bottom: em(53px);
+    }
+  }
+
+  &_Marquee {
+    overflow: hidden;
+    .Ticker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: em(39px);
+      padding: em(20px) em(54px);
+      margin: 0 em(19px);
+      @include iflaptop {
+      }
+      @include iftablet {
+        padding: em(15px) em(40px);
+        margin: 0 em(12px);
+      }
+      @include ifmobile {
+        padding: em(15px) em(25px);
+        margin: 0 em(4.5px);
+      }
+      span {
+        color: $text;
+        font-size: em(20px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include iflaptop {
+          font-size: em(15px);
+        }
+        @include iftablet {
+          font-size: em(15px);
+        }
+        @include ifmobile {
+          font-size: em(15px);
+        }
+      }
+      &__2,
+      &__4,
+      &__6,
+      &__8 {
+        span {
+          color: $white;
+        }
+      }
+      &__1 {
+        background: linear-gradient(89deg, #f98973 4.47%, #fff174 99.54%);
+      }
+      &__2 {
+        background: linear-gradient(89deg, #6f6dd0 4.47%, #423d7f 99.54%);
+      }
+      &__3 {
+        background: linear-gradient(89deg, #fff38f 4.47%, #f98973 99.54%);
+      }
+      &__4 {
+        background: linear-gradient(89deg, #6f6dd0 4.47%, #f98973 99.54%);
+      }
+      &__5 {
+        background: linear-gradient(89deg, #f98973 4.47%, #fff174 99.54%);
+      }
+      &__6 {
+        background: linear-gradient(90deg, #6f6dd0 5.77%, #423d7f 99.96%);
+      }
+      &__7 {
+        background: linear-gradient(89deg, #fff38f 4.47%, #f98973 99.54%);
+      }
+      &__8 {
+        background: linear-gradient(89deg, #6d6bce 4.47%, #fb8971 99.54%);
+      }
+      &__9 {
+        background: linear-gradient(89deg, #f98973 8.02%, #fff174 95.87%);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
