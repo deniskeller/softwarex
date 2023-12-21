@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Main.module.scss';
 import {
+  Achievements,
   Expertise,
   Header,
   Solutions,
@@ -13,6 +14,7 @@ const Main: React.FC = () => {
       <Header />
       <Expertise />
       <Solutions />
+      <Achievements />
       <Technologies />
     </div>
   );

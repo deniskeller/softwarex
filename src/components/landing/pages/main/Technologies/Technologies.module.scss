@@ -38,6 +38,10 @@
   &_Title {
     text-align: center;
     margin-bottom: em(33px);
+    @include ifmobile {
+      max-width: em(260px);
+      margin: 0 auto em(33px);
+    }
   }
 
   &_Text {

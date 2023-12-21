@@ -19,7 +19,7 @@ const NotFound: React.FC = () => {
         </p>
 
         <Image
-          src="/pictures/images/404/404-image.png"
+          src="/pictures/images/404/404.png"
           width={734}
           height={522}
           alt="404 image"

@@ -1,0 +1,149 @@
+.Achievements {
+  margin-bottom: em(260px);
+  @include iflaptop {
+    margin-bottom: em(165px);
+  }
+  @include iftablet {
+    margin-bottom: em(142px);
+  }
+  @include ifmobile {
+    margin-bottom: em(82px);
+  }
+  &_Container {
+    position: relative;
+  }
+
+  &_Star {
+    display: none;
+    position: absolute;
+    @include ifdesktop {
+      display: block;
+    }
+    &__1 {
+      width: em(91px);
+      height: em(91px);
+      top: em(-178px);
+      left: em(594px);
+    }
+    &__2 {
+      width: em(78px);
+      height: em(78px);
+      top: em(-72px);
+      left: em(696px);
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(760px);
+    height: em(654px);
+    bottom: em(-189px);
+    left: em(-71px);
+    @include iflaptop {
+      width: em(442px);
+      height: em(380px);
+      bottom: em(-53px);
+      left: em(30px);
+    }
+    @include iftablet {
+      width: em(329px);
+      height: em(282px);
+      bottom: em(-58px);
+      left: em(-60px);
+    }
+    @include ifmobile {
+      position: relative;
+      width: em(329px);
+      height: em(282px);
+      margin: 0 auto em(20px);
+      bottom: auto;
+      left: auto;
+    }
+  }
+
+  &_List {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: em(34px) em(83px);
+    max-width: em(707px);
+    margin: 0 em(93px) 0 auto;
+    @include iflaptop {
+      gap: em(34px) em(50px);
+      max-width: em(444px);
+      margin: 0 0 0 auto;
+    }
+    @include iftablet {
+      gap: em(36px) em(51px);
+      max-width: em(444px);
+      margin: 0 em(20px) 0 auto;
+    }
+    @include ifmobile {
+      gap: em(40px) em(49px);
+      max-width: em(444px);
+      margin: 0 em(20px) 0 auto;
+    }
+
+    .AchievementItem {
+      &_Value {
+        margin-bottom: em(8px);
+        @include iflaptop {
+          margin-bottom: em(5px);
+        }
+        @include iftablet {
+          margin-bottom: em(4px);
+        }
+        @include ifmobile {
+          margin-bottom: em(5px);
+        }
+        span {
+          font-size: em(96px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          @include iflaptop {
+            font-size: em(58px);
+          }
+          @include iftablet {
+            font-size: em(44px);
+          }
+          @include ifmobile {
+            font-size: em(44px);
+            line-height: 120%;
+          }
+        }
+      }
+
+      &_Label {
+        color: $text;
+        font-size: em(20px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 160% */
+        opacity: 0.5;
+        @include iflaptop {
+          font-size: em(18px);
+          line-height: 100%;
+        }
+        @include iftablet {
+          font-size: em(18px);
+          line-height: 100%;
+        }
+        @include ifmobile {
+          font-size: em(18px);
+          line-height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
