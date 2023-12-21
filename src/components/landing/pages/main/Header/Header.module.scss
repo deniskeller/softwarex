@@ -1,0 +1,81 @@
+.Header {
+  background-image: url('/pictures/images/gradient-bg.png');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: em(831px);
+  padding: em(255px) 0 em(209px);
+  @include iflaptop {
+    min-height: em(685px);
+    padding: em(151px) 0 em(268px);
+  }
+  @include iftablet {
+    min-height: em(685px);
+    padding: em(151px) 0 em(330px);
+  }
+  @include ifmobile {
+    min-height: em(677px);
+    padding: em(150px) 0 em(254px);
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    position: relative;
+    z-index: 1;
+    max-width: em(745px);
+    margin-bottom: em(57px);
+    @include iflaptop {
+      max-width: em(462px);
+      margin-bottom: em(38px);
+    }
+    @include iftablet {
+      max-width: 100%;
+      margin-bottom: em(38px);
+    }
+    @include ifmobile {
+      max-width: 100%;
+      margin-bottom: em(32px);
+    }
+  }
+
+  &_GetAQuote {
+    position: relative;
+    z-index: 1;
+  }
+
+  &_Image {
+    position: absolute;
+    width: em(1148px);
+    height: em(748px);
+    right: em(-157px);
+    bottom: em(-361px);
+    @include iflaptop {
+      width: em(796px);
+      height: em(519px);
+      right: em(-78px);
+      bottom: em(-325px);
+    }
+    @include iftablet {
+      width: em(693px);
+      height: em(502px);
+      right: em(-75px);
+      bottom: em(-469px);
+    }
+    @include ifmobile {
+      width: em(515px);
+      height: em(336px);
+      right: em(-90px);
+      bottom: em(-380px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

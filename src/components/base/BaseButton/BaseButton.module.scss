@@ -9,9 +9,11 @@
   border-radius: em(39px);
   box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.2);
   transition: all $speed ease;
-  @include ifmobile {
-    height: em(48px);
-    padding: em(15px) em(40px);
+  height: em(48px);
+  padding: em(15px) em(40px);
+  @include ifdesktop {
+    height: em(64px);
+    padding: em(20px) em(54px);
   }
 
   &:active {

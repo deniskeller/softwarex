@@ -1,44 +1,28 @@
-import React, { ReactNode, forwardRef } from 'react';
+import React, { ComponentProps, ElementType, ReactNode } from 'react';
 import s from './BaseTitle.module.scss';
 
-interface Props {
+type OwnProps<E extends ElementType = ElementType> = {
   children?: ReactNode | ReactNode[];
   type?: string;
   className?: string;
+  as?: E;
+};
+
+type Props<E extends ElementType> = OwnProps<E> &
+  Omit<ComponentProps<E>, keyof OwnProps>;
+
+const defaultElement = 'h1';
+
+export default function BaseTitle<
+  E extends ElementType = typeof defaultElement
+>({ children, type = 'h1', className = '', ref, as, ...otherProps }: Props<E>) {
+  const TagName = as || defaultElement;
+
+  return (
+    <div className={`${className}`} {...otherProps}>
+      <TagName className={`${s.Title} ${s['Title_' + type]}`}>
+        {children}
+      </TagName>
+    </div>
+  );
 }
-export type Ref = HTMLHeadingElement;
-
-const BaseTitle = forwardRef<Ref, Props>(function BaseTitle(
-  { children, type = 'h1', className = '' },
-  ref
-) {
-  if (type == 'h1') {
-    return (
-      <div className={`${className}`}>
-        <h1 className={`${s.Title} ${s['Title_' + type]}`} ref={ref}>
-          {children}
-        </h1>
-      </div>
-    );
-  } else if (type == 'h2') {
-    return (
-      <div className={`${className}`}>
-        <h2 className={`${s.Title} ${s['Title_' + type]}`} ref={ref}>
-          {children}
-        </h2>
-      </div>
-    );
-  } else if (type == 'h3') {
-    return (
-      <div className={`${className}`}>
-        <h2 className={`${s.Title} ${s['Title_' + type]}`} ref={ref}>
-          {children}
-        </h2>
-      </div>
-    );
-  } else {
-    return null;
-  }
-});
-
-export default BaseTitle;
