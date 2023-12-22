@@ -40,10 +40,11 @@
     color: $text;
     font-size: em(18px);
     font-weight: 400;
-    line-height: 160%;
+    line-height: normal;
     opacity: 0.5;
     @include ifdesktop {
       font-size: em(20px);
+      line-height: 160%;
     }
   }
 }

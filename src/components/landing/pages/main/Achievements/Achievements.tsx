@@ -20,11 +20,10 @@ const Achievements: React.FC = () => {
         />
 
         <Image
-          src="/pictures/images/achievements.png"
+          src="/pictures/images/main/achievements.png"
           width={760}
           height={654}
           alt="Engineers"
-          priority
           className={s.Achievements_Image}
         />
 

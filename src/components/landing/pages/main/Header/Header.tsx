@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         </BaseButton>
 
         <Image
-          src="/pictures/images/engineers.png"
+          src="/pictures/images/main/engineers.png"
           width={1148}
           height={748}
           alt="Engineers"

@@ -1,1 +1,13 @@
 @import './../src/assets/scss/core.scss';
+
+//слайдер на главной блок how we work
+.swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  @include ifmobile {
+    width: initial;
+  }
+}

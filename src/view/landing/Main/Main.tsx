@@ -4,6 +4,7 @@ import {
   Achievements,
   Expertise,
   Header,
+  HowWeWork,
   Solutions,
   Technologies,
 } from 'components/landing/pages/main';
@@ -14,6 +15,7 @@ const Main: React.FC = () => {
       <Header />
       <Expertise />
       <Solutions />
+      <HowWeWork />
       <Achievements />
       <Technologies />
     </div>
