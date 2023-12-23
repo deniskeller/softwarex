@@ -24,7 +24,7 @@
     position: relative;
     width: 100%;
     max-width: em(486px);
-    padding: em(19px) em(60px) em(37px) em(93px);
+    padding: em(26px) em(60px) em(37px) em(93px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,7 +45,7 @@
 
     @include ifmobile {
       max-width: em(311px);
-      padding: em(18px) em(38px) em(18px) em(77px);
+      padding: em(12px) em(38px) em(18px) em(77px);
     }
 
     &_Flower {
@@ -89,7 +89,7 @@
   &_Close {
     cursor: pointer;
     position: absolute;
-    top: em(10px);
+    top: em(17px);
     right: em(26px);
     width: em(18px);
     height: em(18px);
