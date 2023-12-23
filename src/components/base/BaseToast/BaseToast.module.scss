@@ -17,10 +17,11 @@
     bottom: em(44px);
     justify-content: center;
     z-index: $toast;
-    pointer-events: painted;
+    pointer-events: none;
   }
 
   &_Toast {
+    pointer-events: initial;
     position: relative;
     width: 100%;
     max-width: em(486px);
