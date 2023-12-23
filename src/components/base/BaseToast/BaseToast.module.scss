@@ -22,23 +22,43 @@
 
   &_Toast {
     position: relative;
-    max-width: em(500px);
-    padding: em(14px) em(90px) em(14px) em(30px);
+    width: 100%;
+    max-width: em(486px);
+    padding: em(19px) em(60px) em(37px) em(93px);
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     backdrop-filter: blur(15px);
-    border-radius: em(12px);
+    border-radius: em(23px);
     background: #fff;
-    box-shadow: 0px 6px 24px 0px rgba(53, 53, 53, 0.1);
+    box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    border: em(3px) solid transparent;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+      linear-gradient(-2deg, #6e6ccf 0.91%, #fb8873 93.07%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
     animation: 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) 0s 1 normal forwards
       running fadeIn;
 
     @include ifmobile {
-      max-width: em(321px);
-      left: auto;
-      padding: em(10px) em(66px) em(10px) em(10px);
+      max-width: em(311px);
+      padding: em(18px) em(38px) em(18px) em(77px);
+    }
+
+    &_Flower {
+      position: absolute;
+      left: em(-14px);
+      bottom: 0;
+      width: em(99px);
+      height: em(102px);
+      @include ifmobile {
+        left: em(-14px);
+        width: em(79px);
+        height: em(102px);
+      }
     }
   }
 
@@ -46,17 +66,13 @@
     width: em(44px);
     height: em(44px);
     margin-right: em(20px);
-    @include ifmobile {
-      width: em(26px);
-      height: em(26px);
-      margin-right: em(10px);
-    }
   }
 
   &_Content {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 
     .Text {
       p {
@@ -66,67 +82,56 @@
         font-style: normal;
         font-weight: 500;
         line-height: 130%;
-        @include ifmobile {
-          font-size: em(14px);
-        }
       }
     }
   }
 
   &_Close {
-    position: absolute;
-    right: em(18px);
-    top: 50%;
-    transform: translate(0%, -50%);
     cursor: pointer;
-    width: em(24px);
-    height: em(24px);
+    position: absolute;
+    top: em(20px);
+    right: em(32px);
+    width: em(15px);
+    height: em(15px);
     @include ifmobile {
-      right: em(15px);
-      width: em(22px);
-      height: em(22px);
+      top: em(18px);
+      right: em(17px);
+      width: em(10px);
+      height: em(10px);
     }
   }
 }
 
-.BaseToastApp {
-  .BaseToast_Toast {
-    border-radius: em(6px);
-    background: #f9fafb;
-    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0px 10px 10px -5px rgba(0, 0, 0, 0.04);
-    padding: em(10px) em(86px) em(10px) em(16px);
-    .BaseToast_Content {
-      .Icon {
-        width: em(44px);
-        height: em(44px);
-        margin-right: em(14px);
-        @include ifmobile {
-          width: em(30px);
-          height: em(30px);
-          margin-right: em(10px);
-        }
-      }
-      .Text {
-        p {
-          color: $base900light;
-          font-family: 'Gantari', sans-serif;
-          font-size: em(18px);
-          font-style: normal;
-          font-weight: 400;
-          line-height: 120%;
-          @include ifmobile {
-            font-size: em(14px);
-          }
-        }
-      }
-    }
-    .BaseToast_Close path {
-      stroke: #1a1a1a;
-      stroke-opacity: 0.3;
-    }
-  }
-}
+// .BaseToastApp {
+//   .BaseToast_Toast {
+//     border-radius: em(6px);
+//     background: #f9fafb;
+//     box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+//       0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+//     padding: em(10px) em(86px) em(10px) em(16px);
+//     .BaseToast_Content {
+//       .Icon {
+//         width: em(44px);
+//         height: em(44px);
+//         margin-right: em(14px);
+//       }
+//       .Text {
+//         p {
+//           color: $base900light;
+//           font-family: 'Gantari', sans-serif;
+//           font-size: em(18px);
+//           font-style: normal;
+//           font-weight: 400;
+//           line-height: 120%;
+//         }
+//       }
+//     }
+//     .BaseToast_Close path {
+//       stroke: #1a1a1a;
+//       stroke-opacity: 0.3;
+//     }
+//   }
+// }
 
 @include keyframe(fadeIn) {
   0% {

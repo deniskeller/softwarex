@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './Form.module.scss';
 import { BaseButton, BaseContainer, BaseInput, BaseText } from '@base/index';
+import toast from 'react-hot-toast';
+import { Toast } from '@content/landing/index';
 
 interface IFormData {
   nameSurname: string;
@@ -18,10 +20,21 @@ const Form: React.FC = () => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // toast.success('Thank you! We will reach you in 24 hours.', {
+    //   duration: 3000,
+    // });
+
+    toast.custom(<Toast />, {
+      duration: 3000,
+    });
+  };
+
   return (
     <section className={s.Form}>
       <BaseContainer className={s.Form_Container}>
-        <form action="">
+        <form action="" onSubmit={submitHandler}>
           <BaseText className={s.Form_Title} as="h2">
             Say Hello
           </BaseText>
