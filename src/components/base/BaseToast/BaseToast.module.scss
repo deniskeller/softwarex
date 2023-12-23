@@ -89,10 +89,10 @@
   &_Close {
     cursor: pointer;
     position: absolute;
-    top: em(20px);
-    right: em(32px);
-    width: em(15px);
-    height: em(15px);
+    top: em(10px);
+    right: em(26px);
+    width: em(18px);
+    height: em(18px);
     @include ifmobile {
       top: em(18px);
       right: em(17px);

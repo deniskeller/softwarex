@@ -27,7 +27,7 @@ const Form: React.FC = () => {
     // });
 
     toast.custom(<Toast />, {
-      duration: 3000,
+      duration: 300000,
     });
   };
 
