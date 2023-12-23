@@ -1,4 +1,5 @@
 .Button {
+  font-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,13 +27,13 @@
     color: $text;
     text-align: center;
     font-family: 'Gantari', sans-serif;
-    font-size: em(20px);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    font-size: em(15px);
     // transition: all $speed ease;
-    @include ifmobile {
-      font-size: em(15px);
+    @include ifdesktop {
+      font-size: em(20px);
     }
   }
 }

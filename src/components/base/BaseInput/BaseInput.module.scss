@@ -3,118 +3,145 @@
   position: relative;
   display: flex;
   flex-direction: column;
-}
 
-.Input {
-  $size: 18px;
-  width: 100%;
-  height: em(62px, $size);
-  background: none;
-  outline: none;
-  border: none;
-  position: relative;
-  box-shadow: none;
-  background: #fff;
-  border: 1px solid #e8e8ea;
-  border-radius: em(12px, $size);
-  transition: 0.3s ease all;
-  -moz-transition: 0.3s ease all;
-  -webkit-transition: 0.3s ease all;
-  @include placeholder-color(transparent);
-  padding: em(34px, $size) em(16px, $size) em(10px, $size) em(24px, $size);
+  &_Label {
+    position: absolute;
+    pointer-events: none;
+    top: em(8px);
+    left: em(27px);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    transform-origin: left top;
+    @include ifdesktop {
+      top: em(14px);
+      left: em(36px);
+    }
 
-  color: rgba(26, 26, 26, 0.9);
-  font-family: 'Gantari', sans-serif;
-  font-size: em($size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-
-  &::-webkit-contacts-auto-fill-button {
-    opacity: 0;
-  }
-
-  @include ifmobile {
-    $size: 16px;
-    height: em(52px, $size);
-    border-radius: em(10px, $size);
-    padding: em(27px, $size) em(16px, $size) em(6px, $size) em(16px, $size);
-    font-size: em($size);
-  }
-
-  &:hover {
-    border-color: #425eec;
-  }
-
-  &:focus {
-    border-color: #425eec;
-    @include placeholder-color(transparent);
-    & + .Label {
-      top: em(10px);
-      left: em(25px);
-      @include ifmobile {
-        top: em(10px);
-        left: em(17px);
+    span {
+      color: $white;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: all 0.3s ease;
+      @include ifdesktop {
+        font-size: em(18px);
       }
-      span {
-        font-size: em(14px);
-        @include ifmobile {
-          font-size: em(12px);
+    }
+
+    &__NoEmpty {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+  }
+
+  &_Wrapper {
+    position: relative;
+    padding: 0 em(35px);
+    @include ifdesktop {
+      padding: 0 em(46px);
+    }
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 99%;
+      height: em(12px);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      transition: $speed ease all;
+      border-top: none;
+      border-radius: 0px 0px 50px 40px/0px 0px 30px 30px;
+      @include ifdesktop {
+        height: em(16px);
+      }
+    }
+
+    .Input {
+      $size: 15px;
+      width: 100%;
+      height: em(45px, $size);
+      padding: em(12px, $size) 0 em(10px, $size);
+      background: none;
+      outline: none;
+      border: none;
+      position: relative;
+      box-shadow: none;
+      background: transparent;
+      transition: $speed ease all;
+      @include placeholder-color(transparent);
+
+      color: $white;
+      font-family: 'Gantari', sans-serif;
+      font-size: em($size);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include ifdesktop {
+        $size: 18px;
+        height: em(60px, $size);
+        padding: em(16px, $size) 0 em(15px, $size);
+        font-size: em($size);
+      }
+
+      &::-webkit-contacts-auto-fill-button {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      &::before,
+      .Input {
+        border-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  &__Focus {
+    .BaseInput_Wrapper {
+      &::before,
+      .Input {
+        border-color: rgba(255, 255, 255, 1);
+      }
+    }
+    .BaseInput_Label {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+  }
+
+  &__Error {
+    .BaseInput_Wrapper {
+      &::before,
+      .Input {
+        border-color: $error;
+      }
+    }
+
+    .BaseInput_ErrorText {
+      padding-left: em(27px);
+      margin-top: em(3px);
+      @include ifdesktop {
+        padding-left: em(36px);
+        margin-top: em(5px);
+      }
+      p {
+        color: $error;
+        font-family: 'Gantari', sans-serif;
+        font-size: em(13px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include ifdesktop {
+          font-size: em(15px);
         }
       }
-    }
-  }
-
-  & + .NoEmpty {
-    top: em(10px);
-    left: em(25px);
-    @include ifmobile {
-      top: em(10px);
-      left: em(17px);
-    }
-    span {
-      font-size: em(14px);
-      @include ifmobile {
-        font-size: em(12px);
-      }
-    }
-  }
-
-  &_Error {
-    border: 1px solid #ff5f5f;
-  }
-
-  &_Password {
-    padding-right: em(44px);
-    @include ifmobile {
-      padding-right: em(40px);
-    }
-  }
-}
-
-.Label {
-  position: absolute;
-  pointer-events: none;
-  top: em(24px);
-  left: em(25px);
-  transition: top 0.3s ease, left 0.3s ease;
-
-  @include ifmobile {
-    top: em(18px);
-    left: em(15px);
-  }
-
-  span {
-    display: flex;
-    color: rgba(26, 26, 26, 0.4);
-    font-family: 'Gantari', sans-serif;
-    font-size: em(18px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    transition: font-size 0.3s ease;
-    @include ifmobile {
-      font-size: em(16px);
     }
   }
 }
@@ -144,5 +171,5 @@
   color: rgba(26, 26, 26, 0.5);
 }
 
-@include ifmobile {
+@include ifdesktop {
 }

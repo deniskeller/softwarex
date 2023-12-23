@@ -1,5 +1,5 @@
 import { ALL_ICONS } from '@constants/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import { BaseIcon } from '..';
 import s from './BaseInput.module.scss';
 
@@ -36,6 +36,7 @@ const BaseInput: React.FC<Props> = ({
   onChange,
   onKeyDown,
 }) => {
+  const [focus, setFocus] = useState(false);
   //ДЛЯ ПАРОЛЯ НААЛО
   const [typeIcon, setTypeIcon] = React.useState<string>('eye-off');
   const [newType, setType] = React.useState<string>(type);
@@ -52,49 +53,65 @@ const BaseInput: React.FC<Props> = ({
   //ДЛЯ ПАРОЛЯ КОНЕЦ
 
   return (
-    <div className={`${s.BaseInput} ${className}`}>
-      <input
-        value={value}
-        type={newType || type}
-        className={`${s.Input} ${error ? s.Input_Error : ''} ${
-          type == 'password' ? s.Input_Password : ''
-        }`}
-        name={name}
-        min={min}
-        max={max}
-        placeholder={placeholder}
-        required={required}
-        autoComplete={autocomplete}
-        disabled={disabled}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.target.value)
-        }
-        onKeyDown={onKeyDown}
-      />
-
+    <div
+      className={`${s.BaseInput} ${focus ? s.BaseInput__Focus : ''} ${
+        error ? s.BaseInput__Error : ''
+      } ${className}`}
+    >
       {label ? (
-        <label className={`${s.Label} ${value ? s.NoEmpty : ''}`}>
+        <label
+          className={`${s.BaseInput_Label} ${
+            value ? s.BaseInput_Label__NoEmpty : ''
+          }`}
+        >
           <span>{label}</span>
         </label>
       ) : null}
 
-      {typeIcon === 'eye' ? (
-        <BaseIcon
-          viewBox="0 0 24 24"
-          icon={ALL_ICONS.EYE_OFF}
-          className={s.Icon}
-          onClick={() => changeType('eye-off')}
+      <div className={s.BaseInput_Wrapper}>
+        <input
+          value={value}
+          type={newType || type}
+          className={`${s.Input} ${
+            type == 'password' ? s.Input__Password : ''
+          }`}
+          name={name}
+          min={min}
+          max={max}
+          placeholder={placeholder}
+          required={required}
+          autoComplete={autocomplete}
+          disabled={disabled}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange(e.target.value)
+          }
+          onKeyDown={onKeyDown}
         />
-      ) : null}
 
-      {type === 'password' && typeIcon === 'eye-off' ? (
-        <BaseIcon
-          viewBox="0 0 24 24"
-          icon={ALL_ICONS.EYE}
-          className={s.Icon}
-          onClick={() => changeType('eye')}
-        />
-      ) : null}
+        {/* {typeIcon === 'eye' ? (
+          <BaseIcon
+            viewBox="0 0 24 24"
+            icon={ALL_ICONS.EYE_OFF}
+            className={s.Icon}
+            onClick={() => changeType('eye-off')}
+          />
+        ) : null}
+
+        {type === 'password' && typeIcon === 'eye-off' ? (
+          <BaseIcon
+            viewBox="0 0 24 24"
+            icon={ALL_ICONS.EYE}
+            className={s.Icon}
+            onClick={() => changeType('eye')}
+          />
+        ) : null} */}
+      </div>
+
+      <div className={s.BaseInput_ErrorText}>
+        <p>{error}</p>
+      </div>
     </div>
   );
 };

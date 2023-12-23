@@ -3,6 +3,7 @@ import s from './Main.module.scss';
 import {
   Achievements,
   Expertise,
+  Form,
   Header,
   HowWeWork,
   Solutions,
@@ -18,6 +19,7 @@ const Main: React.FC = () => {
       <HowWeWork />
       <Achievements />
       <Technologies />
+      <Form />
     </div>
   );
 };

@@ -1,0 +1,126 @@
+.Form {
+  margin-bottom: em(237px);
+  @include iflaptop {
+    margin-bottom: em(136px);
+  }
+  @include iftablet {
+    margin-bottom: em(114px);
+  }
+  @include ifmobile {
+    margin-bottom: em(205px);
+  }
+
+  form {
+    position: relative;
+    border-radius: em(40px);
+    background: linear-gradient(
+      -120deg,
+      #706dd0 -6.57%,
+      #f98973 26.41%,
+      #facb71 51.86%,
+      #f98973 97.2%
+    );
+    padding: em(75px) em(82px);
+    min-height: em(618px);
+    @include iflaptop {
+      border-radius: em(27px);
+      padding: em(55px) em(32px) em(47px);
+      min-height: em(420px);
+    }
+    @include iftablet {
+      border-radius: em(27px);
+      padding: em(25px) em(30px);
+      min-height: em(384px);
+    }
+    @include ifmobile {
+      border-radius: em(27px);
+      padding: em(21px);
+      min-height: em(607px);
+      background: linear-gradient(
+        30deg,
+        #706dd0 -4.36%,
+        #f98973 10.06%,
+        #facb71 30.61%,
+        #faaf72 49.54%,
+        #f98973 80.76%
+      );
+    }
+  }
+
+  &_Title {
+    margin-bottom: em(18px);
+    @include iflaptop {
+      margin-bottom: em(8px);
+    }
+    @include iftablet {
+      margin-bottom: em(8px);
+    }
+    @include ifmobile {
+      margin-bottom: em(8px);
+    }
+  }
+
+  &_Description {
+    max-width: em(676px);
+    margin-bottom: em(43px);
+    @include iflaptop {
+      max-width: em(450px);
+      margin-bottom: em(19px);
+    }
+    @include iftablet {
+      max-width: em(422px);
+      margin-bottom: em(30px);
+    }
+    @include ifmobile {
+      margin-bottom: em(28px);
+    }
+
+    p {
+      color: $text;
+      font-size: em(20px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      opacity: 0.7;
+      @include iflaptop {
+        font-size: em(18px);
+      }
+      @include iftablet {
+        font-size: em(18px);
+      }
+      @include ifmobile {
+        font-size: em(18px);
+        line-height: 180%;
+      }
+    }
+  }
+
+  &_Fields {
+    max-width: em(676px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: em(40px) 0;
+    margin-bottom: em(50px);
+    @include iflaptop {
+      max-width: em(450px);
+      gap: em(25px) 0;
+      margin-bottom: em(30px);
+    }
+    @include iftablet {
+      max-width: em(329px);
+      gap: em(25px) 0;
+      margin-bottom: em(23px);
+    }
+    @include ifmobile {
+      gap: em(18px) 0;
+      margin-bottom: em(30px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

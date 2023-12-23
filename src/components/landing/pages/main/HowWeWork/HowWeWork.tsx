@@ -7,6 +7,10 @@ import { ALL_ICONS } from '@constants/icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const HowWeWork: React.FC = () => {
+  useEffect(() => {
+    window.addEventListener('resize orientationchange', () => {});
+  }, []);
+
   return (
     <section className={s.HowWeWork}>
       <BaseContainer className={s.HowWeWork_Container}>
@@ -28,6 +32,10 @@ const HowWeWork: React.FC = () => {
 
         <Swiper
           className={s.HowWeWork_Slider}
+          // resizeObserver={true}
+          // updateOnWindowResize={true}
+          // observeSlideChildren={true}
+          // observer={true}
           breakpoints={{
             320: {
               slidesPerView: 1.1,
@@ -40,6 +48,7 @@ const HowWeWork: React.FC = () => {
               enabled: false,
             },
           }}
+          // onResize={() => alert('lel')}
         >
           <SwiperSlide className={`${s.Slide} ${s.Slide__1}`}>
             {/* <svg

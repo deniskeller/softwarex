@@ -8,7 +8,7 @@ import s from './BaseButton.module.scss';
 
 type OwnProps<E extends ElementType = ElementType> = {
   children: string | ReactNode | ReactNode[];
-  type?: string;
+  design?: string;
   ref?: MutableRefObject<null>;
   disabled?: boolean;
   className?: string;
@@ -26,7 +26,7 @@ export default function BaseButton<
 >({
   children,
   disabled = false,
-  type = 'primary',
+  design = 'primary',
   className = '',
   ref,
   onClick,
@@ -39,7 +39,7 @@ export default function BaseButton<
     <TagName
       onClick={onClick}
       disabled={disabled}
-      className={`${className} ${s.Button} ${s['Button_' + type]}`}
+      className={`${s.Button} ${s['Button_' + design]} ${className}`}
       ref={ref}
       {...otherProps}
     >
