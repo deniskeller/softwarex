@@ -3,7 +3,7 @@ import { LogIn } from '@view/landing';
 
 const LogInPage = () => {
   return (
-    <Landing>
+    <Landing footer={false}>
       <LogIn />
     </Landing>
   );
