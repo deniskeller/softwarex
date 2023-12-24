@@ -220,7 +220,7 @@
       display: none;
       position: absolute;
       z-index: -1;
-      bottom: em(-134px);
+      bottom: em(-67px);
       left: em(-345px);
       width: em(482px);
       height: em(473px);
@@ -237,7 +237,7 @@
       width: em(257px);
       height: em(313px);
       @include iflaptop {
-        top: em(-12px);
+        top: em(33px);
         right: em(-160px);
         width: em(257px);
         height: em(313px);
@@ -262,7 +262,7 @@
       @include iflaptop {
         top: auto;
         right: auto;
-        bottom: em(-174px);
+        bottom: em(-127px);
         left: em(-217px);
         transform: scale(-1, 1);
       }

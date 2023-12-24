@@ -43,8 +43,7 @@ const SignUp: React.FC = () => {
 
   const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (value.name != '' && value.password != '') {
-      sessionStorage.setItem('auth', 'true');
+    if (value.name != '') {
       router.push('/');
       toast.custom(<Toast />, {
         duration: 3000,
