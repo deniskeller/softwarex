@@ -67,11 +67,13 @@ const LogIn: React.FC = () => {
           />
 
           <BaseInput
+            type="password"
             name="password"
             placeholder="Password"
             label="Password"
             value={value.password}
             onChange={(val: string) => setNewValue(val, 'password')}
+            withIcon
             error={error}
           />
         </div>

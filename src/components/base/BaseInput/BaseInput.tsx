@@ -13,6 +13,7 @@ interface Props {
   placeholder?: string;
   required?: boolean;
   disabled?: boolean;
+  withIcon?: boolean;
   className?: string;
   autocomplete?: string;
   error?: string | boolean;
@@ -31,6 +32,7 @@ const BaseInput: React.FC<Props> = ({
   min,
   max,
   required = false,
+  withIcon = false,
   disabled = false,
   placeholder,
   className = '',
@@ -57,8 +59,10 @@ const BaseInput: React.FC<Props> = ({
   return (
     <div
       className={`${s.BaseInput} ${focus ? s.BaseInput__Focus : ''} ${
-        theme == 'light' ? s.BaseInput__LightTheme : ''
-      } ${error ? s.BaseInput__Error : ''}  ${className}`}
+        withIcon ? s.BaseInput__WithIcon : ''
+      } ${theme == 'light' ? s.BaseInput__LightTheme : ''} ${
+        error ? s.BaseInput__Error : ''
+      }  ${className}`}
     >
       {label ? (
         <label
@@ -92,7 +96,7 @@ const BaseInput: React.FC<Props> = ({
           onKeyDown={onKeyDown}
         />
 
-        {/* {typeIcon === 'eye' ? (
+        {typeIcon === 'eye' ? (
           <BaseIcon
             viewBox="0 0 24 24"
             icon={ALL_ICONS.EYE_OFF}
@@ -108,7 +112,7 @@ const BaseInput: React.FC<Props> = ({
             className={s.Icon}
             onClick={() => changeType('eye')}
           />
-        ) : null} */}
+        ) : null}
       </div>
 
       <div className={s.BaseInput_ErrorText}>

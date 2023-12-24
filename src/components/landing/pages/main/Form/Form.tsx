@@ -56,13 +56,12 @@ const Form: React.FC = () => {
               onChange={(val: string) => setNewValue(val, 'nameSurname')}
             />
             <BaseInput
-              // theme="light"
+              theme="light"
               name="phone"
               placeholder="Phone"
               label="Phone"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
-              // error="Some text error"
             />
           </div>
 
