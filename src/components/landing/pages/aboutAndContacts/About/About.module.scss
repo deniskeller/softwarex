@@ -1,0 +1,221 @@
+.About {
+  position: relative;
+  padding: em(245px) 0 0;
+  margin-bottom: em(37px);
+  @include iflaptop {
+    padding: em(151px) 0 0;
+    margin-bottom: em(85px);
+  }
+  @include iftablet {
+    padding: em(151px) 0 0;
+    margin-bottom: em(57px);
+  }
+  @include ifmobile {
+    padding: em(150px) 0 0;
+    margin-bottom: em(47px);
+  }
+
+  &_Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('/pictures/images/gradient-bg.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: em(831px);
+    @include iflaptop {
+      min-height: em(685px);
+    }
+    @include iftablet {
+      min-height: em(685px);
+    }
+    @include ifmobile {
+      min-height: em(677px);
+    }
+  }
+
+  &_Container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr em(803px);
+    gap: 0 em(170px);
+    @include iflaptop {
+      grid-template-columns: 1fr;
+      gap: em(163px) 0;
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      gap: em(130px) 0;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(104px) 0;
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    left: em(495px);
+    bottom: em(-78px);
+    width: em(482px);
+    height: em(472px);
+    @include iflaptop {
+      bottom: auto;
+      left: auto;
+      top: em(75px);
+      right: em(45px);
+      width: em(426.667px);
+      height: em(418.221px);
+    }
+    @include iftablet {
+      bottom: auto;
+      left: auto;
+      top: em(182px);
+      right: em(31px);
+      width: em(311px);
+      height: em(305px);
+    }
+    @include ifmobile {
+      display: none;
+    }
+  }
+
+  .Text {
+    position: relative;
+    z-index: 1;
+    &_Title {
+      margin-bottom: em(80px);
+      @include iflaptop {
+        margin-bottom: em(57px);
+      }
+      @include iftablet {
+        margin-bottom: em(57px);
+      }
+      @include ifmobile {
+        margin-bottom: em(39px);
+      }
+    }
+
+    &_Description {
+      @include iflaptop {
+        max-width: em(526px);
+      }
+      @include iftablet {
+        max-width: em(455px);
+      }
+      P {
+        $size: 18px;
+        color: $white;
+        font-size: em($size);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &:first-child {
+          margin-bottom: em(37px, $size);
+        }
+        @include ifdesktop {
+          $size: 20px;
+          font-size: em($size);
+          line-height: 160%;
+          &:first-child {
+            margin-bottom: em(37px, $size);
+          }
+        }
+      }
+    }
+  }
+
+  .Form {
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(229, 229, 229, 0.5);
+    background: linear-gradient(131deg, #fff 9.7%, #fff 89.34%);
+    box-shadow: 2px 4px 21px 0px rgba(31, 30, 88, 0.1);
+    border-radius: em(40px);
+    padding: em(58px) em(70px);
+    @include ifdesktop {
+      //временно
+      min-height: em(686px);
+    }
+    @include iflaptop {
+      width: 100%;
+      max-width: em(723px);
+      margin: 0 auto;
+      border-radius: em(33px);
+      padding: em(37px) em(40px);
+    }
+    @include iftablet {
+      border-radius: em(33px);
+      padding: em(40px) em(35px);
+    }
+    @include ifmobile {
+      border-radius: em(25px);
+      padding: em(26px) em(15px);
+    }
+
+    &_Title {
+      margin-bottom: em(23px);
+      h2 {
+        font-size: em(40px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include iflaptop {
+          font-size: em(30px);
+        }
+        @include iftablet {
+          font-size: em(30px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+        }
+      }
+    }
+
+    &_Fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: em(30px) em(27px);
+      margin-bottom: em(30px);
+      @include iflaptop {
+        gap: em(30px) em(16px);
+      }
+      @include iftablet {
+        gap: em(16px);
+        margin-bottom: em(16px);
+      }
+      @include ifmobile {
+        grid-template-columns: 1fr;
+        gap: em(16px) 0;
+        margin-bottom: em(16px);
+      }
+    }
+
+    &_UploadFile {
+      margin-bottom: em(44px);
+      @include iftablet {
+        margin-bottom: em(24px);
+      }
+      @include ifmobile {
+        margin-bottom: em(24px);
+      }
+    }
+
+    &_Button {
+      width: 100%;
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

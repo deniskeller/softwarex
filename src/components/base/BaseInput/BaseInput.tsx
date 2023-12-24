@@ -7,6 +7,7 @@ interface Props {
   type?: string;
   name: string;
   label?: string;
+  theme?: string;
   min?: number;
   max?: number;
   placeholder?: string;
@@ -24,6 +25,7 @@ const BaseInput: React.FC<Props> = ({
   value,
   label,
   type = 'text',
+  theme = 'dark',
   error,
   name,
   min,
@@ -55,8 +57,8 @@ const BaseInput: React.FC<Props> = ({
   return (
     <div
       className={`${s.BaseInput} ${focus ? s.BaseInput__Focus : ''} ${
-        error ? s.BaseInput__Error : ''
-      } ${className}`}
+        theme == 'light' ? s.BaseInput__LightTheme : ''
+      } ${error ? s.BaseInput__Error : ''}  ${className}`}
     >
       {label ? (
         <label

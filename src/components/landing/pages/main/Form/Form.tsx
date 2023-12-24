@@ -48,6 +48,7 @@ const Form: React.FC = () => {
 
           <div className={s.Form_Fields}>
             <BaseInput
+              theme="light"
               name="nameSurname"
               placeholder="Name, Surname"
               label="Name, Surname"
@@ -55,6 +56,7 @@ const Form: React.FC = () => {
               onChange={(val: string) => setNewValue(val, 'nameSurname')}
             />
             <BaseInput
+              // theme="light"
               name="phone"
               placeholder="Phone"
               label="Phone"

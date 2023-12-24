@@ -1,0 +1,117 @@
+.Contacts {
+  margin-bottom: em(147px);
+  @include iflaptop {
+    margin-bottom: em(78px);
+  }
+  @include iftablet {
+    margin-bottom: em(78px);
+  }
+  @include ifmobile {
+    margin-bottom: em(73px);
+  }
+
+  &_Info {
+    display: grid;
+    grid-template-columns: 1fr em(614px);
+    gap: 0 em(57px);
+    margin-bottom: em(160px);
+    @include iflaptop {
+      grid-template-columns: 1fr;
+      gap: em(57px) 0;
+      margin-bottom: em(60px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      gap: em(57px) 0;
+      margin-bottom: em(80px);
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(57px) 0;
+      margin-bottom: em(96px);
+    }
+
+    .Text {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(37px) 0;
+      p {
+        color: $text;
+        font-size: em(18px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        &.Bold {
+          font-weight: 700;
+        }
+        @include ifdesktop {
+          font-size: em(20px);
+        }
+      }
+    }
+
+    .Info {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(18px) 0;
+      @include ifdesktop {
+        gap: em(25px) 0;
+        margin-top: auto;
+      }
+      .Item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &_Icon {
+          flex-shrink: 0;
+          width: em(34px);
+          height: em(34px);
+          margin-right: em(13px);
+
+          @include ifdesktop {
+            width: em(45px);
+            height: em(45px);
+            margin-right: em(17px);
+          }
+        }
+        &_Value {
+          color: $text;
+          font-size: em(18px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include ifdesktop {
+            font-size: em(20px);
+          }
+        }
+      }
+    }
+  }
+
+  &_Map {
+    width: 100%;
+    height: em(510px);
+    border-radius: em(54px);
+    overflow: hidden;
+    box-shadow: 2px 4px 29px 0px rgba(31, 30, 88, 0.1);
+    @include iflaptop {
+      height: em(307px);
+      border-radius: em(33px);
+    }
+    @include iftablet {
+      height: em(226px);
+      border-radius: em(33px);
+    }
+    @include ifmobile {
+      height: em(412px);
+      border-radius: em(25px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

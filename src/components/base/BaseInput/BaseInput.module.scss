@@ -18,7 +18,7 @@
     }
 
     span {
-      color: $white;
+      color: $text;
       font-family: 'Gantari', sans-serif;
       font-size: em(15px);
       font-style: normal;
@@ -52,7 +52,7 @@
       bottom: 0;
       width: 99%;
       height: em(12px);
-      border: 2px solid rgba(255, 255, 255, 0.6);
+      border: 2px solid rgba(31, 30, 88, 0.1);
       transition: $speed ease all;
       border-top: none;
       border-radius: 0px 0px 50px 40px/0px 0px 30px 30px;
@@ -75,7 +75,7 @@
       transition: $speed ease all;
       @include placeholder-color(transparent);
 
-      color: $white;
+      color: $text;
       font-family: 'Gantari', sans-serif;
       font-size: em($size);
       font-style: normal;
@@ -96,7 +96,7 @@
     &:hover {
       &::before,
       .Input {
-        border-color: rgba(255, 255, 255, 1);
+        border-color: rgba(31, 30, 88, 1);
       }
     }
   }
@@ -105,7 +105,7 @@
     .BaseInput_Wrapper {
       &::before,
       .Input {
-        border-color: rgba(255, 255, 255, 1);
+        border-color: rgba(31, 30, 88, 1);
       }
     }
     .BaseInput_Label {
@@ -140,6 +140,35 @@
         line-height: normal;
         @include ifdesktop {
           font-size: em(15px);
+        }
+      }
+    }
+  }
+
+  &__LightTheme {
+    .BaseInput_Label span {
+      color: $white;
+    }
+    .BaseInput_Wrapper {
+      &::before {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-top: none;
+      }
+      &:hover {
+        &::before,
+        .Input {
+          border-color: rgba(255, 255, 255, 1);
+        }
+      }
+      .Input {
+        color: $white;
+      }
+    }
+    &.BaseInput__Focus {
+      .BaseInput_Wrapper {
+        &::before,
+        .Input {
+          border-color: rgba(255, 255, 255, 1);
         }
       }
     }
