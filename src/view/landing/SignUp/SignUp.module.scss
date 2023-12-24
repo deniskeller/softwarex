@@ -1,4 +1,4 @@
-.ResetPassword {
+.SignUp {
   position: relative;
   width: 100%;
   height: 100%;
@@ -16,7 +16,6 @@
   @include ifmobile {
     padding: em(74px) em(15px) em(36px);
   }
-
   .Background {
     width: 100%;
     position: absolute;
@@ -95,7 +94,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 40%);
+        background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 15%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -128,15 +127,76 @@
     &_Fields {
       position: relative;
       z-index: 1;
-      margin-bottom: em(63px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: em(30px) em(27px);
+      margin-bottom: em(30px);
       @include iflaptop {
-        margin-bottom: em(44px);
+        gap: em(30px) em(17px);
+        margin-bottom: em(30px);
       }
       @include iftablet {
-        margin-bottom: em(44px);
+        grid-template-columns: 1fr;
+        gap: em(16px) 0;
+        margin-bottom: em(16px);
       }
       @include ifmobile {
+        grid-template-columns: 1fr;
+        gap: em(16px) 0;
+        margin-bottom: em(16px);
+      }
+    }
+
+    &_Password {
+      position: relative;
+      z-index: 1;
+      margin-bottom: em(44px);
+      @include ifmobile {
         margin-bottom: em(27px);
+      }
+
+      .PasswordCheck {
+        display: flex;
+        flex-direction: row;
+        margin-top: em(11px);
+        padding-left: em(27px);
+        @include ifmobile {
+        }
+        &_Item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          &:not(:last-child) {
+            margin-right: em(16px);
+            @include ifmobile {
+              margin-right: em(10px);
+            }
+          }
+          .Icon {
+            width: em(16px);
+            height: em(16px);
+            margin-right: em(4px);
+          }
+          .Label {
+            color: rgba(31, 30, 88, 0.7);
+            font-size: em(14px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @include ifmobile {
+              font-size: em(12px);
+            }
+          }
+
+          &__Valid {
+            .Icon g {
+              opacity: 1;
+            }
+            .Label {
+              color: $text;
+            }
+          }
+        }
       }
     }
 
@@ -160,7 +220,7 @@
       display: none;
       position: absolute;
       z-index: -1;
-      bottom: em(-184px);
+      bottom: em(-134px);
       left: em(-345px);
       width: em(482px);
       height: em(473px);
@@ -172,12 +232,12 @@
     &_OrangeFlower {
       position: absolute;
       z-index: -1;
-      top: em(-178px);
+      top: em(-98px);
       right: em(-27px);
       width: em(257px);
       height: em(313px);
       @include iflaptop {
-        top: em(-73px);
+        top: em(-12px);
         right: em(-160px);
         width: em(257px);
         height: em(313px);
@@ -194,7 +254,7 @@
     &_VioletFlower {
       position: absolute;
       z-index: -1;
-      top: em(-150px);
+      top: em(-70px);
       right: em(-226px);
       width: em(374px);
       height: em(505px);
@@ -202,7 +262,7 @@
       @include iflaptop {
         top: auto;
         right: auto;
-        bottom: em(-235px);
+        bottom: em(-174px);
         left: em(-217px);
         transform: scale(-1, 1);
       }
