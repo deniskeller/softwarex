@@ -83,7 +83,7 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
               <BaseButton
                 as="a"
                 href="/sign-up"
-                type={theme == 'light' ? 'gradientEmpty' : 'whiteEmpty'}
+                design={theme == 'light' ? 'gradientEmpty' : 'whiteEmpty'}
                 className={s.SignUp}
               >
                 Sign Up
@@ -92,7 +92,7 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
                 as="a"
                 href="/log-in"
                 className={s.Login}
-                type={theme == 'light' ? 'gradient' : 'primary'}
+                design={theme == 'light' ? 'gradient' : 'primary'}
               >
                 Log In
               </BaseButton>

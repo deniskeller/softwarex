@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: em(125px) 0;
+  overflow: hidden;
   @include iflaptop {
     padding: em(125px) 0;
   }

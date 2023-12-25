@@ -1,0 +1,207 @@
+.CookiesPolicy {
+  padding: em(236px) 0 em(137px);
+  @include iflaptop {
+    padding: em(179px) 0 em(100px);
+  }
+  @include iftablet {
+    padding: em(179px) 0 em(126px);
+  }
+  @include ifmobile {
+    padding: em(93px) 0 em(80px);
+  }
+
+  &_Container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr em(218px);
+    gap: 0 em(162px);
+    @include iflaptop {
+      grid-template-columns: 1fr em(218px);
+      gap: 0 em(18px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_Content {
+    .Header {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      padding-bottom: em(14px);
+      margin-bottom: em(69px);
+      @include iflaptop {
+      }
+      @include iftablet {
+        margin-bottom: em(55px);
+      }
+      @include ifmobile {
+        margin-bottom: em(34px);
+      }
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: em(4px);
+        border-radius: em(13px);
+        background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+      }
+      .Icon {
+        width: em(25px);
+        height: em(25px);
+        margin-right: em(10px);
+      }
+      h1 {
+        color: $text;
+        font-size: em(40px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include iflaptop {
+          font-size: em(30px);
+        }
+        @include iftablet {
+          font-size: em(30px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+        }
+      }
+    }
+
+    .SectionList {
+      list-style: none;
+      .Section:not(:last-child) {
+        margin-bottom: em(40px);
+      }
+
+      .Section {
+        &_Title {
+          margin-bottom: em(20px);
+          h2 {
+            color: rgba(31, 30, 88, 0.9);
+            font-size: em(18px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+        }
+
+        &_Content {
+          list-style: none;
+          .Paragraph:not(:last-child) {
+            margin-bottom: em(20px);
+          }
+
+          .Paragraph {
+            &_Title {
+              margin-bottom: em(20px);
+              h2 {
+                color: rgba(31, 30, 88, 0.9);
+                font-size: em(18px);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+            }
+
+            &_Description {
+              $size: 18px;
+              color: rgba(31, 30, 88, 0.8);
+              font-size: em($size);
+              font-style: normal;
+              font-weight: 400;
+              line-height: 177.778%;
+              &:not(:last-child) {
+                margin-bottom: em(20px, $size);
+              }
+            }
+
+            &_List {
+              list-style: disc;
+              padding-left: em(30px);
+              li {
+                $size: 18px;
+                color: rgba(31, 30, 88, 0.6);
+                font-size: em($size);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 177.778%; /* 177.778% */
+                &:not(:last-child) {
+                  margin-bottom: em(12px, $size);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_Sidebar {
+    position: relative;
+    @include iftablet {
+      display: none;
+    }
+    @include ifmobile {
+      display: none;
+    }
+
+    .Sidebar {
+      position: sticky;
+      top: em(30px);
+
+      &_Header {
+        margin-bottom: em(30px);
+        p {
+          color: $text;
+          font-size: em(18px);
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      &_Navbar {
+        list-style: none;
+        &_Item {
+          cursor: pointer;
+          position: relative;
+          line-height: 100%;
+          padding-left: em(20px);
+          &:not(:last-child) {
+            margin-bottom: em(24px);
+          }
+
+          p {
+            color: rgba(31, 30, 88, 0.8);
+            font-size: em(18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          &:hover {
+            p {
+              color: $pr1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
