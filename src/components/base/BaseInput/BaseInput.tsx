@@ -115,9 +115,11 @@ const BaseInput: React.FC<Props> = ({
         ) : null}
       </div>
 
-      <div className={s.BaseInput_ErrorText}>
-        <p>{error}</p>
-      </div>
+      {error ? (
+        <div className={s.BaseInput_ErrorText}>
+          <p>{error}</p>
+        </div>
+      ) : null}
     </div>
   );
 };

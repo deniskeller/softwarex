@@ -1,0 +1,70 @@
+.BaseRadioButton {
+  position: relative;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  &_Input {
+    position: absolute;
+    visibility: hidden;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  }
+
+  &_Check {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    width: em(16px);
+    height: em(16px);
+    border-radius: 50%;
+    border: 2px solid #6d6bce;
+    opacity: 0.2;
+    transform: translateY(em(2px));
+    transition: opacity 0.3s ease;
+    .Tick {
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &_Label {
+    margin-left: em(10px);
+    p {
+      color: #1f1e58;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(14px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include ifdesktop {
+        font-size: em(16px);
+      }
+    }
+  }
+
+  &__Active {
+    .BaseRadioButton_Check {
+      opacity: 1;
+      .Tick {
+        width: em(8px);
+        height: em(8px);
+        border-radius: 50%;
+        background: #6d6bce;
+        transform: scale(1);
+      }
+    }
+  }
+}

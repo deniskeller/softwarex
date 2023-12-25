@@ -230,9 +230,6 @@ const HowWeWork: React.FC = () => {
                 After we will offer a visual concept of the product for
                 successful user interaction.
               </p>
-              <p className={s.Gradient}>
-                Lorem ipsum dolor sit amet consectetur.{' '}
-              </p>
             </div>
           </SwiperSlide>
 
@@ -497,9 +494,6 @@ const HowWeWork: React.FC = () => {
                 <p>
                   After we will offer a visual concept of the product for
                   successful user interaction.
-                </p>
-                <p className={s.Gradient}>
-                  Lorem ipsum dolor sit amet consectetur.{' '}
                 </p>
               </div>
             </div>

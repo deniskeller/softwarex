@@ -1,0 +1,88 @@
+.BaseCheckbox {
+  user-select: none;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  &_Input {
+    position: absolute;
+    visibility: hidden;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  }
+
+  &_Check {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    width: em(16px);
+    height: em(16px);
+    border-radius: em(4px);
+    border: 2px solid #6d6bce;
+    opacity: 0.2;
+    transform: translateY(em(1px));
+    transition: all 0.3s ease;
+
+    .Tick {
+      width: em(13px);
+      height: em(13px);
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &_Label {
+    margin-left: em(14px);
+    p {
+      color: rgba(31, 30, 88, 0.5);
+      font-family: 'Gantari', sans-serif;
+      font-size: em(14px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__Active {
+    .BaseCheckbox_Check {
+      opacity: 1;
+      background: #6d6bce;
+      .Tick {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__Error {
+    .BaseCheckbox_Check {
+      opacity: 1;
+      border-color: #c92100;
+    }
+  }
+
+  &__Disabled {
+    &:hover {
+      .BaseCheckbox_Check {
+        opacity: 0.2;
+      }
+    }
+    .BaseCheckbox_Check {
+      opacity: 0.2;
+      background: #d9d9d9;
+      border-color: #d9d9d9;
+      cursor: not-allowed;
+    }
+  }
+}
