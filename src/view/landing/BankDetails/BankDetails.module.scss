@@ -1,0 +1,418 @@
+.BankDetails {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: em(125px) 0;
+  @include iflaptop {
+    padding: em(125px) 0;
+  }
+  @include iftablet {
+    padding: em(125px) em(30px);
+  }
+  @include ifmobile {
+    padding: em(74px) em(15px) em(36px);
+  }
+  .Background {
+    width: 100%;
+    position: absolute;
+    height: em(831px);
+    top: 0;
+    right: 0;
+    left: 0;
+    background-image: url('/pictures/images/gradient-bg.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include iflaptop {
+      background-image: url('/pictures/images/404/gradient-bg-laptop.png');
+      height: 100%;
+    }
+    @include iftablet {
+      background-image: url('/pictures/images/404/gradient-bg-tablet.png');
+      height: 100%;
+    }
+    @include ifmobile {
+      background-image: url('/pictures/images/404/gradient-bg-mobile.png');
+      height: 100%;
+    }
+  }
+
+  .Form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding: em(37px) em(59px);
+    width: 100%;
+    max-width: em(710px);
+    @include iflaptop {
+      max-width: em(723px);
+      padding: em(37px) em(40px);
+    }
+    @include iftablet {
+      max-width: em(708px);
+      padding: em(37px) em(40px);
+    }
+    @include ifmobile {
+      max-width: em(330px);
+      padding: em(26px) em(15px);
+    }
+    &_Background {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      @extend %fullsize;
+      pointer-events: none;
+      background: linear-gradient(131deg, #fff 9.7%, #fff 89.34%);
+      border: 2px solid rgba(229, 229, 229, 0.5);
+      box-shadow: 2px 4px 21px 0px rgba(31, 30, 88, 0.1);
+      border-radius: em(40px);
+      @include iflaptop {
+        border-radius: em(33px);
+      }
+      @include iftablet {
+        border-radius: em(33px);
+      }
+      @include ifmobile {
+        border-radius: em(25px);
+      }
+    }
+
+    &_Title {
+      position: relative;
+      z-index: 1;
+      margin-bottom: em(25px);
+      @include iflaptop {
+        margin-bottom: em(18px);
+      }
+      @include iftablet {
+        margin-bottom: em(18px);
+      }
+      @include ifmobile {
+        margin-bottom: em(12px);
+      }
+      h2 {
+        font-size: em(40px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 35%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include iflaptop {
+          font-size: em(30px);
+        }
+        @include iftablet {
+          font-size: em(30px);
+        }
+        @include ifmobile {
+          font-size: em(24px);
+        }
+      }
+    }
+
+    &_Amount {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid rgba(31, 30, 88, 0.1);
+      padding-bottom: em(23px);
+      margin-bottom: em(11px);
+      @include ifdesktop {
+        padding-bottom: em(36px);
+        margin-bottom: em(16px);
+      }
+      .Value {
+        color: $text;
+        font-size: em(25px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @include iflaptop {
+          font-size: em(20px);
+        }
+        @include iftablet {
+          font-size: em(20px);
+        }
+        @include ifmobile {
+          font-size: em(18px);
+        }
+      }
+    }
+
+    &_Details {
+      position: relative;
+      z-index: 1;
+      margin-bottom: em(20px);
+      @include ifdesktop {
+        margin-bottom: em(36px);
+      }
+      .DetailsItem {
+        &:not(:last-child) {
+          margin-bottom: em(22px);
+          @include iflaptop {
+            margin-bottom: em(13px);
+          }
+          @include iftablet {
+            margin-bottom: em(13px);
+          }
+          @include ifmobile {
+            margin-bottom: em(11px);
+          }
+        }
+      }
+      .DetailsItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        &_Info {
+          display: flex;
+          flex-direction: column;
+          .Label {
+            $size: 16px;
+            color: $text;
+            font-size: em($size);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: em(6px, $size);
+            opacity: 0.7;
+            @include ifdesktop {
+              $size: 18px;
+              font-size: em($size);
+              margin-bottom: em(10px, $size);
+            }
+          }
+          .Value {
+            color: $text;
+            font-size: em(14px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            opacity: 0.5;
+          }
+        }
+
+        &_Copy {
+          position: relative;
+          margin-left: em(20px);
+          @include iflaptop {
+          }
+          @include iftablet {
+          }
+          @include ifmobile {
+          }
+          .Icon {
+            width: em(24px);
+            height: em(24px);
+            cursor: pointer;
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+
+            &:hover {
+              path {
+                transition: stroke-opacity $speed ease;
+                stroke-opacity: 1;
+              }
+              & + .Tooltip {
+                opacity: 1;
+              }
+            }
+          }
+          .Tooltip {
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + em(11px));
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: em(8px) em(12px);
+            border-radius: em(4px);
+            border: 1px solid $text;
+            background: $text;
+            opacity: 0;
+            transition: opacity $speed ease;
+            @include ifmobile {
+              transform: translate(-76%, 0%);
+            }
+            ::after {
+              content: '';
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -8px;
+              border-width: 8px;
+              border-style: solid;
+              border-color: $text transparent transparent transparent;
+              @include ifmobile {
+                left: 76%;
+              }
+            }
+            span {
+              color: #fff;
+              font-size: em(13px);
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+            }
+          }
+        }
+      }
+    }
+
+    &_Button {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      margin-bottom: em(25px);
+      @include ifmobile {
+        margin-bottom: em(21px);
+      }
+    }
+
+    &_ToMainPage {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+    }
+
+    &_Laptop {
+      display: none;
+      position: absolute;
+      z-index: -1;
+      bottom: em(-38px);
+      left: em(-352px);
+      width: em(482px);
+      height: em(473px);
+      @include ifdesktop {
+        display: block;
+      }
+    }
+
+    &_OrangeFlower {
+      position: absolute;
+      z-index: -1;
+      top: em(10px);
+      right: em(-162px);
+      width: em(257px);
+      height: em(312px);
+      transform: rotate(48deg);
+      @include iflaptop {
+        top: em(33px);
+        right: em(-160px);
+        width: em(257px);
+        height: em(313px);
+        transform: scale(-1, 1) rotate(-15deg);
+      }
+      @include iftablet {
+        display: none;
+      }
+      @include ifmobile {
+        display: none;
+      }
+    }
+
+    &_VioletFlower {
+      position: absolute;
+      z-index: -1;
+      top: em(104px);
+      right: em(-220px);
+      width: em(374px);
+      height: em(505px);
+      transform: rotate(48deg);
+
+      @include iflaptop {
+        top: auto;
+        right: auto;
+        bottom: em(-56px);
+        left: em(-217px);
+        transform: scale(-1, 1);
+      }
+      @include iftablet {
+        display: none;
+      }
+      @include ifmobile {
+        display: none;
+      }
+    }
+  }
+
+  .YellowFlower_768 {
+    display: none;
+    position: absolute;
+
+    @include iftablet {
+      display: block;
+      width: em(286px);
+      height: em(404px);
+      left: 2px;
+      bottom: em(-90px);
+    }
+  }
+
+  .YellowFlower_360 {
+    display: none;
+    position: absolute;
+    width: em(319px);
+    height: em(357px);
+    right: em(-70px);
+    bottom: em(-77px);
+    @include ifmobile {
+      display: block;
+    }
+  }
+
+  .OrangeFlower {
+    display: none;
+    position: absolute;
+
+    @include iftablet {
+      display: block;
+      width: em(257px);
+      height: em(313px);
+      left: em(160px);
+      bottom: em(-145px);
+      transform: rotate(9deg);
+    }
+  }
+
+  .VioletFlower {
+    display: none;
+    position: absolute;
+
+    @include iftablet {
+      display: block;
+      width: em(374px);
+      height: em(505px);
+      right: em(-9px);
+      bottom: em(-220px);
+      transform: rotate(16deg);
+    }
+    @include ifmobile {
+      display: block;
+      transform: scale(-1, 1);
+      width: em(350px);
+      height: em(473px);
+      right: em(70px);
+      bottom: em(-149px);
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

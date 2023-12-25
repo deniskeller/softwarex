@@ -37,17 +37,6 @@ const PayInvoice: React.FC = () => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
-  const submitHandler = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (value.email != '') {
-      router.push('/');
-      toast.custom(<Toast />, {
-        duration: 3000,
-      });
-    } else {
-      setError('Поле не должно быть пустым!');
-    }
-  };
   //radio button
   const paymentMethods = [
     { id: '1', value: 'bankTransfer' },
@@ -71,6 +60,18 @@ const PayInvoice: React.FC = () => {
       newState[key] = !prevState[key];
       return newState;
     });
+  };
+
+  const submitHandler = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (value.email != '' && paymentMethod === paymentMethods[0].id) {
+      router.push('/bank-details');
+      // toast.custom(<Toast />, {
+      //   duration: 3000,
+      // });
+    } else {
+      setError('Поле не должно быть пустым!');
+    }
   };
 
   useEffect(() => {
