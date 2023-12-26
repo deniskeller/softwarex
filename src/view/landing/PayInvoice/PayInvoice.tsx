@@ -181,7 +181,8 @@ const PayInvoice: React.FC = () => {
           className={s.Form_Rules}
         >
           I have read and agree with the&nbsp;
-          <Link href={'/terms-of-service'}>Terms of service</Link> and&nbsp;
+          <Link href={'/terms-of-service'}>Terms of service</Link>
+          &nbsp;and&nbsp;
           <Link href={'/refund-policy'}>Refund Policy</Link>
         </BaseCheckbox>
 

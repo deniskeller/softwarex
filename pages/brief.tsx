@@ -3,7 +3,7 @@ import { Brief } from '@view/landing';
 
 const BriefPage = () => {
   return (
-    <Landing theme="light">
+    <Landing theme="light" footer={false}>
       <Brief />
     </Landing>
   );
