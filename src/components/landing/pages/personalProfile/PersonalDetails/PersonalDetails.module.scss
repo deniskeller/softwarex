@@ -1,0 +1,84 @@
+.PersonalDetails {
+  margin-bottom: em(165px);
+  @include iflaptop {
+    margin-bottom: em(96px);
+  }
+  @include iftablet {
+    margin-bottom: em(90px);
+  }
+  @include ifmobile {
+    margin-bottom: em(84px);
+  }
+  &_Container {
+    position: relative;
+  }
+
+  &_Image {
+    display: none;
+    position: absolute;
+    top: em(72px);
+    left: em(107px);
+    width: em(721px);
+    height: em(617px);
+    @include ifdesktop {
+      display: block;
+    }
+  }
+
+  .Form {
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(229, 229, 229, 0.5);
+    background: linear-gradient(131deg, #fff 9.7%, #fff 89.34%);
+    box-shadow: 2px 4px 21px 0px rgba(31, 30, 88, 0.1);
+    border-radius: em(40px);
+    padding: em(58px) em(70px) em(88px);
+    width: 100%;
+    max-width: em(947px);
+    margin-left: auto;
+    @include iflaptop {
+      padding: em(58px) em(70px) em(88px);
+      max-width: 100%;
+    }
+    @include iftablet {
+      padding: em(35px) em(30px);
+      max-width: 100%;
+    }
+    @include ifmobile {
+      padding: em(29px) em(21px) em(52px);
+      max-width: 100%;
+      border-radius: em(21px);
+    }
+    &_Title {
+      margin-bottom: em(10px);
+    }
+    &_Subtitle {
+      margin-bottom: em(60px);
+      @include iflaptop {
+        margin-bottom: em(50px);
+      }
+      @include iftablet {
+        margin-bottom: em(50px);
+      }
+      @include ifmobile {
+        margin-bottom: em(50px);
+      }
+    }
+    &_Fields {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(30px) 0;
+      @include iflaptop {
+        grid-template-columns: 1fr 1fr;
+        gap: em(30px);
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

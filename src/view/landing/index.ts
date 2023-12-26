@@ -8,4 +8,5 @@ export { default as SignUp } from "./SignUp/SignUp";
 export { default as PayInvoice } from "./PayInvoice/PayInvoice";
 export { default as BankDetails } from "./BankDetails/BankDetails";
 export { default as CookiesPolicy } from "./CookiesPolicy/CookiesPolicy";
+export { default as PersonalProfile } from "./PersonalProfile/PersonalProfile";
 

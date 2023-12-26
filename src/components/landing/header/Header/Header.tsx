@@ -99,7 +99,7 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
             </>
           ) : (
             <>
-              <Link href="/log-in" className={s.User}>
+              <Link href="/personal-profile" className={s.User}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 45 45"
@@ -486,7 +486,7 @@ const Header: React.FC<Props> = ({ pages, theme = 'dark' }) => {
                   </>
                 ) : (
                   <>
-                    <Link href="/log-in" className={s.User}>
+                    <Link href="/personal-profile" className={s.User}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 73 73"

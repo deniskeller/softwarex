@@ -1,0 +1,125 @@
+.Header {
+  position: relative;
+  padding: em(245px) 0 0;
+  min-height: em(831px);
+  margin-bottom: em(132px);
+  @include iflaptop {
+    min-height: em(685px);
+    padding: em(145px) 0 0;
+    margin-bottom: em(168px);
+  }
+  @include iftablet {
+    min-height: em(685px);
+    padding: em(145px) 0 0;
+    margin-bottom: em(38px);
+  }
+  @include ifmobile {
+    min-height: em(677px);
+    padding: em(145px) 0 0;
+    margin-bottom: em(40px);
+  }
+
+  &_Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('/pictures/images/gradient-bg.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: em(831px);
+    @include iflaptop {
+      min-height: em(685px);
+    }
+    @include iftablet {
+      min-height: em(685px);
+    }
+    @include ifmobile {
+      min-height: em(677px);
+    }
+  }
+
+  &_Container {
+    position: relative;
+  }
+
+  &_Title {
+    margin-bottom: em(80px);
+    @include iflaptop {
+      margin-bottom: em(55px);
+    }
+    @include iftablet {
+      margin-bottom: em(55px);
+    }
+    @include ifmobile {
+      margin-bottom: em(66px);
+    }
+  }
+
+  &_Subtitle {
+    max-width: em(626px);
+    @include iftablet {
+      max-width: 100%;
+      margin-bottom: em(103px);
+    }
+    @include ifmobile {
+      margin-bottom: em(94px);
+    }
+    p {
+      color: $white;
+      opacity: 1;
+      line-height: 160%;
+    }
+  }
+
+  &_Image {
+    position: absolute;
+    top: em(-102px);
+    right: 0;
+    width: em(905px);
+    height: em(779px);
+    @include iflaptop {
+      top: em(126px);
+      right: 0;
+      width: em(603px);
+      height: em(520px);
+    }
+    @include iftablet {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: em(692px);
+      height: em(597px);
+      margin: 0 auto;
+    }
+    @include ifmobile {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: em(320px);
+      height: em(276px);
+      margin: 0 auto;
+    }
+
+    &__Desktop {
+      display: none;
+      @include ifdesktop {
+        display: block;
+      }
+    }
+    &__Mobile {
+      display: block;
+      @include ifdesktop {
+        display: none;
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

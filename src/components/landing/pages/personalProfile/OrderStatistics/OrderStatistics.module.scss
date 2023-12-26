@@ -1,0 +1,152 @@
+.OrderStatistics {
+  position: relative;
+  margin-bottom: em(178px);
+  @include iflaptop {
+    margin-bottom: em(116px);
+  }
+  @include iftablet {
+    margin-bottom: em(94px);
+  }
+  @include ifmobile {
+    margin-bottom: em(94px);
+  }
+
+  &_Title {
+    text-align: center;
+    margin-bottom: em(18px);
+  }
+  &_Subtitle {
+    text-align: center;
+    margin-bottom: em(132px);
+    @include iflaptop {
+      margin-bottom: em(71px);
+    }
+    @include iftablet {
+      margin-bottom: em(71px);
+    }
+    @include ifmobile {
+      margin-bottom: em(55px);
+    }
+  }
+  &_Info {
+    display: flex;
+    flex-direction: row;
+    gap: em(40px) em(34px);
+    @include iflaptop {
+      gap: em(40px) em(24px);
+    }
+    @include iftablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: em(40px) em(24px);
+    }
+    @include ifmobile {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: em(40px) 0;
+    }
+    .InfoItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 25%;
+      transition: width 0.5s ease;
+      @include iftablet {
+        width: 100%;
+      }
+      @include ifmobile {
+        width: 100%;
+      }
+      &_Value {
+        span {
+          text-align: center;
+          font-size: em(49px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 115%; /* 56.35px */
+          background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          @include iflaptop {
+            font-size: em(30px);
+          }
+          @include iftablet {
+            font-size: em(30px);
+          }
+          @include ifmobile {
+            font-size: em(30px);
+          }
+        }
+      }
+      &_Border {
+        width: 100%;
+        height: em(6px);
+        border-radius: em(40px);
+        margin: em(37px) 0;
+        background: rgba(31, 30, 88, 0.1);
+        transition: background 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        @include iflaptop {
+          height: em(4px);
+          margin: em(25px) 0;
+        }
+        @include iftablet {
+          height: em(7px);
+          margin: em(19px) 0;
+        }
+        @include ifmobile {
+          height: em(4px);
+          margin: em(14px) 0;
+        }
+        &::before {
+          display: block;
+          content: '';
+          @extend %fullsize;
+          background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+          opacity: 0;
+          width: 0;
+          transition: width 0.3s ease, opacity 0.3s ease;
+          @include iftablet {
+            display: none;
+          }
+          @include ifmobile {
+            display: none;
+          }
+        }
+      }
+      &_Label {
+        color: $text;
+        font-size: em(18px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      &:hover {
+        width: 40%;
+        @include iflaptop {
+          width: 100%;
+        }
+        @include iftablet {
+          width: 100%;
+        }
+        .InfoItem_Border {
+          &::before {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

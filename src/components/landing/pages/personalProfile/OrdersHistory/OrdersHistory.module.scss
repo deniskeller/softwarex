@@ -1,0 +1,146 @@
+.OrdersHistory {
+  margin-bottom: em(141px);
+  @include iflaptop {
+    margin-bottom: em(96px);
+  }
+  @include iftablet {
+    margin-bottom: em(86px);
+  }
+  @include ifmobile {
+    margin-bottom: em(71px);
+  }
+  &_Title {
+    text-align: center;
+    margin-bottom: em(63px);
+    @include iflaptop {
+      margin-bottom: em(52px);
+    }
+    @include iftablet {
+      margin-bottom: em(55px);
+    }
+    @include ifmobile {
+      margin-bottom: em(50px);
+    }
+  }
+  &_Table {
+    width: 100%;
+    position: relative;
+    box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.1);
+    border: 1px solid rgba(35, 35, 35, 0.1);
+    border-radius: em(30px);
+    overflow: hidden;
+    @include ifmobile {
+      border-radius: em(18px);
+    }
+    .THead {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(31, 30, 88, 0.1);
+      @include ifmobile {
+        grid-template-columns: em(82px) em(68px) em(74px) em(106px);
+      }
+      &_Column {
+        display: flex;
+        align-items: center;
+        padding: em(10px) em(26px);
+        @include ifmobile {
+          padding: em(22px) em(10px);
+        }
+        span {
+          color: $text;
+          font-size: em(18px);
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          @include ifmobile {
+            font-size: em(13px);
+          }
+        }
+      }
+    }
+    .TBody {
+      max-height: em(660px);
+      overflow: auto;
+      // scrollbar-gutter: stable;
+      // &::-webkit-scrollbar {
+      //   width: em(7px);
+      // }
+
+      // &::-webkit-scrollbar-track {
+      //   -webkit-border-radius: em(7px);
+      //   border-radius: em(7px);
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   -webkit-border-radius: em(7px);
+      //   border-radius: em(7px);
+      //   background: rgba(31, 30, 88, 0.2);
+      // }
+
+      &_Row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid rgba(31, 30, 88, 0.1);
+        @include ifmobile {
+          grid-template-columns: em(82px) em(68px) em(74px) em(106px);
+        }
+        .OrderId,
+        .Amount,
+        .Currency,
+        .Status {
+          position: relative;
+          padding: em(14px) em(26px);
+          @include ifmobile {
+            padding: em(22px) em(10px);
+          }
+          span {
+            color: rgba(31, 30, 88, 0.8);
+            font-size: em(18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @include ifmobile {
+              font-size: em(12px);
+            }
+          }
+        }
+        .Status {
+          span {
+            position: relative;
+            padding-left: em(18px, 18px);
+            @include ifmobile {
+              padding-left: em(14px, 12px);
+            }
+            &::before {
+              display: block;
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translate(0%, -50%);
+              width: em(8px);
+              height: em(8px);
+              border-radius: 50%;
+              background: grey;
+            }
+          }
+          &__Processing span::before {
+            background: #3a78c0;
+          }
+          &__Completed span::before {
+            background: #46c03a;
+          }
+          &__Refund span::before {
+            background: #ecc565;
+          }
+        }
+      }
+    }
+  }
+}
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
