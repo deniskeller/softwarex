@@ -154,7 +154,7 @@
       }
       .DetailsItem {
         &:not(:last-child) {
-          margin-bottom: em(22px);
+          margin-bottom: em(16px);
           @include iflaptop {
             margin-bottom: em(13px);
           }
@@ -186,7 +186,7 @@
             @include ifdesktop {
               $size: 18px;
               font-size: em($size);
-              margin-bottom: em(10px, $size);
+              margin-bottom: em(3px, $size);
             }
           }
           .Value {
@@ -194,8 +194,11 @@
             font-size: em(14px);
             font-style: normal;
             font-weight: 400;
-            line-height: normal;
+            line-height: 135.714%;
             opacity: 0.5;
+            @include ifdesktop {
+              line-height: 228.571%;
+            }
           }
         }
 
