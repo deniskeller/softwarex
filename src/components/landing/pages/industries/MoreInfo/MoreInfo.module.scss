@@ -1,0 +1,114 @@
+.MoreInfo {
+  margin-bottom: em(86px);
+  &_Title {
+    text-align: center;
+    margin-bottom: em(33px);
+    @include iftablet {
+      max-width: em(680px);
+    }
+    @include ifmobile {
+    }
+    span {
+      background: linear-gradient(89deg, #6e6ccf 0.92%, #fb8873 80%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &_Subtitle {
+    margin: 0 auto;
+    text-align: center;
+    max-width: em(878px);
+    margin-bottom: em(136px);
+    @include iflaptop {
+      margin-bottom: em(75px);
+    }
+    @include iftablet {
+      margin-bottom: em(67px);
+    }
+    @include ifmobile {
+      margin-bottom: em(46px);
+    }
+  }
+
+  &_Content {
+    display: grid;
+    grid-template-columns: em(621px) auto;
+    gap: em(32px);
+    justify-items: stretch;
+    @include iflaptop {
+      grid-template-columns: em(400px) auto;
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+    }
+    @include ifmobile {
+      display: flex;
+      flex-direction: row;
+    }
+    .InfoItem {
+      border: 2px solid rgba(109, 107, 206, 0.26);
+      background: $white;
+      box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.1);
+      border-radius: em(30px);
+      min-height: em(269px);
+      align-self: stretch;
+      @include iflaptop {
+        min-height: em(249px);
+      }
+      @include iftablet {
+        border-radius: em(30px);
+        min-height: em(246px);
+      }
+      @include ifmobile {
+        border-radius: em(25px);
+        width: em(280px);
+        min-height: em(460px);
+        flex-shrink: 0;
+      }
+
+      &:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      &:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 2;
+        margin-left: auto;
+        @include ifdesktop {
+          width: em(621px);
+        }
+        @include iflaptop {
+          width: em(400px);
+        }
+        @include iftablet {
+          width: 100%;
+        }
+      }
+      &:nth-child(7) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      &:nth-child(4),
+      &:nth-child(6) {
+        @include ifdesktop {
+          width: em(947px);
+        }
+        @include iflaptop {
+          width: em(532px);
+        }
+        @include iftablet {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
