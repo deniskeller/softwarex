@@ -1,5 +1,14 @@
 .MoreInfo {
   margin-bottom: em(86px);
+  @include iflaptop {
+    margin-bottom: em(83px);
+  }
+  @include iftablet {
+    margin-bottom: em(79px);
+  }
+  @include ifmobile {
+    margin-bottom: em(103px);
+  }
   &_Title {
     text-align: center;
     margin-bottom: em(33px);
@@ -33,75 +42,384 @@
   }
 
   &_Content {
-    display: grid;
-    grid-template-columns: em(621px) auto;
-    gap: em(32px);
-    justify-items: stretch;
-    @include iflaptop {
-      grid-template-columns: em(400px) auto;
-    }
-    @include iftablet {
-      grid-template-columns: 1fr;
-    }
-    @include ifmobile {
-      display: flex;
-      flex-direction: row;
+    .Row {
+      display: grid;
+      grid-template-columns: em(621px) auto;
+      gap: em(32px);
+      justify-items: stretch;
+      position: relative;
+      margin-bottom: em(32px);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include iflaptop {
+        grid-template-columns: em(400px) auto;
+      }
+      @include iftablet {
+        grid-template-columns: 1fr;
+      }
+
+      &__Middle {
+        grid-template-columns: auto em(621px);
+        @include iflaptop {
+          grid-template-columns: auto em(400px);
+        }
+        @include iftablet {
+          grid-template-columns: 1fr;
+        }
+        .InfoItem {
+          &:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 3;
+          }
+        }
+      }
     }
     .InfoItem {
+      position: relative;
+      cursor: pointer;
       border: 2px solid rgba(109, 107, 206, 0.26);
       background: $white;
       box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.1);
       border-radius: em(30px);
       min-height: em(269px);
-      align-self: stretch;
+      padding: em(46px) em(48px);
+      display: flex;
+      flex-direction: row;
+
       @include iflaptop {
         min-height: em(249px);
+        padding: em(25px) em(20px);
       }
       @include iftablet {
         border-radius: em(30px);
         min-height: em(246px);
+        padding: em(30px);
       }
       @include ifmobile {
         border-radius: em(25px);
         width: em(280px);
         min-height: em(460px);
+        padding: em(20px) em(15px);
         flex-shrink: 0;
+        flex-direction: column;
       }
 
       &:nth-child(1) {
         grid-column: span 1;
         grid-row: span 2;
       }
-      &:nth-child(5) {
-        grid-column: span 1;
-        grid-row: span 2;
-        margin-left: auto;
-        @include ifdesktop {
-          width: em(621px);
-        }
-        @include iflaptop {
-          width: em(400px);
-        }
+      // &:nth-child(5) {
+      //   grid-column: span 1;
+      //   grid-row: span 2;
+      //   margin-left: auto;
+      //   @include ifdesktop {
+      //     width: em(621px);
+      //   }
+      //   @include iflaptop {
+      //     width: em(400px);
+      //   }
+      //   @include iftablet {
+      //     width: 100%;
+      //   }
+      // }
+      // &:nth-child(7) {
+      //   grid-column: span 1;
+      //   grid-row: span 2;
+      // }
+      // &:nth-child(4),
+      // &:nth-child(6) {
+      //   @include ifdesktop {
+      //     width: em(947px);
+      //   }
+      //   @include iflaptop {
+      //     width: em(532px);
+      //   }
+      //   @include iftablet {
+      //     width: 100%;
+      //   }
+      // }
+
+      &_ImageContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: em(30px);
+
         @include iftablet {
-          width: 100%;
+          margin-right: em(20px);
+        }
+        @include ifmobile {
+          margin-right: 0;
+          justify-content: flex-end;
+          margin-bottom: em(40px);
+        }
+        .Image {
+          width: em(183px);
+          height: em(183px);
+          position: relative;
+          z-index: 2;
+          @include iflaptop {
+            width: em(92px);
+            height: em(92px);
+            margin-top: auto;
+            margin-bottom: em(20px);
+          }
+          @include iftablet {
+            width: em(160px);
+            height: em(160px);
+            margin-top: auto;
+          }
+          @include ifmobile {
+            width: em(140px);
+            height: em(140px);
+          }
+        }
+        .Counter {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: em(120px);
+          height: em(120px);
+          @include iflaptop {
+          }
+          @include iftablet {
+          }
+          @include ifmobile {
+          }
+          &_Value {
+            z-index: 0;
+            color: rgba(65, 60, 124, 0.3);
+            text-align: center;
+            font-size: em(110px);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+          &_Shadow {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            width: em(100px);
+            height: em(100px);
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+          &_Triangle {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            width: em(90px);
+            height: em(90px);
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
         }
       }
-      &:nth-child(7) {
-        grid-column: span 1;
-        grid-row: span 2;
+
+      &_TextContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .Title {
+          margin-bottom: em(12px);
+          @include iflaptop {
+            margin-bottom: em(4px);
+          }
+          @include iftablet {
+            margin-bottom: em(22px);
+          }
+          @include ifmobile {
+            margin-bottom: em(22px);
+          }
+          h3 {
+            color: $text;
+            font-size: em(30px);
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            @include iflaptop {
+              font-size: em(20px);
+            }
+            @include iftablet {
+              font-size: em(20px);
+            }
+            @include ifmobile {
+              font-size: em(20px);
+            }
+          }
+        }
+        .Description {
+          margin-bottom: em(19px);
+          p {
+            color: $text;
+            font-size: em(18px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 177.778%; /* 177.778% */
+            opacity: 0.7;
+            @include iflaptop {
+              line-height: 150%;
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+              line-height: normal;
+            }
+          }
+        }
+
+        .More {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          &_Label {
+            color: $text;
+            font-size: em(16px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            transition: color $speed ease;
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+          }
+          &_Icon {
+            width: em(16px);
+            height: em(16px);
+            margin-left: em(4px);
+            transition: transform $speed ease;
+            @include iflaptop {
+            }
+            @include iftablet {
+            }
+            @include ifmobile {
+            }
+            path {
+              transition: stroke $speed ease;
+            }
+          }
+        }
       }
-      &:nth-child(4),
-      &:nth-child(6) {
-        @include ifdesktop {
-          width: em(947px);
-        }
-        @include iflaptop {
-          width: em(532px);
-        }
+
+      &__Big {
+        flex-direction: column;
         @include iftablet {
-          width: 100%;
+          flex-direction: row;
+        }
+        @include ifmobile {
+        }
+        .InfoItem_ImageContent {
+          margin-bottom: em(30px);
+          @include iflaptop {
+            margin-right: 0;
+            padding: em(25px) em(20px);
+          }
+          @include iftablet {
+            margin-right: em(20px);
+            margin-bottom: 0;
+          }
+          @include ifmobile {
+            margin-top: em(20px);
+            margin-bottom: em(52px);
+            justify-content: flex-end;
+          }
+          .Image {
+            width: em(389px);
+            height: em(257px);
+            @include iflaptop {
+              width: em(236px);
+              height: em(166px);
+            }
+            @include iftablet {
+              width: em(160px);
+              height: em(110px);
+            }
+            @include ifmobile {
+              width: em(160px);
+              height: em(110px);
+            }
+          }
+        }
+        .InfoItem_TextContent {
+          .Title {
+            margin-bottom: em(22px);
+            h3 {
+              font-size: em(40px);
+              @include iflaptop {
+                font-size: em(30px);
+              }
+              @include iftablet {
+                font-size: em(20px);
+              }
+              @include ifmobile {
+                font-size: em(20px);
+              }
+            }
+          }
         }
       }
+
+      &:hover {
+        background: transparent;
+        border: 2px solid transparent;
+        background-image: linear-gradient(
+            rgb(255, 255, 255),
+            rgb(255, 255, 255)
+          ),
+          radial-gradient(circle at left top, #6e6ccf 0.91%, #fb8873 93.07%);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        .InfoItem_TextContent {
+          .More {
+            &_Label {
+              color: $pr1;
+            }
+            &_Icon {
+              transform: translate(em(4px));
+              path {
+                stroke: $pr1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__Desktop {
+      display: grid;
+      @include ifmobile {
+        display: none;
+      }
+    }
+
+    &__Slider {
+      display: none;
+      @include ifmobile {
+        display: flex;
+      }
+    }
+    .swiper-pagination {
+      background: green;
     }
   }
 }

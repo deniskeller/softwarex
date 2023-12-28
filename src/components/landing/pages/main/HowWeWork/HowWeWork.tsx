@@ -32,10 +32,7 @@ const HowWeWork: React.FC = () => {
 
         <Swiper
           className={s.HowWeWork_Slider}
-          // resizeObserver={true}
-          // updateOnWindowResize={true}
-          // observeSlideChildren={true}
-          // observer={true}
+          wrapperClass="HowWeWork_Slider"
           breakpoints={{
             320: {
               slidesPerView: 1.1,
@@ -48,7 +45,6 @@ const HowWeWork: React.FC = () => {
               enabled: false,
             },
           }}
-          // onResize={() => alert('lel')}
         >
           <SwiperSlide className={`${s.Slide} ${s.Slide__1}`}>
             {/* <svg
