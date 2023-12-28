@@ -1,7 +1,7 @@
 @import './../src/assets/scss/core.scss';
 
 //слайдер на главной блок how we work
-.swiper-wrapper {
+.HowWeWork_Slider {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,6 +9,16 @@
   width: 100%;
   @include ifmobile {
     width: initial;
+  }
+  & + .swiper-pagination-bullets {
+    bottom: em(-40px) !important;
+    .swiper-pagination-bullet {
+      background: $text !important;
+      opacity: 0.1 !important;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 0.3 !important;
+    }
   }
 }
 

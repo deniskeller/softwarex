@@ -7,7 +7,7 @@
     margin-bottom: em(78px);
   }
   @include ifmobile {
-    margin-bottom: em(82px);
+    margin-bottom: em(120px);
   }
   &_Container {
     position: relative;
@@ -74,6 +74,9 @@
     max-width: em(946px);
     overflow: hidden;
     position: relative;
+    @include ifmobile {
+      overflow: initial;
+    }
     &_Wrapper {
       display: flex;
       flex-direction: row;

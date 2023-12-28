@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { ALL_ICONS } from '@constants/icons';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 const HowWeWork: React.FC = () => {
   useEffect(() => {
@@ -33,6 +35,7 @@ const HowWeWork: React.FC = () => {
         <Swiper
           className={s.HowWeWork_Slider}
           wrapperClass="HowWeWork_Slider"
+          modules={[Pagination]}
           breakpoints={{
             320: {
               slidesPerView: 1.1,
@@ -44,6 +47,10 @@ const HowWeWork: React.FC = () => {
               spaceBetween: 'auto',
               enabled: false,
             },
+          }}
+          pagination={{
+            type: 'bullets',
+            clickable: true,
           }}
         >
           <SwiperSlide className={`${s.Slide} ${s.Slide__1}`}>
