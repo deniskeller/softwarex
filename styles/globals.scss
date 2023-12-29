@@ -41,3 +41,25 @@
     }
   }
 }
+
+//слайдер ecommerce-and-retail
+.Bonuses_Slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  @include ifmobile {
+    width: initial;
+  }
+  & + .swiper-pagination-bullets {
+    bottom: em(-40px) !important;
+    .swiper-pagination-bullet {
+      background: $text !important;
+      opacity: 0.1 !important;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 0.3 !important;
+    }
+  }
+}
