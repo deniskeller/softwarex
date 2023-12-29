@@ -1,0 +1,19 @@
+.Bonuses {
+  margin-bottom: em(217px);
+  @include iflaptop {
+    margin-bottom: em(87px);
+  }
+  @include iftablet {
+    margin-bottom: em(95px);
+  }
+  @include ifmobile {
+    margin-bottom: em(93px);
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

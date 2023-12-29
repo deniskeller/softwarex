@@ -1,0 +1,70 @@
+.Microservices {
+  margin-bottom: em(156px);
+  @include iflaptop {
+    margin-bottom: em(124px);
+  }
+  @include iftablet {
+    margin-bottom: em(76px);
+  }
+  @include ifmobile {
+    margin-bottom: em(89px);
+  }
+  &_Title {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: em(66px);
+    @include iflaptop {
+      max-width: em(740px);
+      margin-bottom: em(34px);
+    }
+    @include iftablet {
+      max-width: em(740px);
+      margin-bottom: em(60px);
+    }
+    @include ifmobile {
+      margin-bottom: em(70px);
+    }
+  }
+  &_Text {
+    display: grid;
+    grid-template-columns: 1fr em(621px);
+    gap: 0 em(73px);
+    @include iflaptop {
+      grid-template-columns: 1fr 1fr;
+      gap: 0 em(14px);
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      gap: em(38px) 0;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(38px) 0;
+    }
+    .Paragraph {
+      &__Strong {
+        margin-top: em(35px);
+        @include iflaptop {
+          margin-top: em(21px);
+        }
+        @include iftablet {
+          margin-top: em(21px);
+        }
+        @include ifmobile {
+          margin-top: em(21px);
+        }
+        p {
+          font-weight: 700;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

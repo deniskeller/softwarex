@@ -10,4 +10,5 @@ export { default as BankDetails } from "./BankDetails/BankDetails";
 export { default as CookiesPolicy } from "./CookiesPolicy/CookiesPolicy";
 export { default as PersonalProfile } from "./PersonalProfile/PersonalProfile";
 export { default as Industries } from "./Industries/Industries";
+export { default as EcommerceAndRetail } from "./EcommerceAndRetail/EcommerceAndRetail";
 

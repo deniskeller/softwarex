@@ -1,0 +1,146 @@
+.Elasticsearch {
+  margin-bottom: em(127px);
+  @include iflaptop {
+    margin-bottom: em(72px);
+  }
+  @include iftablet {
+    margin-bottom: em(83px);
+  }
+  @include ifmobile {
+    margin-bottom: em(57px);
+  }
+
+  &_Container {
+    display: grid;
+    grid-template-columns: em(747px) 1fr;
+    gap: 0 em(109px);
+    @include iflaptop {
+      grid-template-columns: 1fr;
+      gap: em(56px) 0;
+    }
+    @include iftablet {
+      grid-template-columns: 1fr;
+      gap: em(96px) 0;
+    }
+    @include ifmobile {
+      grid-template-columns: 1fr;
+      gap: em(83px) 0;
+    }
+  }
+
+  &_Percent {
+    border-radius: em(30px);
+    background: linear-gradient(
+      103deg,
+      #706dd0 -6.57%,
+      #f98973 26.41%,
+      #facb71 51.86%,
+      #f98973 97.2%
+    );
+    box-shadow: 2px 4px 12px 0px rgba(31, 30, 88, 0.1);
+    padding: em(75px) em(48px) em(61px) em(48px);
+    @include iflaptop {
+      padding: em(45px) em(48px) em(61px) em(48px);
+    }
+    @include iftablet {
+      padding: em(29px) em(48px) em(61px) em(48px);
+    }
+    @include ifmobile {
+      border-radius: em(21px);
+      padding: em(29px) em(21px) em(29px) em(21px);
+    }
+    .Percent {
+      margin-bottom: em(12px);
+      span {
+        color: $white;
+        font-size: em(127px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 115%;
+        @include ifmobile {
+          font-size: em(75px);
+        }
+      }
+    }
+    .Text {
+      color: $white;
+      font-size: em(18px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 177.778%;
+      @include ifmobile {
+        line-height: 150%;
+      }
+    }
+  }
+
+  &_Schema {
+    .Title {
+      max-width: em(562px);
+      margin-bottom: em(21px);
+    }
+    .Subtitle {
+      margin-bottom: em(21px);
+      @include ifmobile {
+        margin-bottom: em(8px);
+      }
+      p {
+        color: $text;
+        font-size: em(20px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 160% */
+        opacity: 0.7;
+        @include iflaptop {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+        @include iftablet {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+        @include ifmobile {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+      }
+    }
+    .SchemaList {
+      list-style: number;
+      padding-left: em(26px);
+      li:not(:last-child) {
+        margin-bottom: em(16px);
+        @include ifmobile {
+          margin-bottom: em(8px);
+        }
+      }
+      li {
+        color: $text;
+        font-size: em(20px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 160% */
+        opacity: 0.7;
+        @include iflaptop {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+        @include iftablet {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+        @include ifmobile {
+          font-size: em(18px);
+          line-height: 150%;
+        }
+      }
+    }
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

@@ -28,7 +28,10 @@ const MoreInfo: React.FC = () => {
         {/* ДЕФОЛТНЫЙ */}
         <div className={`${s.MoreInfo_Content} ${s.MoreInfo_Content__Desktop}`}>
           <div className={s.Row}>
-            <Link href={'/'} className={`${s.InfoItem} ${s.InfoItem__Big}`}>
+            <Link
+              href={'/industries/ecommerce-and-retail'}
+              className={`${s.InfoItem} ${s.InfoItem__Big}`}
+            >
               <div className={s.InfoItem_ImageContent}>
                 <div className={s.Counter}>
                   <div className={s.Counter_Value}>1</div>
@@ -324,7 +327,10 @@ const MoreInfo: React.FC = () => {
           </div>
 
           <div className={`${s.Row} ${s.Row__Middle}`}>
-            <Link href={'/'} className={s.InfoItem}>
+            <Link
+              href={'/industries/ecommerce-and-retail'}
+              className={s.InfoItem}
+            >
               <div className={s.InfoItem_ImageContent}>
                 <div className={s.Counter}>
                   <div className={s.Counter_Value}>4</div>
@@ -937,7 +943,7 @@ const MoreInfo: React.FC = () => {
         >
           <SwiperSlide
             className={`${s.InfoItem} ${s.InfoItem__Big}`}
-            onClick={() => router.push('/')}
+            onClick={() => router.push('/industries/ecommerce-and-retail')}
           >
             <div className={s.InfoItem_ImageContent}>
               <div className={s.Counter}>

@@ -1,0 +1,28 @@
+.WhatIsHighload {
+  margin-bottom: em(122px);
+  @include iflaptop {
+    margin-bottom: em(83px);
+  }
+  @include iftablet {
+    margin-bottom: em(71px);
+  }
+  @include ifmobile {
+    margin-bottom: em(57px);
+  }
+  &_Title {
+    text-align: center;
+    margin-bottom: em(33px);
+  }
+  &_Subtitle {
+    text-align: center;
+    margin: 0 auto;
+    max-width: em(878px);
+  }
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
