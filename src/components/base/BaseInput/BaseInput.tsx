@@ -62,7 +62,7 @@ const BaseInput: React.FC<Props> = ({
         withIcon ? s.BaseInput__WithIcon : ''
       } ${theme == 'light' ? s.BaseInput__LightTheme : ''} ${
         error ? s.BaseInput__Error : ''
-      }  ${className}`}
+      } ${disabled ? s.BaseInput__Disabled : ''} ${className}`}
     >
       {label ? (
         <label

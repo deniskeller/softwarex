@@ -6,17 +6,23 @@ import {
   BaseCheckbox,
   BaseInput,
   BaseRadioButton,
+  BaseSelect,
 } from '@base/index';
 import Link from 'next/link';
 import { ToMainPage, Toast } from '@content/landing/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 
+interface SelectItem {
+  label: string;
+  value: string;
+}
+
 interface IFormData {
   email: string;
-  amount: string;
   paymentsNotes: string;
   couponNumber: string;
+  amount: SelectItem[];
 }
 
 const PayInvoice: React.FC = () => {
@@ -28,12 +34,15 @@ const PayInvoice: React.FC = () => {
   //ФОРМА
   const [value, setValue] = React.useState<IFormData>({
     email: '',
-    amount: '',
     paymentsNotes: '',
     couponNumber: '',
+    amount: [{ value: 'EUR', label: 'EUR' }],
   });
 
-  const setNewValue = (value: string, prop: keyof IFormData) => {
+  const setNewValue = (
+    value: string | SelectItem | SelectItem[],
+    prop: keyof IFormData
+  ) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
@@ -75,8 +84,8 @@ const PayInvoice: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log('radioValue: ', checked.isChecked1);
-  }, [checked.isChecked1]);
+    console.log('value: ', value);
+  }, [value]);
 
   return (
     <div className={s.PayInvoice}>
@@ -102,12 +111,25 @@ const PayInvoice: React.FC = () => {
             error={error}
           />
 
-          <BaseInput
+          <BaseSelect
             name="amount"
-            placeholder="Amount"
-            label="Amount"
             value={value.amount}
-            onChange={(val: string) => setNewValue(val, 'amount')}
+            placeholder="Amount"
+            options={[
+              { value: 'EUR', label: 'EUR' },
+              { value: 'USD', label: 'USD' },
+              { value: 'GBP', label: 'GBP' },
+            ]}
+            onChange={(val: SelectItem[] | SelectItem) =>
+              setNewValue(val, 'amount')
+            }
+            onClear={() => {}}
+            onBlur={() => {}}
+            withLabel
+            // withCounter
+            // multiple
+            // error="werwer"
+            // disabled
           />
         </div>
 
@@ -118,7 +140,6 @@ const PayInvoice: React.FC = () => {
             label="Payments notes (optional)"
             value={value.paymentsNotes}
             onChange={(val: string) => setNewValue(val, 'paymentsNotes')}
-            className={s.Button}
           />
           <p>Note: field can't contain more than 500 characters</p>
         </div>

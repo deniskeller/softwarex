@@ -181,6 +181,14 @@
       }
     }
   }
+
+  &__Disabled,
+  &__Disabled:hover,
+  &__Disabled:focus {
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 .Icon {
@@ -201,17 +209,6 @@
     height: em(24px);
     right: em(36px);
   }
-}
-
-//disabled style
-.Input:disabled,
-.Input:disabled:hover,
-.Input:disabled:focus {
-  cursor: not-allowed;
-  pointer-events: none;
-  background: #f4f4f5;
-  border: 1px solid #e5e7eb !important;
-  color: rgba(26, 26, 26, 0.5);
 }
 
 @include ifdesktop {

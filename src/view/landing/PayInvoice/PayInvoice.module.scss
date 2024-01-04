@@ -127,7 +127,6 @@
 
     &_Fields {
       position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: em(30px) em(27px);
@@ -150,7 +149,6 @@
 
     &_PaymentsNotes {
       position: relative;
-      z-index: 1;
       margin-bottom: em(40px);
       @include iflaptop {
         margin-bottom: em(25px);
