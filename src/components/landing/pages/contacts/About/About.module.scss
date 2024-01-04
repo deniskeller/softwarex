@@ -198,11 +198,17 @@
     }
 
     &_UploadFile {
+      min-height: em(193px);
       margin-bottom: em(44px);
+      @include iflaptop {
+        min-height: em(147px);
+      }
       @include iftablet {
+        min-height: em(132px);
         margin-bottom: em(24px);
       }
       @include ifmobile {
+        min-height: em(132px);
         margin-bottom: em(24px);
       }
     }

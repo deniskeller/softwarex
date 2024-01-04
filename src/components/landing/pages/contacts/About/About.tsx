@@ -3,13 +3,14 @@ import s from './About.module.scss';
 import { BaseButton, BaseContainer, BaseInput, BaseText } from '@base/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
-import { Toast } from '@content/landing/index';
+import { Toast, UploadFile } from '@content/landing/index';
 
 interface IFormData {
   nameSurname: string;
   companyName: string;
   email: string;
   phone: string;
+  files: File[];
 }
 
 const About: React.FC = () => {
@@ -18,10 +19,14 @@ const About: React.FC = () => {
     companyName: '',
     email: '',
     phone: '',
+    files: [],
   };
 
   const [value, setValue] = React.useState<IFormData>(initialState);
-  const setNewValue = (value: string, prop: keyof IFormData) => {
+  const setNewValue = (
+    value: string | number | File[],
+    prop: keyof IFormData
+  ) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
 
@@ -92,15 +97,13 @@ const About: React.FC = () => {
             />
           </div>
 
-          <div className={s.Form_UploadFile}>
-            <BaseInput
-              name="nameSurname"
-              placeholder="Name, Surname"
-              label="Drag & Drop your files here"
-              value={value.nameSurname}
-              onChange={(val: string) => setNewValue(val, 'nameSurname')}
-            />
-          </div>
+          <UploadFile
+            title="Drag & Drop your files here"
+            files={value.files}
+            onChange={(val: any[]) => setNewValue(val, 'files')}
+            className={s.Form_UploadFile}
+            // error="sdfsdf"
+          />
 
           <BaseButton type="submit" design="gradient" className={s.Form_Button}>
             Get a quote

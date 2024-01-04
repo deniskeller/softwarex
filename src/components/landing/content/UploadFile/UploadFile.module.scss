@@ -1,0 +1,106 @@
+.FileInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: inherit;
+
+  .Empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: em(24px) em(16px);
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    min-height: inherit;
+    border-radius: em(29px);
+    border: 2px dashed rgba(31, 30, 88, 0.1);
+    transition: border $speed ease;
+
+    &_Title {
+      color: #1f1e58;
+      text-align: center;
+      font-size: em(16px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      opacity: 0.6;
+      @include ifdesktop {
+        font-size: em(20px);
+      }
+    }
+
+    &:hover {
+      border-color: rgba(31, 30, 88, 0.3);
+    }
+
+    &__Active {
+      border-color: rgba(31, 30, 88, 0.3) !important;
+    }
+
+    &__Error {
+      border-color: #c92100 !important;
+    }
+  }
+
+  .UploadFile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: em(24px) em(16px);
+    width: 100%;
+    min-height: inherit;
+    border-radius: em(29px);
+    border: 2px dashed rgba(31, 30, 88, 0.1);
+    transition: border $speed ease;
+
+    &_Title {
+      color: #1f1e58;
+      text-align: center;
+      font-size: em(18px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include ifdesktop {
+        font-size: em(20px);
+      }
+    }
+
+    &_Delete {
+      width: em(14px);
+      height: em(14px);
+      cursor: pointer;
+      margin-left: em(16px);
+      &:hover {
+        path {
+          transition: opacity $speed ease;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      border-color: rgba(31, 30, 88, 0.3);
+    }
+  }
+
+  .ErrorText {
+    padding-left: em(27px);
+    margin-top: em(3px);
+    @include ifdesktop {
+      padding-left: em(36px);
+      margin-top: em(5px);
+    }
+    p {
+      color: $error;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(13px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      @include ifdesktop {
+        font-size: em(15px);
+      }
+    }
+  }
+}
