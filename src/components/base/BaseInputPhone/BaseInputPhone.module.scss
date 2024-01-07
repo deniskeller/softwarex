@@ -172,9 +172,12 @@
     min-width: 100%;
     max-height: em(268px);
     overflow: hidden;
-    border-radius: em(29px);
+    border-radius: em(22px);
     background: #fcfcfc;
     box-shadow: 0px 2px 16px 0px rgba(18, 18, 18, 0.1);
+    @include ifdesktop {
+      border-radius: em(29px);
+    }
 
     &_Search {
       position: sticky;
