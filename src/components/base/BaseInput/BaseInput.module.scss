@@ -53,7 +53,7 @@
       width: 99.7%;
       height: em(12px);
       border: 2px solid rgba(31, 30, 88, 0.1);
-      transition: $speed ease all;
+      transition: all $speed ease;
       border-top: none;
       border-radius: 0px 0px 50px 60px/0px 0px 30px 30px;
       @include ifdesktop {
@@ -87,6 +87,10 @@
         font-size: em($size);
       }
 
+      &::placeholder {
+        user-select: none;
+      }
+
       &::-webkit-contacts-auto-fill-button {
         opacity: 0;
       }
@@ -95,7 +99,7 @@
     &:hover {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 1);
+        border-color: rgba(31, 30, 88, 0.7);
       }
     }
   }
@@ -104,7 +108,7 @@
     .BaseInput_Wrapper {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 1);
+        border-color: rgba(31, 30, 88, 0.7);
       }
     }
     .BaseInput_Label {

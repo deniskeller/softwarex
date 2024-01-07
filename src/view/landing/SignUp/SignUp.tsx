@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ToMainPage, Toast } from '@content/landing/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
 
 interface IFormData {
   name: string;
@@ -98,13 +99,12 @@ const SignUp: React.FC = () => {
             error={error}
           />
 
-          <BaseInput
+          <BaseInputPhone
             name="phone"
             placeholder="Phone"
             label="Phone"
             value={value.phone}
             onChange={(val: string) => setNewValue(val, 'phone')}
-            error={error}
           />
         </div>
 

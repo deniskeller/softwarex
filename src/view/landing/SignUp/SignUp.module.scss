@@ -127,7 +127,7 @@
 
     &_Fields {
       position: relative;
-      z-index: 1;
+      z-index: 10;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: em(30px) em(27px);

@@ -4,6 +4,7 @@ import { BaseButton, BaseContainer, BaseInput, BaseText } from '@base/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import { Toast, UploadFile } from '@content/landing/index';
+import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
 
 interface IFormData {
   nameSurname: string;
@@ -18,7 +19,7 @@ const About: React.FC = () => {
     nameSurname: '',
     companyName: '',
     email: '',
-    phone: '',
+    phone: '99',
     files: [],
   };
 
@@ -81,6 +82,7 @@ const About: React.FC = () => {
             />
 
             <BaseInput
+              type="email"
               name="email"
               placeholder="Email"
               label="Email"
@@ -88,12 +90,14 @@ const About: React.FC = () => {
               onChange={(val: string) => setNewValue(val, 'email')}
             />
 
-            <BaseInput
+            <BaseInputPhone
               name="phone"
               placeholder="Phone"
               label="Phone"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
+              // error="Number doesn’t exist."
+              // theme="light"
             />
           </div>
 

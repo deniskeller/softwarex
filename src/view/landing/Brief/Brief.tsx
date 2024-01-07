@@ -10,6 +10,7 @@ import { ToMainPage, Toast } from '@content/landing/index';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
+import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
 
 interface IFormData {
   name: string;
@@ -382,7 +383,7 @@ const Brief: React.FC = () => {
                   onChange={(val: string) => setNewValue(val, 'email')}
                 />
 
-                <BaseInput
+                <BaseInputPhone
                   name="phone"
                   placeholder="Phone"
                   label="Phone"

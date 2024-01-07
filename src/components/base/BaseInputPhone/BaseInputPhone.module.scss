@@ -1,0 +1,433 @@
+.InputPhone {
+  font-size: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &_Label {
+    position: absolute;
+    pointer-events: none;
+    top: em(8px);
+    left: em(27px);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    transform-origin: left top;
+    transform: translate(em(0px), em(-12px)) scale(0.8);
+    @include ifdesktop {
+      transform: translate(em(0px), em(-18px)) scale(0.8);
+      top: em(14px);
+      left: em(36px);
+    }
+
+    span {
+      color: $text;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: all 0.3s ease;
+      @include ifdesktop {
+        font-size: em(18px);
+      }
+    }
+  }
+
+  .Flag {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 0 0 em(35px);
+    @include ifdesktop {
+      padding: 0 0 0 em(46px);
+    }
+    &_Icon {
+      display: flex;
+      width: em(16px);
+      height: em(11px);
+      margin-right: em(6px);
+      @include ifdesktop {
+        width: em(21px);
+        height: em(15px);
+        margin-right: em(8px);
+      }
+      svg {
+        width: inherit;
+        height: inherit;
+        overflow: visible;
+      }
+    }
+    &_CountryCode {
+      line-height: 100%;
+      margin-right: em(4px);
+      span {
+        color: #1f1e58;
+        font-size: em(15px);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        opacity: 0.6;
+        transition: opacity $speed ease;
+        @include ifdesktop {
+          font-size: em(18px);
+        }
+      }
+    }
+    &_Chevron {
+      width: em(18px);
+      height: em(18px);
+      transition: transform $speed ease;
+      @include ifdesktop {
+        width: em(24px);
+        height: em(24px);
+      }
+      path {
+        opacity: 0.4;
+        transition: opacity $speed ease;
+      }
+    }
+  }
+
+  &_Wrapper {
+    position: relative;
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 99.7%;
+      height: em(12px);
+      border: 2px solid rgba(31, 30, 88, 0.1);
+      transition: all $speed ease;
+      border-top: none;
+      border-radius: 0px 0px 50px 60px/0px 0px 30px 30px;
+      @include ifdesktop {
+        height: em(16px);
+      }
+    }
+
+    .Input {
+      $size: 15px;
+      width: 100%;
+      height: em(45px, $size);
+      padding: 0 em(35px, $size) 0 em(100px, $size);
+      outline: none;
+      border: none;
+      position: relative;
+      box-shadow: none;
+      background: transparent;
+      transition: $speed ease all;
+      @include placeholder-color(transparent);
+
+      color: $text;
+      font-family: 'Gantari', sans-serif;
+      font-size: em($size);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include ifdesktop {
+        $size: 18px;
+        height: em(60px, $size);
+        padding: 0 em(46px, $size) 0 em(132px, $size);
+        font-size: em($size);
+      }
+      &::placeholder {
+        user-select: none;
+      }
+
+      &::-webkit-contacts-auto-fill-button {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      &::before,
+      .Input {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+      .Flag {
+        &_CountryCode span {
+          opacity: 0.8;
+        }
+        &_Chevron path {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .Dropdown {
+    position: absolute;
+    top: calc(100% + em(3px));
+    left: 0;
+    z-index: 1000;
+    width: auto;
+    min-width: 100%;
+    max-height: em(268px);
+    overflow: hidden;
+    border-radius: em(29px);
+    background: #fcfcfc;
+    box-shadow: 0px 2px 16px 0px rgba(18, 18, 18, 0.1);
+
+    &_Search {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: em(8px);
+      border-bottom: 1px solid rgba(31, 30, 88, 0.1);
+      background: $white;
+      .IconSearch {
+        position: absolute;
+        z-index: 1;
+        left: em(24px);
+        top: 50%;
+        transform: translate(0%, -50%);
+        width: em(22px);
+        height: em(22px);
+      }
+      .InputSearch {
+        background: #f0f0f3;
+        $size: 16px;
+        width: 100%;
+        height: em(44px, $size);
+        padding: 0 em(20px) 0 em(50px, $size);
+        border-radius: em(21px, $size);
+        outline: none;
+        border: none;
+        position: relative;
+        box-shadow: none;
+        @include placeholder-color(rgba(31, 30, 88, 0.5));
+
+        color: $text;
+        font-family: 'Gantari', sans-serif;
+        font-size: em($size);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include ifdesktop {
+          $size: 14px;
+          height: em(44px, $size);
+          padding: 0 em(20px) 0 em(50px, $size);
+          font-size: em($size);
+        }
+      }
+    }
+
+    &_List {
+      overflow: auto;
+      max-height: em(208px);
+      padding: em(6px) 0 em(8px);
+      scrollbar-color: #d4d3d3 transparent;
+      scrollbar-width: thin;
+      &::-webkit-scrollbar {
+        width: em(3px);
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 em(6px) #d4d3d3;
+        border-radius: em(100px);
+      }
+
+      .DropdownItem {
+        position: relative;
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: em(12.5px) em(56px) em(12.5px) em(16px);
+        min-width: max-content;
+        &:not(:last-child) {
+          margin-bottom: em(8px);
+        }
+
+        &_Flag {
+          display: flex;
+          width: em(24px);
+          height: em(18px);
+          margin-right: em(12px);
+          flex-shrink: 0;
+          svg {
+            width: inherit;
+            height: inherit;
+            overflow: visible;
+          }
+        }
+
+        &_CountryCode {
+          line-height: 100%;
+          margin-right: em(4px);
+          span {
+            color: #1f1e58;
+            font-size: em(16px);
+            font-style: normal;
+            line-height: normal;
+            font-weight: 400;
+          }
+        }
+
+        &_Label {
+          color: #1f1e58;
+          font-family: 'Gantari', sans-serif;
+          font-size: em(16px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        &:hover {
+          background: rgba(31, 30, 88, 0.06);
+        }
+      }
+    }
+
+    &_Empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: em(23px) em(10px);
+      p {
+        color: #1f1e58;
+        font-size: em(16px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .Icon {
+        position: absolute;
+        width: em(46px);
+        height: em(14px);
+        flex-shrink: 0;
+        &__Top {
+          top: em(9px);
+        }
+        &__Bottom {
+          bottom: em(9px);
+        }
+      }
+    }
+  }
+
+  &__Focus {
+    .InputPhone_Wrapper {
+      &::before,
+      .Input {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
+    .InputPhone_Label {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+
+    .Flag {
+      &_CountryCode span {
+        opacity: 0.8;
+      }
+      &_Chevron path {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__Error {
+    .InputPhone_Wrapper {
+      &::before,
+      .Input {
+        border-color: $error;
+      }
+    }
+
+    .InputPhone_ErrorText {
+      padding-left: em(27px);
+      margin-top: em(3px);
+      @include ifdesktop {
+        padding-left: em(36px);
+        margin-top: em(5px);
+      }
+      p {
+        color: $error;
+        font-family: 'Gantari', sans-serif;
+        font-size: em(13px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include ifdesktop {
+          font-size: em(15px);
+        }
+      }
+    }
+  }
+
+  &__LightTheme {
+    .InputPhone_Label span {
+      color: $white;
+    }
+    .InputPhone_Wrapper {
+      &::before {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-top: none;
+      }
+      &:hover {
+        &::before,
+        .Input {
+          border-color: rgba(255, 255, 255, 1);
+        }
+      }
+      .Input {
+        color: $white;
+      }
+    }
+    &.InputPhone__Focus {
+      .InputPhone_Wrapper {
+        &::before,
+        .Input {
+          border-color: rgba(255, 255, 255, 1);
+        }
+      }
+      .Flag {
+        &_CountryCode span {
+          color: $white;
+        }
+        &_Chevron path {
+          stroke: $white;
+        }
+      }
+    }
+
+    .Flag {
+      &_CountryCode span {
+        color: $white;
+      }
+      &_Chevron path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &__Disabled,
+  &__Disabled:hover,
+  &__Disabled:focus {
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+@include ifdesktop {
+}

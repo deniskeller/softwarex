@@ -3,6 +3,7 @@ import s from './Form.module.scss';
 import { BaseButton, BaseContainer, BaseInput, BaseText } from '@base/index';
 import toast from 'react-hot-toast';
 import { Toast } from '@content/landing/index';
+import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
 
 interface IFormData {
   nameSurname: string;
@@ -55,13 +56,14 @@ const Form: React.FC = () => {
               value={value.nameSurname}
               onChange={(val: string) => setNewValue(val, 'nameSurname')}
             />
-            <BaseInput
-              theme="light"
+
+            <BaseInputPhone
               name="phone"
               placeholder="Phone"
               label="Phone"
               value={value.phone}
               onChange={(val: string) => setNewValue(val, 'phone')}
+              theme="light"
             />
           </div>
 
