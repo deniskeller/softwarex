@@ -40,10 +40,10 @@
 
   &_Wrapper {
     position: relative;
-    padding: 0 em(35px);
-    @include ifdesktop {
-      padding: 0 em(46px);
-    }
+    // padding: 0 em(35px);
+    // @include ifdesktop {
+    //   padding: 0 em(46px);
+    // }
     &::before {
       display: block;
       content: '';
@@ -65,7 +65,7 @@
       $size: 15px;
       width: 100%;
       height: em(45px, $size);
-      padding: em(12px, $size) 0 em(10px, $size);
+      padding: em(12px, $size) em(35px, $size) em(10px, $size) em(35px, $size);
       outline: none;
       border: none;
       position: relative;
@@ -83,7 +83,7 @@
       @include ifdesktop {
         $size: 18px;
         height: em(60px, $size);
-        padding: em(16px, $size) 0 em(15px, $size);
+        padding: em(16px, $size) em(46px, $size) em(15px, $size) em(46px, $size);
         font-size: em($size);
       }
 
@@ -99,7 +99,7 @@
     &:hover {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 0.7);
+        border-color: rgba(31, 30, 88, 0.6);
       }
     }
   }
@@ -108,7 +108,7 @@
     .BaseInput_Wrapper {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 0.7);
+        border-color: rgba(31, 30, 88, 0.6);
       }
     }
     .BaseInput_Label {
