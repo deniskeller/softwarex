@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './PersonalDetails.module.scss';
-import { BaseContainer, BaseInput, BaseText } from '@base/index';
+import { BaseContainer, BaseIcon, BaseInput, BaseText } from '@base/index';
 import Image from 'next/image';
+import BaseInputPhone from '@base/BaseInputPhone/BaseInputPhone';
+import { ALL_ICONS } from '@constants/icons';
 
 interface IFormData {
   name: string;
@@ -16,12 +18,15 @@ const PersonalDetails: React.FC = () => {
     name: 'Alexander',
     surname: 'Williamson',
     email: 'alexanderwilliamson@gmail.com',
-    phone: '+ 79 990 000 00 00',
+    phone: '',
   });
 
   const setNewValue = (value: string, prop: keyof IFormData) => {
     setValue((prev) => ({ ...prev, [prop]: value }));
   };
+
+  const [nameDisabled, setNameDisabled] = useState(true);
+  const [surnameDisabled, setSurnameDisabled] = useState(true);
 
   return (
     <section className={s.PersonalDetails}>
@@ -44,39 +49,78 @@ const PersonalDetails: React.FC = () => {
             View and edit some of your data.
           </BaseText>
 
-          <div className={s.Form_Fields}>
-            <BaseInput
-              name="name"
-              placeholder="Name"
-              label="Name"
-              value={value.name}
-              onChange={(val: string) => setNewValue(val, 'name')}
-            />
+          <ul className={s.Form_Fields}>
+            <li>
+              <BaseInput
+                name="name"
+                placeholder="Name"
+                label="Name"
+                value={value.name}
+                onChange={(val: string) => setNewValue(val, 'name')}
+                disabled={nameDisabled}
+              />
+              {nameDisabled ? (
+                <BaseIcon
+                  viewBox="0 0 19 19"
+                  icon={ALL_ICONS.PENCIL}
+                  className={s.Icon}
+                  onClick={() => setNameDisabled(false)}
+                />
+              ) : (
+                <BaseIcon
+                  viewBox="0 0 19 19"
+                  icon={ALL_ICONS.DISKETTE}
+                  className={s.Icon}
+                  onClick={() => setNameDisabled(true)}
+                />
+              )}
+            </li>
+            <li>
+              <BaseInput
+                name="surname"
+                placeholder="Surname"
+                label="Surname"
+                value={value.surname}
+                onChange={(val: string) => setNewValue(val, 'surname')}
+                disabled={surnameDisabled}
+              />
 
-            <BaseInput
-              name="surname"
-              placeholder="Surname"
-              label="Surname"
-              value={value.surname}
-              onChange={(val: string) => setNewValue(val, 'surname')}
-            />
-
-            <BaseInput
-              name="email"
-              placeholder="Email"
-              label="Email"
-              value={value.email}
-              onChange={(val: string) => setNewValue(val, 'email')}
-            />
-
-            <BaseInput
-              name="phone"
-              placeholder="Phone"
-              label="Phone"
-              value={value.phone}
-              onChange={(val: string) => setNewValue(val, 'phone')}
-            />
-          </div>
+              {surnameDisabled ? (
+                <BaseIcon
+                  viewBox="0 0 19 19"
+                  icon={ALL_ICONS.PENCIL}
+                  className={s.Icon}
+                  onClick={() => setSurnameDisabled(false)}
+                />
+              ) : (
+                <BaseIcon
+                  viewBox="0 0 19 19"
+                  icon={ALL_ICONS.DISKETTE}
+                  className={s.Icon}
+                  onClick={() => setSurnameDisabled(true)}
+                />
+              )}
+            </li>
+            <li>
+              <BaseInput
+                name="email"
+                placeholder="Email"
+                label="Email"
+                value={value.email}
+                onChange={(val: string) => setNewValue(val, 'email')}
+              />
+            </li>
+            <li>
+              <BaseInputPhone
+                type="phone"
+                name="phone"
+                placeholder="Phone"
+                label="Phone"
+                value={value.phone}
+                onChange={(val: string) => setNewValue(val, 'phone')}
+              />
+            </li>
+          </ul>
         </form>
       </BaseContainer>
     </section>

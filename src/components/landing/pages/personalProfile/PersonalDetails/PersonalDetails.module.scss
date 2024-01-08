@@ -72,6 +72,28 @@
         grid-template-columns: 1fr 1fr;
         gap: em(30px);
       }
+      li {
+        position: relative;
+        .Icon {
+          cursor: pointer;
+          position: absolute;
+          width: em(18px);
+          height: em(18px);
+          right: em(27px);
+          top: 50%;
+          transform: translate(0, -50%);
+          opacity: 0.6;
+          transition: opacity $speed ease;
+          &:hover {
+            opacity: 1;
+          }
+          @include ifdesktop {
+            width: em(24px);
+            height: em(24px);
+            right: em(36px);
+          }
+        }
+      }
     }
   }
 }

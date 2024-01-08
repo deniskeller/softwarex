@@ -5,6 +5,7 @@
   flex-direction: column;
 
   &_Label {
+    user-select: none;
     position: absolute;
     pointer-events: none;
     top: em(8px);
@@ -65,7 +66,7 @@
       $size: 15px;
       width: 100%;
       height: em(45px, $size);
-      padding: em(12px, $size) em(35px, $size) em(10px, $size) em(35px, $size);
+      padding: em(12px, $size) em(26px, $size) em(10px, $size) em(35px, $size);
       outline: none;
       border: none;
       position: relative;
@@ -192,6 +193,14 @@
     cursor: not-allowed;
     pointer-events: none;
     user-select: none;
+    .BaseInput_Label span {
+      opacity: 0.6;
+    }
+    .BaseInput_Wrapper {
+      .Input {
+        opacity: 0.4;
+      }
+    }
   }
 }
 

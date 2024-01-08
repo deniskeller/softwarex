@@ -29,7 +29,7 @@
     &:hover {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 1);
+        border-color: rgba(31, 30, 88, 0.6);
       }
     }
   }
@@ -196,7 +196,7 @@
     .BaseSelect_Wrapper {
       &::before,
       .Input {
-        border-color: rgba(31, 30, 88, 1);
+        border-color: rgba(31, 30, 88, 0.6);
       }
     }
     .BaseSelect_Label {

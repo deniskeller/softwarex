@@ -37,7 +37,7 @@
       grid-template-columns: repeat(4, 1fr);
       background: rgba(31, 30, 88, 0.1);
       @include ifmobile {
-        grid-template-columns: em(82px) em(68px) em(74px) em(106px);
+        grid-template-columns: em(82px) em(68px) em(74px) em(102px);
       }
       &_Column {
         display: flex;
@@ -82,7 +82,7 @@
         grid-template-columns: repeat(4, 1fr);
         border-bottom: 1px solid rgba(31, 30, 88, 0.1);
         @include ifmobile {
-          grid-template-columns: em(82px) em(68px) em(74px) em(106px);
+          grid-template-columns: em(82px) em(68px) em(74px) em(102px);
         }
         .OrderId,
         .Amount,
