@@ -1,3 +1,5 @@
+$currentSpeed: 0.5s;
+
 .Bonuses {
   margin-bottom: em(217px);
   @include iflaptop {
@@ -65,34 +67,39 @@
       align-items: center;
       flex-shrink: 0;
       border-radius: em(31px);
-      border: 2px solid rgba(109, 107, 206, 0.26);
       width: em(291px);
       min-height: em(370px);
       padding: em(56px) em(28px) em(46px) em(28px);
-      background: $white;
       filter: drop-shadow(2px 4px 12px rgba(31, 30, 88, 0.1));
       @include iflaptop {
         width: em(305px);
       }
       @include iftablet {
         width: em(220px);
-        padding: em(44px) em(28px) em(29px) em(28px);
+        min-height: em(312px);
+        padding: em(44px) em(10px) em(29px) em(10px);
       }
       @include ifmobile {
         flex-shrink: initial;
-        width: em(288px);
+        width: em(268px);
+        padding: em(89px) em(28px) em(39px) em(28px);
         flex-shrink: 1;
       }
 
-      &_Background {
-        position: absolute;
-        top: em(-8px);
-        left: em(-8px);
-        overflow: visible;
-      }
-
       &_Title {
+        position: relative;
+        z-index: 2;
         margin-bottom: em(22px);
+
+        @include iflaptop {
+          min-height: 32%;
+        }
+        @include iftablet {
+          min-height: 46%;
+        }
+        @include ifmobile {
+          min-height: 46%;
+        }
         p {
           color: $text;
           text-align: center;
@@ -102,7 +109,10 @@
           line-height: normal;
         }
       }
+
       &_ForExample {
+        position: relative;
+        z-index: 2;
         margin-bottom: em(22px);
         p {
           color: $text;
@@ -115,7 +125,10 @@
           opacity: 0.7;
         }
       }
+
       &_Description {
+        position: relative;
+        z-index: 2;
         p {
           color: $text;
           text-align: center;
@@ -127,8 +140,63 @@
         }
       }
 
+      .Background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: em(31px);
+        transition: opacity $currentSpeed ease;
+        &__Default {
+          background: rgba(109, 107, 206, 0.26);
+        }
+        &__Gradient {
+          opacity: 0;
+          background: linear-gradient(345deg, #6e6ccf 0%, #fb8873 100%);
+        }
+        &__White {
+          background: $white;
+          z-index: 1;
+          top: em(2px);
+          left: em(2px);
+          right: em(2px);
+          bottom: em(2px);
+          border-radius: em(29px);
+        }
+      }
+
+      .Number {
+        position: absolute;
+        top: em(-93px);
+        right: 50%;
+        transform: translate(50%, 0%);
+        transition: opacity $currentSpeed ease;
+        width: em(291px);
+        height: em(96px);
+        @include iftablet {
+          width: em(271px);
+          height: em(96px);
+          top: em(-84px);
+        }
+        @include ifmobile {
+          width: em(230px);
+          height: em(70px);
+          top: em(-66px);
+        }
+
+        &__Gradient {
+          opacity: 0;
+        }
+      }
+
       &:hover {
-        border-color: #fb8873;
+        .Background__Gradient {
+          opacity: 1;
+        }
+        .Number__Gradient {
+          opacity: 1;
+        }
         .Slide_Title {
           p {
             background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
@@ -140,11 +208,4 @@
       }
     }
   }
-}
-
-@include iflaptop {
-}
-@include iftablet {
-}
-@include ifmobile {
 }

@@ -1,3 +1,5 @@
+$currentSpeed: 0.5s;
+
 .HowWeWork {
   margin-bottom: em(340px);
   @include iflaptop {
@@ -107,10 +109,7 @@
       min-height: em(370px);
       width: em(291px);
       padding: em(31px) em(28px) em(46px) em(28px);
-      filter: url(#border) drop-shadow(2px 4px 12px rgba(31, 30, 88, 0.1));
-      &:hover {
-        filter: url(#border2);
-      }
+      filter: drop-shadow(2px 4px 12px rgba(31, 30, 88, 0.1));
 
       @include iftablet {
         width: em(220px);
@@ -124,7 +123,7 @@
 
       &_Number {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         margin-bottom: em(22px);
         @include iftablet {
           margin-bottom: em(18px);
@@ -149,7 +148,7 @@
 
       &_Title {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         margin-bottom: em(22px);
         @include iftablet {
           margin-bottom: em(18px);
@@ -164,6 +163,8 @@
       }
 
       &_Description {
+        position: relative;
+        z-index: 2;
         p {
           color: $text;
           text-align: center;
@@ -175,56 +176,51 @@
         }
       }
 
-      svg {
-        width: inherit;
-        height: -webkit-fill-available;
-        @extend %fullsize;
-        visibility: hidden;
-        overflow: visible;
-      }
-
-      .Number {
+      .Background {
         position: absolute;
-        top: -400px;
+        top: 0;
+        left: 0;
         right: 0;
-      }
-
-      &__1,
-      &__2 {
-        &::after {
-          background: #fff;
-          // border: 2px solid rgba(109, 107, 206, 0.26);
-          border-right: 0;
-          border-bottom: 0;
-          content: '';
-          height: em(40px);
-          position: absolute;
-          top: em(45px);
-          right: em(-16px);
-          transform: rotate(135deg);
-          width: em(40px);
-          @include iftablet {
-            height: em(24px);
-            right: em(-14px);
-            width: em(24px);
-          }
-          @include ifmobile {
-            height: em(30px);
-            right: em(-17px);
-            width: em(30px);
-          }
+        bottom: 0;
+        border-radius: em(31px);
+        transition: opacity $currentSpeed ease;
+        &__Default {
+          background: rgba(109, 107, 206, 0.26);
+        }
+        &__Gradient {
+          opacity: 0;
+          background: linear-gradient(345deg, #6e6ccf 0%, #fb8873 100%);
+        }
+        &__White {
+          background: $white;
+          z-index: 1;
+          top: em(2px);
+          left: em(2px);
+          right: em(2px);
+          bottom: em(2px);
+          border-radius: em(29px);
         }
       }
 
-      // &__3 {
-      // }
+      .Arrow {
+        position: absolute;
+        top: em(48px);
+        right: em(-18px);
+        width: em(22px);
+        height: em(50px);
+        transition: opacity $currentSpeed ease;
+        &__Gradient {
+          opacity: 0;
+        }
+      }
 
       &:hover {
-        // filter: url(#gradient);
-        // background: linear-gradient(345deg, #6e6ccf 0%, #fb8873 100%);
-        // &::after {
-        // border-color: rgba(251, 136, 115, 1);
-        // }
+        .Background__Gradient {
+          opacity: 1;
+        }
+        .Arrow__Gradient {
+          opacity: 1;
+        }
         .Slide_Title span {
           background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
           background-clip: text;
@@ -241,4 +237,13 @@
 @include iftablet {
 }
 @include ifmobile {
+}
+
+@keyframes dash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -6,33 +6,6 @@ import { ALL_ICONS } from '@constants/icons';
 const Expertise: React.FC = () => {
   const refExpertiseLogo = useRef(null);
 
-  // const shape2 =
-  //   'M469.539032,263.986786H-0.000001L0,229.890961c310.649475,58.156982,255.61113-98.5,469.539032-65.062302V263.986786z';
-  // const shape3 =
-  //   'M469.539032,263.986786H-0.000001L0,0c226.11113,0,182.887283-0.414484,469.539032,0V263.986786zz';
-
-  // new TimelineMax({
-  //   repeat: -1,
-  //   repeatDelay: 1,
-  // })
-  //   .to(wave, 0.8, {
-  //     attr: { d: shape2 },
-  //     ease: Power2.easeIn,
-  //   })
-  //   .to(wave, 0.8, {
-  //     attr: { d: shape3 },
-  //     ease: Power2.easeOut,
-  //     fill: '#77aeff',
-  //   })
-  //   .from(
-  //     logo,
-  //     0.8,
-  //     {
-  //       y: 75,
-  //     },
-  //     '-=.8'
-  //   );
-
   return (
     <section className={s.Expertise}>
       <BaseContainer className={s.Expertise_Container}>
