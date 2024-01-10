@@ -116,3 +116,18 @@
 }
 @include ifmobile {
 }
+
+#svg__underline {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: svg__underlineInfiniteAnimation 3s infinite linear;
+}
+
+@keyframes svg__underlineInfiniteAnimation {
+  from {
+    stroke-dashoffset: 822;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

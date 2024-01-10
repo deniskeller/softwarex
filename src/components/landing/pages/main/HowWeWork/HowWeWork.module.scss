@@ -105,11 +105,13 @@
       border-radius: em(31px);
       background: #fff;
       min-height: em(370px);
-      border: 2px solid rgba(109, 107, 206, 0.26);
-      filter: drop-shadow(2px 4px 12px rgba(31, 30, 88, 0.1));
-
       width: em(291px);
       padding: em(31px) em(28px) em(46px) em(28px);
+      filter: url(#border) drop-shadow(2px 4px 12px rgba(31, 30, 88, 0.1));
+      &:hover {
+        filter: url(#border2);
+      }
+
       @include iftablet {
         width: em(220px);
         padding: em(13px) em(28px) em(29px) em(28px);
@@ -175,22 +177,30 @@
 
       svg {
         width: inherit;
-        height: inherit;
+        height: -webkit-fill-available;
         @extend %fullsize;
+        visibility: hidden;
+        overflow: visible;
+      }
+
+      .Number {
+        position: absolute;
+        top: -400px;
+        right: 0;
       }
 
       &__1,
       &__2 {
         &::after {
           background: #fff;
-          border: 2px solid rgba(109, 107, 206, 0.26);
+          // border: 2px solid rgba(109, 107, 206, 0.26);
           border-right: 0;
           border-bottom: 0;
           content: '';
           height: em(40px);
           position: absolute;
           top: em(45px);
-          right: em(-22px);
+          right: em(-16px);
           transform: rotate(135deg);
           width: em(40px);
           @include iftablet {
@@ -210,10 +220,11 @@
       // }
 
       &:hover {
-        border-color: rgba(251, 136, 115, 1);
-        &::after {
-          border-color: rgba(251, 136, 115, 1);
-        }
+        // filter: url(#gradient);
+        // background: linear-gradient(345deg, #6e6ccf 0%, #fb8873 100%);
+        // &::after {
+        // border-color: rgba(251, 136, 115, 1);
+        // }
         .Slide_Title span {
           background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
           background-clip: text;
