@@ -59,8 +59,8 @@ const SignUp: React.FC = () => {
       <div className={s.Background}></div>
 
       <form
-        action=""
-        onSubmit={submitHandler}
+        // action=""
+        // onSubmit={submitHandler}
         className={s.Form}
         autoComplete="off"
       >
@@ -202,7 +202,12 @@ const SignUp: React.FC = () => {
           </ul>
         </div>
 
-        <BaseButton type="submit" design="gradient" className={s.Form_Button}>
+        <BaseButton
+          type="submit"
+          design="gradient"
+          className={s.Form_Button}
+          onClick={submitHandler}
+        >
           Get a quote
         </BaseButton>
 
