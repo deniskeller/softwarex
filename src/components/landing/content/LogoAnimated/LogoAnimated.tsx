@@ -112,10 +112,10 @@ const LogoAnimated: React.FC<Props> = ({ className }) => {
         'stroke-dasharray': `0,${0},${length - TAIL_LENGHT},${length}`,
       });
       gsap.to(boxElement.querySelector('.start'), 2, {
-        'stop-color': '#6E6CCF',
+        'stop-color': '#FB8873',
       });
       gsap.to(boxElement.querySelector('.stop'), 2, {
-        'stop-color': '#FB8873',
+        'stop-color': '#6E6CCF',
       });
     })();
   }, []);
@@ -123,9 +123,9 @@ const LogoAnimated: React.FC<Props> = ({ className }) => {
   return (
     <div ref={box} style={{ opacity: 0 }} className={className}>
       <svg
-        width="345"
+        width="445"
         height="175"
-        viewBox="-3 -3 453 184"
+        viewBox="-3 -3 473 184"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

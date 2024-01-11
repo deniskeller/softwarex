@@ -43,7 +43,7 @@ const Expertise: React.FC = () => {
           user's preferences.
         </BaseText> */}
 
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 194 105"
           fill="none"
@@ -70,7 +70,7 @@ const Expertise: React.FC = () => {
               <stop offset="1" stopColor="#FB8873" />
             </linearGradient>
           </defs>
-        </svg>
+        </svg> */}
 
         <LogoAnimated className={s.Expertise_Logo} />
       </BaseContainer>

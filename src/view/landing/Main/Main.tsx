@@ -13,7 +13,7 @@ import {
 const Main: React.FC = () => {
   return (
     <div className={s.Main}>
-      <Header />
+      {/* <Header /> */}
       <Expertise />
       <Solutions />
       <HowWeWork />
