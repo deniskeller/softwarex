@@ -59,7 +59,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <form className={s.Form} onSubmit={submitHandler}>
+        <form className={s.Form} onSubmit={submitHandler} autoComplete="off">
           <div className={s.Form_Title}>
             <h2>Tell us about your project</h2>
           </div>

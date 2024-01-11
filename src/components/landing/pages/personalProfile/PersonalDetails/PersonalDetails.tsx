@@ -40,7 +40,7 @@ const PersonalDetails: React.FC = () => {
           className={s.PersonalDetails_Image}
         />
 
-        <form className={s.Form}>
+        <form className={s.Form} autoComplete="off">
           <BaseText className={s.Form_Title} as="h2">
             Personal details
           </BaseText>

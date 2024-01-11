@@ -36,7 +36,7 @@ const Form: React.FC = () => {
   return (
     <section className={s.Form}>
       <BaseContainer className={s.Form_Container}>
-        <form action="" onSubmit={submitHandler}>
+        <form action="" onSubmit={submitHandler} autoComplete="off">
           <Image
             src="/pictures/images/main/main-form-1920.png"
             width={1099}

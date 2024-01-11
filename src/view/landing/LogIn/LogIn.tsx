@@ -43,7 +43,12 @@ const LogIn: React.FC = () => {
     <div className={s.Login}>
       <div className={s.Background}></div>
 
-      <form action="" onSubmit={submitHandler} className={s.Form}>
+      <form
+        action=""
+        onSubmit={submitHandler}
+        className={s.Form}
+        autoComplete="off"
+      >
         <div className={s.Form_Background}></div>
         <div className={s.Form_Title}>
           <h2>Log in</h2>

@@ -40,7 +40,12 @@ const ResetPassword: React.FC = () => {
     <div className={s.ResetPassword}>
       <div className={s.Background}></div>
 
-      <form action="" onSubmit={submitHandler} className={s.Form}>
+      <form
+        action=""
+        onSubmit={submitHandler}
+        className={s.Form}
+        autoComplete="off"
+      >
         <div className={s.Form_Background}></div>
         <div className={s.Form_Title}>
           <h2>Password reset</h2>

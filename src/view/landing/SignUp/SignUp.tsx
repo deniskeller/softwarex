@@ -58,7 +58,12 @@ const SignUp: React.FC = () => {
     <div className={s.SignUp}>
       <div className={s.Background}></div>
 
-      <form action="" onSubmit={submitHandler} className={s.Form}>
+      <form
+        action=""
+        onSubmit={submitHandler}
+        className={s.Form}
+        autoComplete="off"
+      >
         <div className={s.Form_Background}></div>
         <div className={s.Form_Title}>
           <h2>Sign Up</h2>

@@ -340,7 +340,11 @@ const Brief: React.FC = () => {
               <ToMainPage className={s.Text_ToMainPage} />
             </div>
 
-            <form className={s.Form} onSubmit={submitHandler}>
+            <form
+              className={s.Form}
+              onSubmit={submitHandler}
+              autoComplete="off"
+            >
               <div className={s.Form_Fields}>
                 <BaseInput
                   name="name"
