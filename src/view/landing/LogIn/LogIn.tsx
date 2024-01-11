@@ -43,12 +43,7 @@ const LogIn: React.FC = () => {
     <div className={s.Login}>
       <div className={s.Background}></div>
 
-      <form
-        action=""
-        onSubmit={submitHandler}
-        className={s.Form}
-        autoComplete="off"
-      >
+      <form className={s.Form} autoComplete="off">
         <div className={s.Form_Background}></div>
         <div className={s.Form_Title}>
           <h2>Log in</h2>
@@ -69,6 +64,7 @@ const LogIn: React.FC = () => {
             value={value.name}
             onChange={(val: string) => setNewValue(val, 'name')}
             error={error}
+            autocomplete="new-password"
           />
 
           <BaseInput
@@ -80,6 +76,7 @@ const LogIn: React.FC = () => {
             onChange={(val: string) => setNewValue(val, 'password')}
             withIcon
             error={error}
+            autocomplete="new-password"
           />
         </div>
 
@@ -87,7 +84,12 @@ const LogIn: React.FC = () => {
           Forgot password?
         </Link>
 
-        <BaseButton type="submit" design="gradient" className={s.Form_Button}>
+        <BaseButton
+          type="submit"
+          design="gradient"
+          className={s.Form_Button}
+          onClick={submitHandler}
+        >
           Get a quote
         </BaseButton>
 

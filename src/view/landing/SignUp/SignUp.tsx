@@ -58,12 +58,7 @@ const SignUp: React.FC = () => {
     <div className={s.SignUp}>
       <div className={s.Background}></div>
 
-      <form
-        // action=""
-        // onSubmit={submitHandler}
-        className={s.Form}
-        autoComplete="off"
-      >
+      <form className={s.Form} autoComplete="off">
         <div className={s.Form_Background}></div>
         <div className={s.Form_Title}>
           <h2>Sign Up</h2>
@@ -84,6 +79,7 @@ const SignUp: React.FC = () => {
             value={value.name}
             onChange={(val: string) => setNewValue(val, 'name')}
             error={error}
+            autocomplete="new-password"
           />
 
           <BaseInput
@@ -93,6 +89,7 @@ const SignUp: React.FC = () => {
             value={value.surname}
             onChange={(val: string) => setNewValue(val, 'surname')}
             error={error}
+            autocomplete="new-password"
           />
 
           <BaseInput
@@ -102,6 +99,7 @@ const SignUp: React.FC = () => {
             value={value.email}
             onChange={(val: string) => setNewValue(val, 'email')}
             error={error}
+            autocomplete="new-password"
           />
 
           <BaseInputPhone
@@ -124,6 +122,7 @@ const SignUp: React.FC = () => {
             withIcon
             error={error}
             className={s.Password}
+            autocomplete="new-password"
           />
 
           <ul className={s.PasswordCheck}>
