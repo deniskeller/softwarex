@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import s from './Expertise.module.scss';
 import { BaseContainer, BaseIcon, BaseText } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
+import { LogoAnimated } from '@content/landing/index';
 
 const Expertise: React.FC = () => {
   const refExpertiseLogo = useRef(null);
@@ -70,6 +71,8 @@ const Expertise: React.FC = () => {
             </linearGradient>
           </defs>
         </svg>
+
+        <LogoAnimated className={s.Expertise_Logo} />
       </BaseContainer>
     </section>
   );
