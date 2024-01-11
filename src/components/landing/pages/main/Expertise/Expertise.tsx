@@ -31,7 +31,7 @@ const Expertise: React.FC = () => {
           className={`${s.Expertise_Star} ${s.Expertise_Star__4}`}
         />
 
-        <BaseText className={s.Expertise_Title} as="h2">
+        {/* <BaseText className={s.Expertise_Title} as="h2">
           <span>Expertise</span>&nbsp;is our second name!
         </BaseText>
 
@@ -41,7 +41,7 @@ const Expertise: React.FC = () => {
           and personal users. Our products can be seamlessly integrated into any
           home or commercial project and meet even the pickiest
           user's preferences.
-        </BaseText>
+        </BaseText> */}
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
