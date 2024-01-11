@@ -22,9 +22,16 @@
     );
     padding: em(75px) em(82px);
     min-height: em(618px);
-    svg {
-      display: none;
+    &::after {
+      display: block;
+      content: '';
+      @extend %fullsize;
+      width: 100%;
+      height: 100%;
+      background-image: url('/pictures/images/noise.png');
+      border-radius: em(40px);
     }
+
     @include iflaptop {
       border-radius: em(27px);
       padding: em(55px) em(32px) em(47px);
@@ -51,6 +58,8 @@
   }
 
   &_Title {
+    position: relative;
+    z-index: 2;
     margin-bottom: em(18px);
     @include iflaptop {
       margin-bottom: em(8px);
@@ -64,6 +73,8 @@
   }
 
   &_Description {
+    position: relative;
+    z-index: 2;
     max-width: em(676px);
     margin-bottom: em(43px);
     @include iflaptop {
@@ -99,6 +110,8 @@
   }
 
   &_Fields {
+    position: relative;
+    z-index: 2;
     max-width: em(676px);
     display: grid;
     grid-template-columns: 1fr;
@@ -118,6 +131,20 @@
       gap: em(18px) 0;
       margin-bottom: em(30px);
     }
+  }
+
+  &_Button {
+    position: relative;
+    z-index: 2;
+  }
+
+  &_Image {
+    position: absolute;
+    z-index: 3;
+    top: em(-112px);
+    right: em(-138px);
+    width: em(1099px);
+    height: em(855px);
   }
 }
 
