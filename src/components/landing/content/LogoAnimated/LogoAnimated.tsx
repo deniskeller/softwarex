@@ -21,8 +21,8 @@ const LogoAnimated: React.FC<Props> = ({ className }) => {
     const length = myPath?.getTotalLength();
 
     gsap.set(boxElement.querySelector('path'), {
-      'stroke-dasharray': length,
-      'stroke-dashoffset': -length,
+      'stroke-dasharray': `0,${length},${length - TAIL_LENGHT}`,
+      'stroke-dashoffset': 1,
     });
 
     gsap.set(boxElement.querySelector('.start'), {
@@ -36,8 +36,7 @@ const LogoAnimated: React.FC<Props> = ({ className }) => {
     });
     (async () => {
       gsap.to(boxElement.querySelector('path'), 2, {
-        'stroke-dashoffset': 0,
-        'stroke-dasharray': length - TAIL_LENGHT,
+        'stroke-dasharray': `0,${0},${length - TAIL_LENGHT}`,
       });
       gsap.to(boxElement.querySelector('.start'), 2, {
         'stop-color': '#6E6CCF',
