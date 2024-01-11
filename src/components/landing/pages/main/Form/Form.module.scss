@@ -140,11 +140,44 @@
 
   &_Image {
     position: absolute;
-    z-index: 3;
-    top: em(-112px);
-    right: em(-138px);
-    width: em(1099px);
-    height: em(855px);
+    z-index: 1;
+    display: none;
+    &__Desktop {
+      top: em(-112px);
+      right: em(-138px);
+      width: em(1099px);
+      height: em(855px);
+      @include ifdesktop {
+        display: block;
+      }
+    }
+    &__Laptop {
+      top: em(-80px);
+      right: em(-84px);
+      width: em(653px);
+      height: em(581px);
+      @include iflaptop {
+        display: block;
+      }
+    }
+    &__Tablet {
+      top: em(-74px);
+      right: em(-62px);
+      width: em(486px);
+      height: em(531px);
+      @include iftablet {
+        display: block;
+      }
+    }
+    &__Mobile {
+      top: em(317px);
+      right: em(-118px);
+      width: em(556px);
+      height: em(433px);
+      @include ifmobile {
+        display: block;
+      }
+    }
   }
 }
 

@@ -14,11 +14,11 @@ const Main: React.FC = () => {
   return (
     <div className={s.Main}>
       <Header />
-      {/* <Expertise />
+      <Expertise />
       <Solutions />
       <HowWeWork />
       <Achievements />
-      <Technologies /> */}
+      <Technologies />
       <Form />
     </div>
   );

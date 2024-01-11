@@ -42,7 +42,35 @@ const Form: React.FC = () => {
             width={1099}
             height={855}
             alt=""
-            className={s.Form_Image}
+            quality={100}
+            className={`${s.Form_Image} ${s.Form_Image__Desktop}`}
+          />
+
+          <Image
+            src="/pictures/images/main/main-form-1024.png"
+            width={653}
+            height={581}
+            alt=""
+            quality={100}
+            className={`${s.Form_Image} ${s.Form_Image__Laptop}`}
+          />
+
+          <Image
+            src="/pictures/images/main/main-form-768.png"
+            width={486}
+            height={531}
+            alt=""
+            quality={100}
+            className={`${s.Form_Image} ${s.Form_Image__Tablet}`}
+          />
+
+          <Image
+            src="/pictures/images/main/main-form-360.png"
+            width={556}
+            height={433}
+            alt=""
+            quality={100}
+            className={`${s.Form_Image} ${s.Form_Image__Mobile}`}
           />
 
           <BaseText className={s.Form_Title} as="h2">
