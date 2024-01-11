@@ -14,14 +14,17 @@
     position: relative;
     border-radius: em(40px);
     background: linear-gradient(
-      -120deg,
-      #706dd0 -6.57%,
-      #f98973 26.41%,
-      #facb71 51.86%,
-      #f98973 97.2%
+      -130deg,
+      rgba(112, 109, 208, 0.9) 3.55%,
+      rgba(249, 137, 115, 0.9) 32.43%,
+      rgba(250, 203, 113, 0.9) 54.72%,
+      rgba(249, 137, 115, 0.9) 94.43%
     );
     padding: em(75px) em(82px);
     min-height: em(618px);
+    svg {
+      display: none;
+    }
     @include iflaptop {
       border-radius: em(27px);
       padding: em(55px) em(32px) em(47px);

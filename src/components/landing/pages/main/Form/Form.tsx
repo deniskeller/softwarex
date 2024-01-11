@@ -36,6 +36,17 @@ const Form: React.FC = () => {
     <section className={s.Form}>
       <BaseContainer className={s.Form_Container}>
         <form action="" onSubmit={submitHandler}>
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <filter id="noiseFilter">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.65"
+                numOctaves="3"
+                stitchTiles="stitch"
+              />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+          </svg>
           <BaseText className={s.Form_Title} as="h2">
             Say Hello
           </BaseText>
