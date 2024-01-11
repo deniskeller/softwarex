@@ -202,7 +202,6 @@ const BaseInputPhone: React.FC<Props> = ({
           max={max}
           placeholder={placeholder}
           required={required}
-          autoComplete={autocomplete}
           disabled={disabled}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
@@ -210,6 +209,7 @@ const BaseInputPhone: React.FC<Props> = ({
             onChange(e.target.value)
           }
           onKeyDown={onKeyDown}
+          autoComplete="new-password"
         />
 
         <div
