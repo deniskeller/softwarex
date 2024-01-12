@@ -10,7 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        {/* <link
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"
@@ -28,27 +28,8 @@ export default function Document() {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c"></meta>
+        <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
-        <meta
-          name="description"
-          content="Azure Processing is professional Agent with many years of experience made to solicit merchants for an acquiring banks or payment service providers under their name."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://azure-processing.vercel.app/"
-        />
-        <meta property="og:site_name" content="Azure processing" />
-        <meta
-          property="og:title"
-          content="Azure processing. Your best acquiring provider"
-        />
-        <meta
-          property="og:description"
-          content="Azure Processing is professional Agent with many years of experience made to solicit merchants for an acquiring banks or payment service providers under their name."
-        /> */}
       </Head>
       <title>Softwarex</title>
       <body>
