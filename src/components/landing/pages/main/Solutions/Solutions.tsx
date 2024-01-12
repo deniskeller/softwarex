@@ -16,7 +16,7 @@ const Solutions: React.FC = () => {
           cover.
         </BaseText>
       </BaseContainer>
-      <Marquee className={s.Solutions_Marquee} speed={0} gradient={false}>
+      <Marquee className={s.Solutions_Marquee} speed={150} gradient={false}>
         <div className={`${s.Ticker} ${s.Ticker__1}`}>
           <span>E-Commerce & Retail</span>
         </div>
