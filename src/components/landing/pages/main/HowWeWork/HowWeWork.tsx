@@ -15,18 +15,25 @@ const HowWeWork: React.FC = () => {
     window.addEventListener('resize orientationchange', () => {});
   }, []);
 
-  const refCard_1 = useRef(null);
-  const refCard_2 = useRef(null);
-  const refCard_3 = useRef(null);
+  const refCard_1 = useRef<HTMLDivElement>(null);
+  const refCard_2 = useRef<HTMLDivElement>(null);
+  const refCard_3 = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   gsap.timeline().fromTo(refCard_1.current, { y: '100%' }, { y: '0%' });
-  // }, []);
+  useEffect(() => {
+    const card1 = refCard_1.current;
+    const card2 = refCard_2.current;
+    const card3 = refCard_3.current;
+    if (!card1 || !card2 || !card3) {
+      return;
+    }
 
-  // var animateOne = gsap.timeline({ delay: 1 });
-  // animateOne
-  //   .to(refCard_1.current, { opacity: 1, duration: 1 })
-  //   .to(refCard_2.current, { x: 100, opacity: 0, duration: 1 }, '+=1');
+    var animateOne = gsap.timeline({ delay: 1 });
+    animateOne
+      .to(card1, { opacity: 1, duration: 1 })
+      .to(card1, { opacity: 0, duration: 1 }, '<=1')
+      .to(card2, { opacity: 1, duration: 1 })
+      .to(card2, { opacity: 0, duration: 1 }, '<=2');
+  }, []);
 
   return (
     <section className={s.HowWeWork}>
@@ -70,7 +77,10 @@ const HowWeWork: React.FC = () => {
         >
           <SwiperSlide className={`${s.Slide} ${s.Slide__1}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_1}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <svg
@@ -142,7 +152,10 @@ const HowWeWork: React.FC = () => {
 
           <SwiperSlide className={`${s.Slide} ${s.Slide__2}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_2}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <svg
@@ -214,7 +227,10 @@ const HowWeWork: React.FC = () => {
 
           <SwiperSlide className={`${s.Slide} ${s.Slide__3}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_3}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <div className={s.Slide_Number}>
