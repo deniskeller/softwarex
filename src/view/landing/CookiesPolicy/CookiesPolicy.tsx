@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import s from './CookiesPolicy.module.scss';
 import { BaseContainer } from '@base/index';
+import { useRouter } from 'next/navigation';
 
 var Scroll = require('react-scroll');
 var scroller = Scroll.scroller;
 
 const CookiesPolicy: React.FC = () => {
+  const router = useRouter();
+
   const navbar_links = [
     'What Are Cookies',
     'How We Use Cookies',
@@ -31,7 +34,7 @@ const CookiesPolicy: React.FC = () => {
       <BaseContainer>
         <div className={s.CookiesPolicy_Container}>
           <div className={s.CookiesPolicy_Content}>
-            <div className={s.Header}>
+            <div className={s.Header} onClick={() => router.back()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 25 26"

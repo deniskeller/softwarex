@@ -29,6 +29,7 @@
 
   &_Content {
     .Header {
+      cursor: pointer;
       display: inline-flex;
       flex-direction: row;
       align-items: center;
@@ -54,11 +55,14 @@
         border-radius: em(13px);
         background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
       }
+
       .Icon {
         width: em(25px);
         height: em(25px);
         margin-right: em(10px);
+        transition: transform $speed ease;
       }
+
       h1 {
         color: $text;
         font-size: em(40px);
@@ -73,6 +77,12 @@
         }
         @include ifmobile {
           font-size: em(24px);
+        }
+      }
+
+      &:hover {
+        .Icon {
+          transform: translate(-3px, 0);
         }
       }
     }
