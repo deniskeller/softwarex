@@ -1,5 +1,3 @@
-$currentSpeed: 0.5s;
-
 .HowWeWork {
   margin-bottom: em(340px);
   @include iflaptop {
@@ -154,11 +152,19 @@ $currentSpeed: 0.5s;
           margin-bottom: em(18px);
         }
         span {
-          color: $text;
+          color: transparent;
           font-size: em(18px);
           font-style: normal;
           font-weight: 700;
           line-height: normal;
+          background-image: linear-gradient(
+            89deg,
+            #1f1e58 0.91%,
+            #1f1e58 93.07%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
 
@@ -183,7 +189,7 @@ $currentSpeed: 0.5s;
         right: 0;
         bottom: 0;
         border-radius: em(31px);
-        transition: opacity $currentSpeed ease;
+        // transition: opacity $currentSpeed ease;
         &__Default {
           background: rgba(109, 107, 206, 0.26);
         }
@@ -208,7 +214,7 @@ $currentSpeed: 0.5s;
         right: em(-18px);
         width: em(22px);
         height: em(50px);
-        transition: opacity $currentSpeed ease;
+        // transition: opacity $currentSpeed ease;
         &__Gradient {
           opacity: 0;
         }

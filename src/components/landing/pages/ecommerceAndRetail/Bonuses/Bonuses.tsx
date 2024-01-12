@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import s from './Bonuses.module.scss';
 import { BaseContainer, BaseText } from '@base/index';
 import Image from 'next/image';
@@ -6,8 +6,20 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import { gsap } from 'gsap';
 
 const Bonuses: React.FC = () => {
+  const refCard_1 = useRef<HTMLDivElement>(null);
+  const refCard_2 = useRef<HTMLDivElement>(null);
+  const refCard_3 = useRef<HTMLDivElement>(null);
+
+  const refText_1 = useRef<HTMLSpanElement>(null);
+  const refText_2 = useRef<HTMLSpanElement>(null);
+  const refText_3 = useRef<HTMLSpanElement>(null);
+
+  const refTriangle_1 = useRef<SVGSVGElement>(null);
+  const refTriangle_2 = useRef<SVGSVGElement>(null);
+
   return (
     <section className={s.Bonuses}>
       <BaseContainer className={s.Bonuses_Container}>

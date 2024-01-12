@@ -19,34 +19,97 @@ const HowWeWork: React.FC = () => {
   const refCard_2 = useRef<HTMLDivElement>(null);
   const refCard_3 = useRef<HTMLDivElement>(null);
 
+  const refText_1 = useRef<HTMLSpanElement>(null);
+  const refText_2 = useRef<HTMLSpanElement>(null);
+  const refText_3 = useRef<HTMLSpanElement>(null);
+
   const refTriangle_1 = useRef<SVGSVGElement>(null);
   const refTriangle_2 = useRef<SVGSVGElement>(null);
+
   const swiperSlide = useRef<SwiperRef>(null);
+  // console.log('swiperSlide: ', swiperSlide);
 
   useEffect(() => {
-    // console.log('swiperSlide: ', swiperSlide);
-
     const card1 = refCard_1.current;
     const card2 = refCard_2.current;
     const card3 = refCard_3.current;
+
+    const text1 = refText_1.current;
+    const text2 = refText_2.current;
+    const text3 = refText_3.current;
+
     const triangle1 = refTriangle_1.current;
     const triangle2 = refTriangle_2.current;
     // if (!card1 || !card2 || !card3 || !triangle1 || !triangle2 || !triangle3) {
     //   return;
     // }
-
+    const duration = 1;
     var animateOne = gsap.timeline({ repeat: -1, delay: 1 });
     animateOne
-      .to(card1, { opacity: 1, duration: 1 })
-      .to(triangle1, { opacity: 1, duration: 1 }, '<')
-      .to(card1, { opacity: 0, duration: 1 }, '>')
-      .to(triangle1, { opacity: 0, duration: 1 }, '<')
-      .to(card2, { opacity: 1, duration: 1 }, '>')
-      .to(triangle2, { opacity: 1, duration: 1 }, '<')
-      .to(card2, { opacity: 0, duration: 1 }, '>')
-      .to(triangle2, { opacity: 0, duration: 1 }, '<')
-      .to(card3, { opacity: 1, duration: 1 }, '>')
-      .to(card3, { opacity: 0, duration: 1 }, '>');
+      .to(card1, { opacity: 1, duration: duration })
+      .to(triangle1, { opacity: 1, duration: duration }, '<')
+      .to(
+        text1,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card1, { opacity: 0, duration: duration }, '>')
+      .to(triangle1, { opacity: 0, duration: duration }, '<')
+      .to(
+        text1,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card2, { opacity: 1, duration: duration }, '>')
+      .to(triangle2, { opacity: 1, duration: duration }, '<')
+      .to(
+        text2,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card2, { opacity: 0, duration: duration }, '>')
+      .to(triangle2, { opacity: 0, duration: duration }, '<')
+      .to(
+        text2,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card3, { opacity: 1, duration: duration }, '>')
+      .to(
+        text3,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card3, { opacity: 0, duration: duration }, '>')
+      .to(
+        text3,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      );
   }, []);
 
   return (
@@ -156,7 +219,7 @@ const HowWeWork: React.FC = () => {
               <span>1</span>
             </div>
             <div className={s.Slide_Title}>
-              <span>Analitycs</span>
+              <span ref={refText_1}>Analitycs</span>
             </div>
             <div className={s.Slide_Description}>
               <p>
@@ -232,7 +295,7 @@ const HowWeWork: React.FC = () => {
               <span>2</span>
             </div>
             <div className={s.Slide_Title}>
-              <span>Design</span>
+              <span ref={refText_2}>Design</span>
             </div>
             <div className={s.Slide_Description}>
               <p>
@@ -254,7 +317,7 @@ const HowWeWork: React.FC = () => {
               <span>3</span>
             </div>
             <div className={s.Slide_Title}>
-              <span>Development</span>
+              <span ref={refText_3}>Development</span>
             </div>
             <div className={s.Slide_Description}>
               <p>
