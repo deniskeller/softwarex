@@ -186,7 +186,7 @@ const Footer: React.FC<Props> = () => {
           </div>
 
           <div className={s.Copyright}>
-            <p>Copyright © 2023.&nbsp;</p>
+            <p>Copyright © 2023&nbsp;</p>
             <p>English & Indian Software Exs LIMITED.&nbsp;</p>
             <p>All Rights Reserved.&nbsp;</p>
           </div>

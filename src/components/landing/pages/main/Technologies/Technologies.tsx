@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './Technologies.module.scss';
 import { BaseContainer, BaseIcon, BaseText } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 
 const Technologies: React.FC = () => {
   return (
-    <section className={s.Technologies}>
+    <section className={s.Technologies} id="technologies">
       <BaseContainer className={s.Technologies_Container}>
         <BaseIcon
           viewBox="0 0 124 124"

@@ -52,12 +52,19 @@
       flex-direction: column;
       width: 25%;
       transition: width 0.5s ease;
-      @include iftablet {
+
+      @media only screen and (max-width: 1023px) {
         width: 100%;
       }
-      @include ifmobile {
-        width: 100%;
-      }
+      // @include iflaptop {
+      //   width: 100%;
+      // }
+      // @include iftablet {
+      //   width: 100%;
+      // }
+      // @include ifmobile {
+      //   width: 100%;
+      // }
       &_Value {
         span {
           text-align: center;
@@ -109,10 +116,13 @@
           opacity: 0;
           width: 0;
           transition: width 0.3s ease, opacity 0.3s ease;
-          @include iftablet {
-            display: none;
-          }
-          @include ifmobile {
+          // @include iftablet {
+          //   display: none;
+          // }
+          // @include ifmobile {
+          //   display: none;
+          // }
+          @media only screen and (max-width: 1023px) {
             display: none;
           }
         }
@@ -131,6 +141,9 @@
           width: 100%;
         }
         @include iftablet {
+          width: 100%;
+        }
+        @include ifmobile {
           width: 100%;
         }
         .InfoItem_Border {
