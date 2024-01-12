@@ -93,6 +93,7 @@ const MoreInfo: React.FC = () => {
                   width={389}
                   height={257}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -191,6 +192,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -289,6 +291,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -392,6 +395,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -490,6 +494,7 @@ const MoreInfo: React.FC = () => {
                   width={389}
                   height={257}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -587,6 +592,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -687,6 +693,7 @@ const MoreInfo: React.FC = () => {
                   width={389}
                   height={257}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -784,6 +791,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -881,6 +889,7 @@ const MoreInfo: React.FC = () => {
                   width={183}
                   height={183}
                   alt=""
+                  quality={100}
                   className={s.Image}
                 />
               </div>
@@ -1006,6 +1015,7 @@ const MoreInfo: React.FC = () => {
                 width={389}
                 height={257}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1104,6 +1114,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1202,6 +1213,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1300,6 +1312,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1401,6 +1414,7 @@ const MoreInfo: React.FC = () => {
                 width={389}
                 height={257}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1498,6 +1512,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1599,6 +1614,7 @@ const MoreInfo: React.FC = () => {
                 width={389}
                 height={257}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1696,6 +1712,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
@@ -1793,6 +1810,7 @@ const MoreInfo: React.FC = () => {
                 width={183}
                 height={183}
                 alt=""
+                quality={100}
                 className={s.Image}
               />
             </div>
