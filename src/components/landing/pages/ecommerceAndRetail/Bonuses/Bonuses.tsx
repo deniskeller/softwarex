@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import s from './Bonuses.module.scss';
 import { BaseContainer, BaseText } from '@base/index';
 import Image from 'next/image';
@@ -13,12 +13,100 @@ const Bonuses: React.FC = () => {
   const refCard_2 = useRef<HTMLDivElement>(null);
   const refCard_3 = useRef<HTMLDivElement>(null);
 
-  const refText_1 = useRef<HTMLSpanElement>(null);
-  const refText_2 = useRef<HTMLSpanElement>(null);
-  const refText_3 = useRef<HTMLSpanElement>(null);
+  const refText_1 = useRef<HTMLParagraphElement>(null);
+  const refText_2 = useRef<HTMLParagraphElement>(null);
+  const refText_3 = useRef<HTMLParagraphElement>(null);
 
-  const refTriangle_1 = useRef<SVGSVGElement>(null);
-  const refTriangle_2 = useRef<SVGSVGElement>(null);
+  const refNumber_01 = useRef<SVGSVGElement>(null);
+  const refNumber_02 = useRef<SVGSVGElement>(null);
+  const refNumber_03 = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const card1 = refCard_1.current;
+    const card2 = refCard_2.current;
+    const card3 = refCard_3.current;
+
+    const text1 = refText_1.current;
+    const text2 = refText_2.current;
+    const text3 = refText_3.current;
+
+    const number01 = refNumber_01.current;
+    const number02 = refNumber_02.current;
+    const number03 = refNumber_03.current;
+    // if (!card1 || !card2 || !card3 || !triangle1 || !triangle2 || !triangle3) {
+    //   return;
+    // }
+
+    const duration = 1;
+    var animateOne = gsap.timeline({ repeat: -1, delay: 1 });
+    animateOne
+      .to(card1, { opacity: 1, duration: duration })
+      .to(number01, { opacity: 1, duration: duration }, '<')
+      .to(
+        text1,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card1, { opacity: 0, duration: duration }, '>')
+      .to(number01, { opacity: 0, duration: duration }, '<')
+      .to(
+        text1,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card2, { opacity: 1, duration: duration }, '>')
+      .to(number02, { opacity: 1, duration: duration }, '<')
+      .to(
+        text2,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card2, { opacity: 0, duration: duration }, '>')
+      .to(number02, { opacity: 0, duration: duration }, '<')
+      .to(
+        text2,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card3, { opacity: 1, duration: duration }, '>')
+      .to(number03, { opacity: 1, duration: duration }, '<')
+      .to(
+        text3,
+        {
+          backgroundImage:
+            'linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%)',
+          duration: duration,
+        },
+        '<'
+      )
+      .to(card3, { opacity: 0, duration: duration }, '>')
+      .to(number03, { opacity: 0, duration: duration }, '<')
+      .to(
+        text3,
+        {
+          backgroundImage:
+            'linear-gradient(89deg,#1f1e58 0.91%,#1f1e58 93.07%)',
+          duration: duration,
+        },
+        '<'
+      );
+  }, []);
 
   return (
     <section className={s.Bonuses}>
@@ -50,7 +138,10 @@ const Bonuses: React.FC = () => {
         >
           <SwiperSlide className={`${s.Slide} ${s.Slide__1}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_1}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <svg
@@ -87,6 +178,7 @@ const Bonuses: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Number} ${s.Number__Gradient}`}
+              ref={refNumber_01}
             >
               <g clipPath="url(#clip0_1834_9208)">
                 <path
@@ -115,7 +207,7 @@ const Bonuses: React.FC = () => {
             </svg>
 
             <div className={s.Slide_Title}>
-              <p>
+              <p ref={refText_1}>
                 The ability to update and replace individual services without
                 reworking the rest of the project
               </p>
@@ -134,7 +226,10 @@ const Bonuses: React.FC = () => {
 
           <SwiperSlide className={`${s.Slide} ${s.Slide__2}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_2}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <svg
@@ -171,6 +266,7 @@ const Bonuses: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Number} ${s.Number__Gradient}`}
+              ref={refNumber_02}
             >
               <g clipPath="url(#clip0_1834_9212)">
                 <path
@@ -199,7 +295,7 @@ const Bonuses: React.FC = () => {
             </svg>
 
             <div className={s.Slide_Title}>
-              <p>
+              <p ref={refText_2}>
                 Ability to run several identical services simultaneously to cope
                 with peak loads
               </p>
@@ -214,7 +310,10 @@ const Bonuses: React.FC = () => {
 
           <SwiperSlide className={`${s.Slide} ${s.Slide__3}`}>
             <div className={`${s.Background} ${s.Background__Default}`}></div>
-            <div className={`${s.Background} ${s.Background__Gradient}`}></div>
+            <div
+              className={`${s.Background} ${s.Background__Gradient}`}
+              ref={refCard_3}
+            ></div>
             <div className={`${s.Background} ${s.Background__White}`}></div>
 
             <svg
@@ -256,6 +355,7 @@ const Bonuses: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Number} ${s.Number__Gradient}`}
+              ref={refNumber_03}
             >
               <mask id="path-1-inside-1_1834_9217" fill="white">
                 <path d="M55.6395 132C43.2326 132 32.8721 129.186 24.5581 123.558C16.2442 117.802 10.0407 110 5.94767 100.151C1.98256 90.1744 0 78.7907 0 66C0 53.2093 1.98256 41.8895 5.94767 32.0407C10.0407 22.0639 16.2442 14.2616 24.5581 8.63372C32.8721 2.87791 43.2326 0 55.6395 0C68.1744 0 78.5349 2.87791 86.7209 8.63372C95.0349 14.2616 101.174 22.0639 105.14 32.0407C109.233 41.8895 111.279 53.2093 111.279 66C111.279 78.7907 109.233 90.1744 105.14 100.151C101.174 110 95.0349 117.802 86.7209 123.558C78.5349 129.186 68.1744 132 55.6395 132ZM55.6395 105.14C60.3721 105.14 64.3372 103.797 67.5349 101.11C70.7326 98.4244 73.2267 94.2035 75.0174 88.4477C76.936 82.6919 77.8953 75.2093 77.8953 66C77.8953 56.6628 76.936 49.1802 75.0174 43.5523C73.2267 37.7965 70.7326 33.5756 67.5349 30.8895C64.3372 28.2035 60.3721 26.8605 55.6395 26.8605C51.0349 26.8605 47.0058 28.2035 43.5523 30.8895C40.2267 33.5756 37.6686 37.7965 35.8779 43.5523C34.2151 49.1802 33.3837 56.6628 33.3837 66C33.3837 75.2093 34.2151 82.6919 35.8779 88.4477C37.6686 94.2035 40.2267 98.4244 43.5523 101.11C47.0058 103.797 51.0349 105.14 55.6395 105.14Z" />
@@ -308,7 +408,7 @@ const Bonuses: React.FC = () => {
             </svg>
 
             <div className={s.Slide_Title}>
-              <p>
+              <p ref={refText_3}>
                 The ability to limit resources for minor microservices so that
                 they do not slow down the entire project
               </p>

@@ -43,6 +43,7 @@ const HowWeWork: React.FC = () => {
     // if (!card1 || !card2 || !card3 || !triangle1 || !triangle2 || !triangle3) {
     //   return;
     // }
+
     const duration = 1;
     var animateOne = gsap.timeline({ repeat: -1, delay: 1 });
     animateOne
