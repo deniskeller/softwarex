@@ -234,7 +234,8 @@
       top: 0;
       right: 0;
       width: em(384px);
-      min-height: 100vh;
+      // min-height: 100vh;
+      min-height: 100dvh;
       height: 100%;
       overflow: auto;
       overflow-x: hidden;
