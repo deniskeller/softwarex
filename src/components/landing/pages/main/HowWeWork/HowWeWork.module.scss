@@ -214,20 +214,20 @@ $currentSpeed: 0.5s;
         }
       }
 
-      &:hover {
-        .Background__Gradient {
-          opacity: 1;
-        }
-        .Arrow__Gradient {
-          opacity: 1;
-        }
-        .Slide_Title span {
-          background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
+      // &:hover {
+      //   .Background__Gradient {
+      //     opacity: 1;
+      //   }
+      //   .Arrow__Gradient {
+      //     opacity: 1;
+      //   }
+      //   .Slide_Title span {
+      //     background: linear-gradient(89deg, #6e6ccf 0.91%, #fb8873 93.07%);
+      //     background-clip: text;
+      //     -webkit-background-clip: text;
+      //     -webkit-text-fill-color: transparent;
+      //   }
+      // }
     }
   }
 }

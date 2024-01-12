@@ -4,35 +4,49 @@ import { BaseContainer, BaseIcon, BaseText } from '@base/index';
 import Image from 'next/image';
 import { ALL_ICONS } from '@constants/icons';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 import { gsap } from 'gsap';
 
 const HowWeWork: React.FC = () => {
-  useEffect(() => {
-    window.addEventListener('resize orientationchange', () => {});
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('resize orientationchange', () => {});
+  // }, []);
 
   const refCard_1 = useRef<HTMLDivElement>(null);
   const refCard_2 = useRef<HTMLDivElement>(null);
   const refCard_3 = useRef<HTMLDivElement>(null);
 
+  const refTriangle_1 = useRef<SVGSVGElement>(null);
+  const refTriangle_2 = useRef<SVGSVGElement>(null);
+  const swiperSlide = useRef<SwiperRef>(null);
+
   useEffect(() => {
+    // console.log('swiperSlide: ', swiperSlide);
+
     const card1 = refCard_1.current;
     const card2 = refCard_2.current;
     const card3 = refCard_3.current;
-    if (!card1 || !card2 || !card3) {
-      return;
-    }
+    const triangle1 = refTriangle_1.current;
+    const triangle2 = refTriangle_2.current;
+    // if (!card1 || !card2 || !card3 || !triangle1 || !triangle2 || !triangle3) {
+    //   return;
+    // }
 
-    var animateOne = gsap.timeline({ delay: 1 });
+    var animateOne = gsap.timeline({ repeat: -1, delay: 1 });
     animateOne
       .to(card1, { opacity: 1, duration: 1 })
-      .to(card1, { opacity: 0, duration: 1 }, '<=1')
-      .to(card2, { opacity: 1, duration: 1 })
-      .to(card2, { opacity: 0, duration: 1 }, '<=2');
+      .to(triangle1, { opacity: 1, duration: 1 }, '<')
+      .to(card1, { opacity: 0, duration: 1 }, '>')
+      .to(triangle1, { opacity: 0, duration: 1 }, '<')
+      .to(card2, { opacity: 1, duration: 1 }, '>')
+      .to(triangle2, { opacity: 1, duration: 1 }, '<')
+      .to(card2, { opacity: 0, duration: 1 }, '>')
+      .to(triangle2, { opacity: 0, duration: 1 }, '<')
+      .to(card3, { opacity: 1, duration: 1 }, '>')
+      .to(card3, { opacity: 0, duration: 1 }, '>');
   }, []);
 
   return (
@@ -55,6 +69,7 @@ const HowWeWork: React.FC = () => {
         </BaseText>
 
         <Swiper
+          ref={swiperSlide}
           className={s.HowWeWork_Slider}
           wrapperClass="HowWeWork_Slider"
           modules={[Pagination]}
@@ -109,6 +124,7 @@ const HowWeWork: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Arrow} ${s.Arrow__Gradient}`}
+              ref={refTriangle_1}
             >
               <g clipPath="url(#clip0_1946_9675)">
                 <path
@@ -184,6 +200,7 @@ const HowWeWork: React.FC = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={`${s.Arrow} ${s.Arrow__Gradient}`}
+              ref={refTriangle_2}
             >
               <g clipPath="url(#clip0_1946_9675)">
                 <path
