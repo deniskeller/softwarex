@@ -1,13 +1,13 @@
 .Expertise {
-  padding: em(198px) 0 em(113px);
+  padding: em(198px) 0 em(72px);
   @include iflaptop {
-    padding: em(114px) 0 em(151px);
+    padding: em(114px) 0 em(142px);
   }
   @include iftablet {
-    padding: em(114px) 0 em(90px);
+    padding: em(114px) 0 em(80px);
   }
   @include ifmobile {
-    padding: em(150px) 0 em(100px);
+    padding: em(150px) 0 em(60px);
   }
 
   &_Container {
@@ -32,21 +32,25 @@
     margin: 0 auto;
     text-align: center;
     max-width: em(878px);
-    margin-bottom: em(24px);
+    margin-bottom: em(14px);
     @include iflaptop {
-      margin-bottom: em(117px);
+      margin-bottom: em(76px);
     }
     @include iftablet {
-      margin-bottom: em(95px);
+      margin-bottom: em(56px);
     }
     @include ifmobile {
-      margin-bottom: em(43px);
+      margin-bottom: em(18px);
     }
   }
 
   &_Logo {
     width: em(445px);
-    height: em(175px);
+    height: em(155px);
+    @include ifmobile {
+      width: em(218px);
+      height: em(128px);
+    }
   }
 
   &_Star {
@@ -67,8 +71,8 @@
       height: em(123px);
       @include iflaptop {
         top: auto;
-        bottom: em(40px);
-        left: em(50px);
+        bottom: em(50px);
+        left: em(80px);
         width: em(90px);
         height: em(90px);
       }
@@ -80,15 +84,15 @@
       height: em(114px);
       @include iflaptop {
         top: auto;
-        bottom: em(-26px);
-        left: em(125px);
+        bottom: em(-18px);
+        left: em(156px);
         width: em(52px);
         height: em(52px);
       }
     }
     &__3 {
       top: em(129px);
-      right: em(92px);
+      right: em(120px);
       width: em(91px);
       height: em(91px);
       @include iflaptop {
@@ -101,8 +105,8 @@
       width: em(78px);
       height: em(78px);
       @include iflaptop {
-        bottom: em(-90px);
-        right: em(66px);
+        bottom: em(-80px);
+        right: em(96px);
         width: em(90px);
         height: em(90px);
       }
