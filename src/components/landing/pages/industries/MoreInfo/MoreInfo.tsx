@@ -88,8 +88,10 @@ const MoreInfo: React.FC = () => {
                     />
                   </svg>
                 </div>
+
                 <Image
-                  src="/pictures/images/industries/industries-1.png"
+                  // src="/pictures/images/industries/industries-1.png"
+                  src="/pictures/images/industries/industries-1.svg"
                   width={389}
                   height={257}
                   alt=""
@@ -188,7 +190,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-2.png"
+                  // src="/pictures/images/industries/industries-2.png"
+                  src="/pictures/images/industries/industries-2.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -287,7 +290,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-3.png"
+                  // src="/pictures/images/industries/industries-3.png"
+                  src="/pictures/images/industries/industries-3.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -391,7 +395,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-4.png"
+                  // src="/pictures/images/industries/industries-4.png"
+                  src="/pictures/images/industries/industries-4.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -490,7 +495,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-6.png"
+                  // src="/pictures/images/industries/industries-6.png"
+                  src="/pictures/images/industries/industries-6.svg"
                   width={389}
                   height={257}
                   alt=""
@@ -588,7 +594,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-5.png"
+                  // src="/pictures/images/industries/industries-5.png"
+                  src="/pictures/images/industries/industries-5.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -689,7 +696,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-7.png"
+                  // src="/pictures/images/industries/industries-7.png"
+                  src="/pictures/images/industries/industries-7.svg"
                   width={389}
                   height={257}
                   alt=""
@@ -787,7 +795,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-8.png"
+                  // src="/pictures/images/industries/industries-8.png"
+                  src="/pictures/images/industries/industries-8.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -885,7 +894,8 @@ const MoreInfo: React.FC = () => {
                   </svg>
                 </div>
                 <Image
-                  src="/pictures/images/industries/industries-9.png"
+                  // src="/pictures/images/industries/industries-9.png"
+                  src="/pictures/images/industries/industries-9.svg"
                   width={183}
                   height={183}
                   alt=""
@@ -1011,7 +1021,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-1.png"
+                // src="/pictures/images/industries/industries-1.png"
+                src="/pictures/images/industries/industries-1.svg"
                 width={389}
                 height={257}
                 alt=""
@@ -1111,6 +1122,7 @@ const MoreInfo: React.FC = () => {
               </div>
               <Image
                 src="/pictures/images/industries/industries-2.png"
+                // src="/pictures/images/industries/industries-2.svg"
                 width={183}
                 height={183}
                 alt=""
@@ -1209,7 +1221,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-3.png"
+                // src="/pictures/images/industries/industries-3.png"
+                src="/pictures/images/industries/industries-3.svg"
                 width={183}
                 height={183}
                 alt=""
@@ -1308,7 +1321,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-4.png"
+                // src="/pictures/images/industries/industries-4.png"
+                src="/pictures/images/industries/industries-4.svg"
                 width={183}
                 height={183}
                 alt=""
@@ -1410,7 +1424,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-6.png"
+                // src="/pictures/images/industries/industries-6.png"
+                src="/pictures/images/industries/industries-6.svg"
                 width={389}
                 height={257}
                 alt=""
@@ -1508,7 +1523,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-5.png"
+                // src="/pictures/images/industries/industries-5.png"
+                src="/pictures/images/industries/industries-5.svg"
                 width={183}
                 height={183}
                 alt=""
@@ -1610,7 +1626,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-7.png"
+                // src="/pictures/images/industries/industries-7.png"
+                src="/pictures/images/industries/industries-7.svg"
                 width={389}
                 height={257}
                 alt=""
@@ -1708,7 +1725,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-8.png"
+                // src="/pictures/images/industries/industries-8.png"
+                src="/pictures/images/industries/industries-8.svg"
                 width={183}
                 height={183}
                 alt=""
@@ -1806,7 +1824,8 @@ const MoreInfo: React.FC = () => {
                 </svg>
               </div>
               <Image
-                src="/pictures/images/industries/industries-9.png"
+                // src="/pictures/images/industries/industries-9.png"
+                src="/pictures/images/industries/industries-9.svg"
                 width={183}
                 height={183}
                 alt=""
