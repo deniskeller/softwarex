@@ -4,7 +4,7 @@
     margin-bottom: em(122px);
   }
   @include iftablet {
-    margin-bottom: em(113px);
+    margin-bottom: em(120px);
   }
   @include ifmobile {
     margin-bottom: em(76px);
@@ -38,9 +38,10 @@
       padding: em(20px) em(54px);
       margin: 0 em(19px);
       @include iflaptop {
+        padding: em(15px) em(40.5px);
       }
       @include iftablet {
-        padding: em(15px) em(40px);
+        padding: em(15px) em(40.5px);
         margin: 0 em(12px);
       }
       @include ifmobile {

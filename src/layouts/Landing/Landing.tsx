@@ -15,8 +15,8 @@ const pages = [
     href: '/industries',
   },
   {
-    name: 'Tecnologies',
-    href: '/tecnologies',
+    name: 'Technologies',
+    href: '/technologies',
   },
   {
     name: 'About & Contacts',
