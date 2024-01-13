@@ -4,3 +4,4 @@ export { default as ToMainPage } from './ToMainPage/ToMainPage';
 export { default as Toast } from './Toast/Toast';
 export { default as UploadFile } from './UploadFile/UploadFile';
 export { default as LogoAnimated } from './LogoAnimated/LogoAnimated';
+export { default as AmountSelect } from './AmountSelect/AmountSelect';

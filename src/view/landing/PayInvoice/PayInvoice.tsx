@@ -6,10 +6,9 @@ import {
   BaseCheckbox,
   BaseInput,
   BaseRadioButton,
-  BaseSelect,
 } from '@base/index';
 import Link from 'next/link';
-import { ToMainPage, Toast } from '@content/landing/index';
+import { AmountSelect, ToMainPage, Toast } from '@content/landing/index';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 
@@ -116,7 +115,7 @@ const PayInvoice: React.FC = () => {
             error={error}
           />
 
-          <BaseSelect
+          <AmountSelect
             name="amount"
             value={value.amount}
             placeholder="Amount"
@@ -131,10 +130,6 @@ const PayInvoice: React.FC = () => {
             onClear={() => {}}
             onBlur={() => {}}
             withLabel
-            // withCounter
-            // multiple
-            // error="werwer"
-            // disabled
           />
         </div>
 

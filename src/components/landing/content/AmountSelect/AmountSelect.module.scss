@@ -1,0 +1,316 @@
+.AmountSelect {
+  position: relative;
+
+  &_Wrapper {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    position: relative;
+    // padding: 0 0 0 em(35px);
+    // @include ifdesktop {
+    //   padding: 0 0 0 em(46px);
+    // }
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      width: 99.7%;
+      height: em(12px);
+      border: 2px solid rgba(31, 30, 88, 0.1);
+      transition: $speed ease all;
+      border-top: none;
+      border-radius: 0px 0px 50px 60px/0px 0px 30px 30px;
+      @include ifdesktop {
+        height: em(16px);
+      }
+    }
+
+    &:hover {
+      &::before,
+      .Input {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
+  }
+
+  .Label {
+    line-height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: em(8px);
+    left: em(27px);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    transform-origin: left top;
+    @include ifdesktop {
+      top: em(14px);
+      left: em(36px);
+    }
+
+    span {
+      display: flex;
+      color: $text;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: all 0.3s ease;
+      @include ifdesktop {
+        font-size: em(18px);
+      }
+    }
+  }
+
+  .Select {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: em(45px);
+    padding: em(12px) 0 em(10px) em(35px);
+    @include placeholder-color(transparent);
+    @include ifdesktop {
+      height: em(60px);
+      padding: em(16px) 0 em(15px) em(46px);
+    }
+
+    .SelectedOption {
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      color: #1f1e58;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(14px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      opacity: 0.6;
+      @include ifdesktop {
+        font-size: em(18px);
+      }
+
+      &__NotEmpty {
+        display: block;
+      }
+    }
+
+    &_Chevron {
+      flex-shrink: 0;
+      width: em(18px);
+      height: em(18px);
+      margin-left: em(4px);
+      transition: transform $speed ease;
+      @include ifdesktop {
+        width: em(24px);
+        height: em(24px);
+      }
+    }
+  }
+
+  .Input {
+    $size: 15px;
+    width: 100%;
+    height: em(45px, $size);
+    padding: 0 em(26px, $size) 0 em(10px, $size);
+    outline: none;
+    border: none;
+    position: relative;
+    box-shadow: none;
+    background: transparent;
+    transition: $speed ease all;
+    @include placeholder-color(transparent);
+
+    color: $text;
+    font-family: 'Gantari', sans-serif;
+    font-size: em($size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include ifdesktop {
+      $size: 18px;
+      height: em(60px, $size);
+      padding: 0 em(46px, $size) 0 em(10px, $size);
+      font-size: em($size);
+    }
+    &::placeholder {
+      user-select: none;
+    }
+
+    &::-webkit-contacts-auto-fill-button {
+      opacity: 0;
+    }
+  }
+
+  .Dropdown {
+    position: absolute;
+    top: calc(100% + em(3px));
+    left: 0;
+    z-index: 10000000;
+    width: auto;
+    min-width: 100%;
+    max-height: em(218px);
+    overflow: auto;
+    padding: em(8px) 0;
+
+    border-radius: em(29px);
+    background: #fcfcfc;
+    box-shadow: 0px 2px 16px 0px rgba(18, 18, 18, 0.1);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+
+    .DropdownItem {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: em(12.5px) em(56px) em(12.5px) em(16px);
+      min-width: max-content;
+
+      &_Label {
+        color: #1f1e58;
+        font-family: 'Gantari', sans-serif;
+        font-size: em(16px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      // &_Check {
+      //   position: absolute;
+      //   right: em(16px);
+      //   top: 50%;
+      //   transform: translate(0, -50%) rotate(-5.742deg);
+      //   width: em(26px);
+      //   height: em(16px);
+      // }
+
+      &:hover {
+        background: rgba(31, 30, 88, 0.06);
+      }
+
+      // &__Active {
+      //   .DropdownItem_Label {
+      //     font-weight: 700;
+      //   }
+      // }
+    }
+  }
+
+  &_ErrorText {
+    padding-left: em(27px);
+    margin-top: em(3px);
+    @include ifdesktop {
+      padding-left: em(36px);
+      margin-top: em(5px);
+    }
+    p {
+      color: $error;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(13px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      @include ifdesktop {
+        font-size: em(15px);
+      }
+    }
+  }
+
+  &__Focus {
+    .BaseSelect_Wrapper {
+      &::before,
+      .Input {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
+    .BaseSelect_Label {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+
+    .Select_Chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__FocusInput {
+    .BaseSelect_Wrapper {
+      &::before,
+      .Input {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
+    .BaseSelect_Label {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+  }
+
+  &__NotEmpty {
+    .Label {
+      transform: translate(em(0px), em(-10px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+  }
+
+  &__Error {
+    .BaseSelect_Wrapper {
+      &::before,
+      .Select {
+        border-color: $error;
+      }
+    }
+  }
+
+  &__Disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.SelectedCounter {
+  white-space: nowrap;
+  font-family: 'Gantari', sans-serif;
+  font-size: em(14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: #1a1a1a;
+}
+
+.ClearValue {
+  position: absolute;
+  right: em(40px);
+  top: 50%;
+  transform: translate(0, -50%);
+  width: em(20px);
+  height: em(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #e8e8ea;
+  svg {
+    width: em(14px);
+    height: em(14px);
+  }
+}
