@@ -227,9 +227,6 @@
                 transition: stroke-opacity $speed ease;
                 stroke-opacity: 1;
               }
-              & + .Tooltip {
-                opacity: 1;
-              }
             }
           }
           .Tooltip {
@@ -245,7 +242,6 @@
             border-radius: em(4px);
             border: 1px solid $text;
             background: $text;
-            opacity: 0;
             transition: opacity $speed ease;
             @include ifmobile {
               transform: translate(-76%, 0%);
