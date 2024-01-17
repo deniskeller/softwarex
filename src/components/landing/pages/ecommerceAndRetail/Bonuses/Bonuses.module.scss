@@ -49,7 +49,7 @@
     position: relative;
     z-index: 1;
     @include ifmobile {
-      overflow: initial;
+      overflow: visible;
     }
     @include iflaptop {
       max-width: 100%;
