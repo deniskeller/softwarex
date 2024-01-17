@@ -6,10 +6,6 @@
     flex-direction: row;
     cursor: pointer;
     position: relative;
-    // padding: 0 0 0 em(35px);
-    // @include ifdesktop {
-    //   padding: 0 0 0 em(46px);
-    // }
     &::before {
       display: block;
       content: '';
@@ -229,13 +225,13 @@
   }
 
   &__Focus {
-    .BaseSelect_Wrapper {
+    .AmountSelect_Wrapper {
       &::before,
       .Input {
         border-color: rgba(31, 30, 88, 0.6);
       }
     }
-    .BaseSelect_Label {
+    .AmountSelect_Label {
       transform: translate(em(0px), em(-12px)) scale(0.8);
       @include ifdesktop {
         transform: translate(em(0px), em(-18px)) scale(0.8);
@@ -248,16 +244,10 @@
   }
 
   &__FocusInput {
-    .BaseSelect_Wrapper {
+    .AmountSelect_Wrapper {
       &::before,
       .Input {
         border-color: rgba(31, 30, 88, 0.6);
-      }
-    }
-    .BaseSelect_Label {
-      transform: translate(em(0px), em(-12px)) scale(0.8);
-      @include ifdesktop {
-        transform: translate(em(0px), em(-18px)) scale(0.8);
       }
     }
   }

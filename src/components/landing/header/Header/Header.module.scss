@@ -459,8 +459,53 @@
       }
     }
   }
+
   .Header_Burder span {
     background: $text;
+  }
+
+  .Header_Actions {
+    .User {
+      &_Icon {
+        circle {
+          fill: $pr1;
+        }
+        path {
+          stroke: $white;
+        }
+      }
+      &:hover {
+        .User_Icon {
+          circle {
+            fill: $text;
+            fill-opacity: 1;
+          }
+          path {
+            stroke: $white;
+          }
+        }
+      }
+      &:active {
+        .User_Icon {
+          circle {
+            fill: $text;
+          }
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+    .Logout {
+      &_Label {
+        color: $pr1;
+      }
+      &_Icon {
+        path {
+          stroke: $pr1;
+        }
+      }
+    }
   }
 }
 
