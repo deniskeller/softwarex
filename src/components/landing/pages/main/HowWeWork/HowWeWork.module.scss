@@ -75,7 +75,7 @@
     // overflow: hidden;
     position: relative;
     @include ifmobile {
-      overflow: initial;
+      overflow: visible;
     }
     &_Wrapper {
       display: flex;
