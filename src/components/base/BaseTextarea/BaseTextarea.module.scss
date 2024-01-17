@@ -65,9 +65,9 @@
     }
 
     &__NoEmpty {
-      transform: translate(em(0px), em(-12px)) scale(0.8);
+      transform: translate(em(0px), em(-16px)) scale(0.8);
       @include ifdesktop {
-        transform: translate(em(0px), em(-18px)) scale(0.8);
+        transform: translate(em(0px), em(-24px)) scale(0.8);
       }
     }
   }
@@ -155,9 +155,9 @@
     }
 
     .BaseTextarea_Label {
-      transform: translate(em(0px), em(-12px)) scale(0.8);
+      transform: translate(em(0px), em(-16px)) scale(0.8);
       @include ifdesktop {
-        transform: translate(em(0px), em(-18px)) scale(0.8);
+        transform: translate(em(0px), em(-24px)) scale(0.8);
       }
     }
   }
