@@ -36,18 +36,19 @@ const BaseTextarea: React.FC<Props> = ({
       const scrollHeight = refTextarea.current.scrollHeight;
       refTextarea.current.style.height = scrollHeight + 'px';
     }
+
     setFocus(false);
   };
 
   useEffect(() => {
     if (refTextarea.current != null) {
-      refTextarea.current.style.height = 'inherit';
+      refTextarea.current.style.height = 'initial';
       refTextarea.current.style.height =
         refTextarea.current.scrollHeight + 'px';
     }
 
     setTimeout(() => {
-      if (refTextarea.current != null && value.length > 1) {
+      if (refTextarea.current != null && value.length > 0) {
         refTextarea.current.style.height = 'initial';
         refTextarea.current.style.height =
           refTextarea.current.scrollHeight + 'px';
@@ -58,33 +59,46 @@ const BaseTextarea: React.FC<Props> = ({
   return (
     <div
       className={`${s.BaseTextarea} ${className} ${
-        disabled ? s.BaseTextarea_Disabled : null
-      } ${error ? s.BaseTextarea_Error : ''} ${
-        focus ? s.BaseTextarea_Focus : ''
+        focus ? s.BaseTextarea__Focus : ''
+      } ${error ? s.BaseTextarea__Error : ''} ${
+        disabled ? s.BaseTextarea__Disabled : ''
       }`}
       onClick={() => refTextarea.current?.focus()}
     >
-      <textarea
-        ref={refTextarea}
-        value={value}
-        className={s.Textarea}
-        name={name}
-        maxLength={maxLength}
-        placeholder={placeholder}
-        required={required}
-        disabled={disabled}
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          onChange(e.target.value)
-        }
-        onKeyDown={onKeyDown}
-        onFocus={() => setFocus(true)}
-        onBlur={onBlur}
-      />
-
       {label ? (
-        <label className={`${s.Label} ${value ? s.NoEmpty : ''}`}>
+        <label
+          className={`${s.BaseTextarea_Label} ${
+            value ? s.BaseTextarea_Label__NoEmpty : ''
+          }`}
+        >
           <span>{label}</span>
         </label>
+      ) : null}
+
+      <div className={s.BaseTextarea_Wrapper}>
+        <textarea
+          ref={refTextarea}
+          value={value}
+          className={s.Textarea}
+          name={name}
+          maxLength={maxLength}
+          rows={1}
+          placeholder={placeholder}
+          required={required}
+          disabled={disabled}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            onChange(e.target.value)
+          }
+          onKeyDown={onKeyDown}
+          onFocus={() => setFocus(true)}
+          onBlur={onBlur}
+        />
+      </div>
+
+      {error ? (
+        <div className={s.BaseTextarea_ErrorText}>
+          <p>{error}</p>
+        </div>
       ) : null}
     </div>
   );

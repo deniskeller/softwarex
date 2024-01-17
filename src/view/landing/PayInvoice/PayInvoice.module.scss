@@ -159,7 +159,7 @@
       @include ifmobile {
         margin-bottom: em(12px);
       }
-      p {
+      .Note {
         $size: 10px;
         color: rgba(31, 30, 88, 0.4);
         font-size: em($size);

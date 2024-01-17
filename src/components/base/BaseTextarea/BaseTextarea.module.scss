@@ -1,140 +1,190 @@
 .BaseTextarea {
+  cursor: text;
+  font-size: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: em(34px) em(16px) em(10px) em(25px);
-  border-radius: em(12px);
-  border: 1px solid #e8e8ea;
-  background: #fff;
-  cursor: text;
-  transition: 0.3s ease all;
 
-  &:hover {
-    border-color: #425eec;
+  &_Wrapper {
+    position: relative;
+    padding: em(12px) em(10px) em(10px) em(35px);
+    transition: 0.3s ease all;
+    @include ifdesktop {
+      padding: em(16px) em(10px) em(15px) em(46px);
+    }
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 99.7%;
+      height: em(12px);
+      border: 2px solid rgba(31, 30, 88, 0.1);
+      transition: all $speed ease;
+      border-top: none;
+      border-radius: 0px 0px 50px 60px/0px 0px 30px 30px;
+      @include ifdesktop {
+        height: em(16px);
+      }
+    }
+
+    &:hover {
+      &::before,
+      .Textarea {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
   }
 
-  &_Focus {
-    border-color: #425eec;
-  }
+  &_Label {
+    user-select: none;
+    position: absolute;
+    pointer-events: none;
+    top: em(8px);
+    left: em(27px);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    transform-origin: left top;
+    @include ifdesktop {
+      top: em(14px);
+      left: em(36px);
+    }
 
-  @include ifmobile {
-    border-radius: em(10px);
-    padding: em(27px) em(16px) em(9px) em(16px);
+    span {
+      color: $text;
+      font-family: 'Gantari', sans-serif;
+      font-size: em(15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: all 0.3s ease;
+      @include ifdesktop {
+        font-size: em(18px);
+      }
+    }
+
+    &__NoEmpty {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
   }
 
   .Textarea {
-    $size: 18px;
+    $size: 15px;
     width: 100%;
-    min-height: em(44px, $size);
-    max-height: em(200px, $size);
-
-    border-radius: 0;
-    background: none;
+    min-height: em(19px, $size);
+    max-height: em(40px, $size);
     outline: none;
     border: none;
     position: relative;
     box-shadow: none;
-    transition: all 0.3s ease;
+    background: transparent;
+    transition: $speed ease all;
     @include placeholder-color(transparent);
     resize: none;
-    font-size: em($size);
-    text-overflow: ellipsis;
-    color: rgba(26, 26, 26, 0.9);
+
+    color: $text;
     font-family: 'Gantari', sans-serif;
+    font-size: em($size);
     font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    color: #1a1a1a;
+    font-weight: 500;
+    line-height: normal;
+
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
-
-    @include ifmobile {
-      $size: 16px;
-      font-size: em($size);
-      min-height: em(44px, $size);
-      max-height: em(200px, $size);
-    }
-
+    scrollbar-color: #d4d3d3 transparent;
+    scrollbar-width: thin;
     &::-webkit-scrollbar {
-      display: none;
+      width: em(3px);
     }
-    -ms-overflow-style: none; /* IE и Edge */
-    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 em(6px) #d4d3d3;
+      border-radius: em(100px);
+    }
 
     &::placeholder {
-      visibility: hidden;
+      user-select: none;
     }
 
-    &:focus + .Label {
-      top: em(10px);
-      left: em(25px);
-      @include ifmobile {
-        top: em(10px);
-        left: em(16px);
-      }
-      span {
-        font-size: em(14px);
-        @include ifmobile {
-          font-size: em(12px);
-        }
-      }
+    &::-webkit-contacts-auto-fill-button {
+      opacity: 0;
     }
 
-    & + .NoEmpty {
-      top: em(10px);
-      left: em(25px);
-      @include ifmobile {
-        top: em(10px);
-        left: em(16px);
-      }
-      span {
-        font-size: em(14px);
-        @include ifmobile {
-          font-size: em(12px);
-        }
-      }
+    @include ifdesktop {
+      $size: 18px;
+      font-size: em($size);
+      min-height: em(25px, $size);
+      max-height: em(40px, $size);
     }
   }
 
-  .Label {
-    position: absolute;
-    pointer-events: none;
-    top: em(24px);
-    left: em(25px);
-    transition: all 0.3s ease;
-    @include ifmobile {
-      left: em(15px);
+  &_ErrorText {
+    padding-left: em(27px);
+    margin-top: em(3px);
+    @include ifdesktop {
+      padding-left: em(36px);
+      margin-top: em(5px);
     }
-
-    span {
-      display: flex;
-      color: rgba(26, 26, 26, 0.4);
+    p {
+      color: #c92100;
       font-family: 'Gantari', sans-serif;
-      font-size: em(18px);
+      font-size: em(13px);
       font-style: normal;
       font-weight: 400;
-      line-height: 100%; /* 18px */
-      transition: all 0.3s ease;
-      @include ifmobile {
-        font-size: em(16px);
+      line-height: normal;
+      @include ifdesktop {
+        font-size: em(15px);
       }
     }
   }
 
-  &_Error {
-    border-color: #ff5f5f !important;
+  &__Focus {
+    .BaseTextarea_Wrapper {
+      &::before,
+      .Textarea {
+        border-color: rgba(31, 30, 88, 0.6);
+      }
+    }
+
+    .BaseTextarea_Label {
+      transform: translate(em(0px), em(-12px)) scale(0.8);
+      @include ifdesktop {
+        transform: translate(em(0px), em(-18px)) scale(0.8);
+      }
+    }
+  }
+
+  &__Error {
+    .BaseTextarea_Wrapper {
+      &::before,
+      .Textarea {
+        border-color: #c92100;
+      }
+    }
   }
 
   //disabled style
-  &_Disabled,
-  &_Disabled:hover,
-  &_Disabled:focus {
+  &__Disabled,
+  &__Disabled:hover,
+  &__Disabled:focus {
     cursor: not-allowed;
     pointer-events: none;
-    background: #f4f4f5;
-    border: 1px solid #e5e7eb !important;
-    .Textarea {
-      color: rgba(26, 26, 26, 0.5);
+    user-select: none;
+    .BaseTextarea_Label span {
+      opacity: 0.6;
+    }
+    .BaseTextarea_Wrapper {
+      .Textarea {
+        opacity: 0.4;
+      }
     }
   }
 }

@@ -6,6 +6,7 @@ import {
   BaseCheckbox,
   BaseInput,
   BaseRadioButton,
+  BaseTextarea,
 } from '@base/index';
 import Link from 'next/link';
 import { AmountSelect, ToMainPage, Toast } from '@content/landing/index';
@@ -134,14 +135,18 @@ const PayInvoice: React.FC = () => {
         </div>
 
         <div className={s.Form_PaymentsNotes}>
-          <BaseInput
+          <BaseTextarea
+            maxLength={500}
             name="paymentsNotes"
             placeholder="Payments notes (optional)"
             label="Payments notes (optional)"
             value={value.paymentsNotes}
             onChange={(val: string) => setNewValue(val, 'paymentsNotes')}
+            error={error}
           />
-          <p>Note: field can't contain more than 500 characters</p>
+          <p className={s.Note}>
+            Note: field can't contain more than 500 characters
+          </p>
         </div>
 
         <div className={s.Form_BankTransfer}>
