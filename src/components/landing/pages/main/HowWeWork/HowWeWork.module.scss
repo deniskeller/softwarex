@@ -71,9 +71,10 @@
 
   &_Slider {
     display: flex;
+    width: 100%;
     max-width: em(946px);
-    // overflow: hidden;
     position: relative;
+    z-index: 1;
     @include ifmobile {
       overflow: visible;
     }
